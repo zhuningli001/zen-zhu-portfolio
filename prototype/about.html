@@ -1,0 +1,792 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About — Ningli Zhu</title>
+    <meta
+      name="description"
+      content="About Ningli Zhu, senior UX designer and digital creator."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="./index.html#top" aria-label="Ningli Zhu home">
+        <span>Ningli Zhu</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="./index.html#work" data-i18n="nav.work">Work</a>
+        <a href="./index.html#notes" data-i18n="nav.notes">Notes</a>
+        <a href="./about.html" data-i18n="nav.about">About</a>
+        <a href="#email-panel" data-email-open data-i18n="nav.contact">
+          Contact
+        </a>
+        <button
+          class="language-toggle"
+          type="button"
+          data-language-toggle
+          aria-label="Switch language"
+        >
+          <span data-language-label>中</span>
+        </button>
+        <button class="theme-toggle" type="button" data-theme-toggle>
+          <span data-theme-label>☾</span>
+        </button>
+      </nav>
+    </header>
+
+    <main class="about-page" id="top">
+      <section class="about-hero section">
+        <div class="about-hero-grid">
+          <div class="about-hero-main">
+            <p class="eyebrow" data-i18n="aboutPage.eyebrow">About me</p>
+            <h1>
+              <span data-i18n="aboutPage.heroLine2Lead">
+                I hope to be a 🧚‍♀️
+              </span>
+              <span class="bright-presence" data-i18n="aboutPage.heroLine2Glow">
+                bright presence.
+              </span>
+            </h1>
+            <div class="about-actions">
+              <a
+                class="about-jump-link"
+                href="#records"
+                data-record-jump="experience"
+                data-i18n="aboutPage.experienceCta"
+              >
+                view experience ↓
+              </a>
+              <a
+                class="about-jump-link"
+                href="./assets/Ningli_Zhu_CV_Concise_EN.pdf"
+                download="Ningli_Zhu_CV_Concise_EN.pdf"
+                data-cv-download
+                data-i18n="contact.cv"
+              >
+                CV ↓
+              </a>
+            </div>
+          </div>
+          <div class="about-hero-copy">
+            <div class="about-photo-placeholder">
+              <img
+                src="./assets/ningli-portrait.png"
+                alt="Ningli Zhu portrait"
+              />
+            </div>
+          </div>
+          <div class="about-intro-card about-hero-greeting">
+            <p class="eyebrow" data-i18n="aboutPage.greetingLabel">Greeting</p>
+            <div class="about-intro-copy">
+              <p data-i18n="aboutPage.greetingCopy1">
+                I’m Ningli, an UX Designer / Media creator focused on future
+                interactions and human values.
+              </p>
+              <p>
+                <span data-i18n="aboutPage.greetingCopy2Lead">
+                  My path moves across art, design and product, with a few
+                  identity shifts along the way. Looking back, the work has kept
+                  circling one question: as technology reshapes expression,
+                  relationships and everyday life,
+                </span>
+                <strong
+                  class="intro-emphasis"
+                  data-i18n="aboutPage.greetingCopy2Strong"
+                >
+                  how might we preserve and deepen the emotions, trust and
+                  connections that matter most to people?
+                </strong>
+              </p>
+              <p>
+                <span data-i18n="aboutPage.greetingCopy3Lead">
+                  When I lived and studied at Design Academy Eindhoven in the
+                  Netherlands, I first felt the force of human-centered critical
+                  thinking, and the possibility of design as a way to intervene
+                  in society. The sincerity and affective power of art, together
+                  with the creativity of design, made me want to
+                </span>
+                <strong
+                  class="intro-emphasis"
+                  data-i18n="aboutPage.greetingCopy3Strong"
+                >
+                  build products that are genuinely meaningful for people.
+                </strong>
+              </p>
+              <p data-i18n="aboutPage.greetingCopy4">
+                My graduate project Face to Face was an early exploration of this
+                direction. It combined moving image, real-time facial sensing and
+                emotion recognition to examine digital identity, self-presentation
+                and human-machine relationships.
+              </p>
+              <p data-i18n="aboutPage.greetingCopy5">
+                That project made something clearer for me: I am not interested in
+                technology for its own sake, but in how technology changes how
+                people feel, and how we might see ourselves again through it.
+              </p>
+              <p data-i18n="aboutPage.greetingCopy6">
+                I value sincerity, kindness and inclusion. I also believe in
+                organic growth, long-term collaboration and building things
+                together. In product and interaction work, I tend to return first
+                to the human situation: why people feel confused, when they feel
+                understood, how trust is formed, and whether a system can help
+                people express and act more naturally.
+              </p>
+              <p data-i18n="aboutPage.greetingCopy7">
+                Outside work, I often solo travel into unknown places, and return
+                to myself through yoga, Buddhism, the outdoors and reflection. I
+                hope to work with creative teams to explore future-facing
+                interactions, product forms and warmer relationships between people
+                and technology.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-records section" id="records">
+        <div class="about-record-tabs" role="tablist" aria-label="About records">
+          <button
+            class="about-record-tab active"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="record-career"
+            data-record-tab="career"
+            data-i18n="aboutPage.recordsCareer"
+          >
+            Career path
+          </button>
+          <button
+            class="about-record-tab"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="record-education"
+            data-record-tab="education"
+            data-i18n="aboutPage.recordsEducation"
+          >
+            Education
+          </button>
+          <button
+            class="about-record-tab"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="record-experience"
+            data-record-tab="experience"
+            data-i18n="aboutPage.recordsExperience"
+          >
+            Experience & Volunteer
+          </button>
+        </div>
+
+        <div
+          class="about-record-panel active"
+          id="record-career"
+          role="tabpanel"
+          data-record-panel="career"
+        >
+      <section class="about-path section">
+        <div class="section-heading slim">
+          <div>
+            <p class="eyebrow" data-i18n="aboutPage.pathEyebrow">
+              Career path
+            </p>
+            <h2 data-i18n="aboutPage.pathHeading">
+              Work roles across UX, design strategist, studio practice and media
+              design.
+            </h2>
+          </div>
+        </div>
+        <div class="path-list career-list">
+          <article class="career-item" tabindex="0">
+            <div class="career-row">
+              <span class="career-time">
+                <span>2026 – Present</span>
+                <span data-i18n="aboutPage.path1Meta">Shenzhen, CN</span>
+              </span>
+              <strong data-i18n="aboutPage.path1Title">
+                Senior UX & Design Strategist
+              </strong>
+              <p class="career-org">
+                <a href="https://momcozy.com/" target="_blank" rel="noreferrer">
+                  Momcozy
+                </a>
+              </p>
+            </div>
+            <p class="career-detail" data-i18n="aboutPage.path1Copy">
+              Designed AI-enhanced e-commerce experience systems across UX,
+              brand strategy, personalization, modular content architecture and
+              customer journeys.
+            </p>
+          </article>
+          <article class="career-item" tabindex="0">
+            <div class="career-row">
+              <span class="career-time">
+                <span>2025 – 2026</span>
+                <span data-i18n="aboutPage.path3Meta">Nanjing, CN</span>
+              </span>
+              <strong data-i18n="aboutPage.path3Title">
+                User Experience Designer (outsourced)
+              </strong>
+              <p class="career-org">
+                <a
+                  href="https://www.huawei.com/en/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Huawei
+                </a>
+              </p>
+            </div>
+            <p class="career-detail" data-i18n="aboutPage.path3Copy">
+              Worked on AI Intelligent Search 2.0, agentic-product research,
+              HarmonyOS-related design development, Celia Translate insights
+              and AIGC prototype visualization.
+            </p>
+          </article>
+          <article class="career-item" tabindex="0">
+            <div class="career-row">
+              <span class="career-time">
+                <span>2019 – Present</span>
+                <span data-i18n="aboutPage.path2Meta">Netherlands / China</span>
+              </span>
+              <strong data-i18n="aboutPage.path2Title">
+                Creative Designer ｜ Studio Owner
+              </strong>
+              <p class="career-org">
+                <span class="career-company">ZEN-ZHU STUDIO</span>
+              </p>
+            </div>
+            <p class="career-detail" data-i18n="aboutPage.path2Copy">
+              Built an independent practice for brand, website, video and UI/UX
+              projects, serving individuals, start-ups and organizations.
+            </p>
+          </article>
+          <article class="career-item" tabindex="0">
+            <div class="career-row">
+              <span class="career-time">
+                <span>2021 – 2023</span>
+                <span data-i18n="aboutPage.path4Meta">Amsterdam, NL</span>
+              </span>
+              <strong data-i18n="aboutPage.path4Title">UI/UX Designer</strong>
+              <p class="career-org">
+                <a
+                  href="https://www.nextportchina.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  NextportChina
+                </a>
+              </p>
+            </div>
+            <p class="career-detail" data-i18n="aboutPage.path4Copy">
+              Designed solution-driven UX products for China-market clients,
+              including mini programs, apps, H5 campaigns, websites, prototypes
+              and user research.
+            </p>
+          </article>
+          <article class="career-item" tabindex="0">
+            <div class="career-row">
+              <span class="career-time">
+                <span>2021</span>
+                <span data-i18n="aboutPage.path5Meta">Amsterdam, NL</span>
+              </span>
+              <strong data-i18n="aboutPage.path5Title">
+                Digital Transformation Trainer
+              </strong>
+              <p class="career-org">
+                <a
+                  href="https://digitalsocietyschool.org/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Digital Society School
+                </a>
+              </p>
+            </div>
+            <p class="career-detail" data-i18n="aboutPage.path5Copy">
+              Facilitated digital transformation learning through UX-oriented
+              methods, collaborative research and structured design exercises.
+            </p>
+          </article>
+          <article class="career-item" tabindex="0">
+            <div class="career-row">
+              <span class="career-time">
+                <span>2020</span>
+                <span data-i18n="aboutPage.path6Meta">Amsterdam, NL</span>
+              </span>
+              <strong data-i18n="aboutPage.path6Title">
+                Media Designer Intern
+              </strong>
+              <p class="career-org">
+                <a
+                  href="https://universestudio.xyz/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  UNI_VERSE Studio
+                </a>
+              </p>
+            </div>
+            <p class="career-detail" data-i18n="aboutPage.path6Copy">
+              Researched and practiced digital products with a focus on AR
+              techniques and interactive Instagram filters for media promotion.
+            </p>
+          </article>
+          <article class="career-item" tabindex="0">
+            <div class="career-row">
+              <span class="career-time">
+                <span>2017 Summer</span>
+                <span data-i18n="aboutPage.path7Meta">Utrecht, NL</span>
+              </span>
+              <strong data-i18n="aboutPage.path7Title">
+                Summer Design Internship
+              </strong>
+              <p class="career-org">
+                <a href="https://impakt.nl/" target="_blank" rel="noreferrer">
+                  Stichting Impakt
+                </a>
+              </p>
+            </div>
+            <p class="career-detail" data-i18n="aboutPage.path7Copy">
+              Supported event-archive website design for Future of the Past, an
+              interactive project around technology, memory and time.
+            </p>
+          </article>
+          <article class="career-item" tabindex="0">
+            <div class="career-row">
+              <span class="career-time">
+                <span>2013 – 2016</span>
+                <span data-i18n="aboutPage.path8Meta">Nanjing, CN</span>
+              </span>
+              <strong data-i18n="aboutPage.path8Title">
+                Art Editor | Visual Designer
+              </strong>
+              <p class="career-org">
+                <a
+                  href="https://www.jsbc.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Jiangsu Broadcasting Corporation
+                </a>
+              </p>
+            </div>
+            <p class="career-detail" data-i18n="aboutPage.path8Copy">
+              Created visual material for TV programs, news, digital
+              storytelling, promotions and offline events.
+            </p>
+          </article>
+          <article class="career-item" tabindex="0">
+            <div class="career-row">
+              <span class="career-time">
+                <span>2011 – 2012</span>
+                <span data-i18n="aboutPage.path9Meta">Hangzhou, CN</span>
+              </span>
+              <strong data-i18n="aboutPage.path9Title">
+                Graphic Design Intern
+              </strong>
+              <p class="career-org">
+                <a
+                  href="http://www.transwhite.cn/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  TRANSWHITE Design Studio | 非白设计
+                </a>
+              </p>
+            </div>
+            <p class="career-detail" data-i18n="aboutPage.path9Copy">
+              Practiced graphic design, typography and digital media design in a
+              studio environment.
+            </p>
+          </article>
+        </div>
+      </section>
+        </div>
+
+        <div
+          class="about-record-panel"
+          id="record-education"
+          role="tabpanel"
+          hidden
+          data-record-panel="education"
+        >
+      <section class="about-education section">
+        <div class="section-heading slim">
+          <div>
+            <p class="eyebrow" data-i18n="aboutPage.eduEyebrow">Education</p>
+          </div>
+        </div>
+        <div class="credential-list path-table">
+          <article>
+            <span>2017 – 2019</span>
+            <strong>
+              <a
+                href="https://www.akvstjoostmasters.nl/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Avans Masters of Arts
+              </a>
+            </strong>
+            <p>
+              <span class="plain-org">
+                MA Graphic Design / Fine Art and Design
+              </span>
+              <span data-i18n="aboutPage.edu1Meta">Netherlands</span>
+            </p>
+          </article>
+          <article>
+            <span>2016 – 2017</span>
+            <strong>
+              <a
+                href="https://www.designacademy.nl/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Design Academy Eindhoven
+              </a>
+            </strong>
+            <p>
+              <span class="plain-org">MA Information Design</span>
+              <span data-i18n="aboutPage.edu2Meta">Netherlands</span>
+            </p>
+          </article>
+          <article>
+            <span>2009 – 2013</span>
+            <strong>
+              <a
+                href="https://en.caa.edu.cn/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                China Academy of Art
+              </a>
+            </strong>
+            <p>
+              <span class="plain-org">Visual Communication Design</span>
+              <span data-i18n="aboutPage.edu3Meta">China</span>
+            </p>
+          </article>
+        </div>
+      </section>
+        </div>
+
+        <div
+          class="about-record-panel"
+          id="record-experience"
+          role="tabpanel"
+          hidden
+          data-record-panel="experience"
+        >
+      <section class="about-experience section" id="experience">
+        <div class="section-heading slim">
+          <div>
+            <p class="eyebrow" data-i18n="aboutPage.expEyebrow">Experience</p>
+            <h2 data-i18n="aboutPage.expHeading">
+              Artist-period exhibitions and cultural activities.
+            </h2>
+          </div>
+        </div>
+        <div class="experience-list">
+          <article class="experience-item" tabindex="0">
+            <div class="experience-row">
+              <span>2019 – 2020</span>
+              <strong data-i18n="aboutPage.exp1Position">Exhibition</strong>
+              <p class="career-org">
+                <em data-i18n="aboutPage.exp1Org">Media-art presentations</em>
+                <span data-i18n="aboutPage.exp1Country">
+                  NL / US
+                </span>
+              </p>
+            </div>
+            <div class="experience-detail experience-lines">
+              <span data-i18n="aboutPage.exp1Item1">
+                (Im)possible Bodies Exhibition, 2020, Den Bosch
+              </span>
+              <span data-i18n="aboutPage.exp1Item2">
+                TAC2GO program, Confined.Work, July 2020, Eindhoven
+              </span>
+              <span data-i18n="aboutPage.exp1Item3">
+                CinemAsia Festival Program, Amsterdam, March 2020
+              </span>
+              <span data-i18n="aboutPage.exp1Item4">
+                Dutch Design Week, Manifestations, Eindhoven
+              </span>
+              <span data-i18n="aboutPage.exp1Item5">
+                Pratt Institute, New York, 2019, US
+              </span>
+            </div>
+          </article>
+          <article class="experience-item" tabindex="0">
+            <div class="experience-row">
+              <span>2017 – 2021</span>
+              <strong data-i18n="aboutPage.exp2Position">Activities</strong>
+              <p class="career-org">
+                <em data-i18n="aboutPage.exp2Org">Art, design and culture</em>
+                <span data-i18n="aboutPage.exp2Country">
+                  NL / DE / JP
+                </span>
+              </p>
+            </div>
+            <div class="experience-detail experience-lines">
+              <span data-i18n="aboutPage.exp2Item1">
+                Oddstream Studio, Nijmegen, 2020 / 2021
+              </span>
+              <span data-i18n="aboutPage.exp2Item2">
+                Eindhoven Maker Faire, September 2020
+              </span>
+              <span data-i18n="aboutPage.exp2Item3">
+                Renault Design Rides, 2019
+              </span>
+              <span data-i18n="aboutPage.exp2Item4">
+                ZUIBISHE Online Design Media, 2019
+              </span>
+              <span data-i18n="aboutPage.exp2Item5">
+                Dérive Berlin residency, 2018
+              </span>
+              <span data-i18n="aboutPage.exp2Item6">
+                Tokyo Art Book Fair, 2017
+              </span>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="about-volunteering section">
+        <div class="section-heading slim">
+          <div>
+            <p class="eyebrow" data-i18n="aboutPage.volEyebrow">
+              Volunteering
+            </p>
+            <h2 data-i18n="aboutPage.volHeading">
+              Cultural-social community outside formal roles.
+            </h2>
+          </div>
+        </div>
+        <div class="credential-list path-table">
+          <article>
+            <span>2026</span>
+            <strong data-i18n="aboutPage.vol5Title">Volunteer</strong>
+            <p>
+              <a
+                class="plain-org"
+                href="https://en.wikipedia.org/wiki/Isha_Foundation"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Isha Foundation
+              </a>
+              <span data-i18n="aboutPage.vol5Meta">Global</span>
+            </p>
+          </article>
+          <article>
+            <span>2019</span>
+            <strong data-i18n="aboutPage.vol1Title">Graphic Illustrator</strong>
+            <p>
+              <a
+                class="plain-org"
+                href="https://neu-reality.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                神经现实
+              </a>
+              <span>neu-reality.com</span>
+            </p>
+          </article>
+          <article>
+            <span>2017.11</span>
+            <strong data-i18n="aboutPage.vol2Title">
+              Tour Guide | STRP biënnale
+            </strong>
+            <p>
+              <a
+                class="plain-org"
+                href="https://strp.nl/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                STRP
+              </a>
+              <span>Science and Technology</span>
+            </p>
+          </article>
+          <article>
+            <span>2016 – 2018</span>
+            <strong data-i18n="aboutPage.vol3Title">Tour Guide</strong>
+            <p>
+              <a
+                class="plain-org"
+                href="https://ddw.nl/en"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Dutch Design Week
+              </a>
+              <span>Arts and Culture</span>
+            </p>
+          </article>
+          <article>
+            <span>2017-2019</span>
+            <strong data-i18n="aboutPage.vol4Title">
+              Youth Buddhist Volunteer
+            </strong>
+            <p>
+              <span class="plain-org">Fo Guang Shan He Hua Temple</span>
+              <span>Amsterdam</span>
+            </p>
+          </article>
+        </div>
+      </section>
+        </div>
+      </section>
+
+      <section class="about-offclock section">
+        <p class="eyebrow" data-i18n="aboutPage.offEyebrow">Off the clock</p>
+        <div>
+          <h2 data-i18n="aboutPage.offHeading">
+            Outside work, I draw energy from culture, nature and mind-body
+            exploration.
+          </h2>
+          <div class="offclock-grid">
+            <span data-i18n="aboutPage.off1">Media-art lover</span>
+            <span data-i18n="aboutPage.off2">Cultural explorer</span>
+            <span data-i18n="aboutPage.off3">Yogi 🧘‍♀️</span>
+            <span data-i18n="aboutPage.off4">Notes and reflections</span>
+            <span data-i18n="aboutPage.off5">Gardener 🌱</span>
+            <span data-i18n="aboutPage.off6">Swimming</span>
+          </div>
+          <div
+            class="offclock-masonry"
+            aria-label="Life and culture image placeholders"
+          >
+            <div class="life-tile tall image-tile">
+              <img
+                src="./assets/gallery-day.jpg"
+                alt="Ningli at a museum with Girl with a Pearl Earring"
+              />
+              <span data-i18n="aboutPage.life1">Gallery day</span>
+            </div>
+            <div class="life-tile">
+              <span data-i18n="aboutPage.life2">City texture</span>
+            </div>
+            <div class="life-tile wide">
+              <span data-i18n="aboutPage.life3">Studio notes</span>
+            </div>
+            <div class="life-tile image-tile">
+              <img
+                src="./assets/life-yoga-practice.jpg"
+                alt="Yoga and meditation practice with Isha Foundation"
+              />
+              <span data-i18n="aboutPage.life4">Yoga practice</span>
+            </div>
+            <div class="life-tile tall image-tile">
+              <img
+                src="./assets/life-community-fieldwork.jpg"
+                alt="Community fieldwork and cultural volunteering"
+              />
+              <span data-i18n="aboutPage.life5">Cultural fieldwork</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact-section about-contact" id="cv">
+        <p class="eyebrow" data-i18n="aboutPage.nextEyebrow">Next</p>
+        <h2 data-i18n="aboutPage.nextHeading">
+          Want the short version? Download CV or start with selected work.
+        </h2>
+        <div class="contact-actions">
+          <a
+            class="button primary"
+            href="./assets/Ningli_Zhu_CV_Concise_EN.pdf"
+            download="Ningli_Zhu_CV_Concise_EN.pdf"
+            data-cv-download
+            data-i18n="contact.cv"
+          >
+            View CV
+          </a>
+          <a class="button" href="./index.html#work" data-i18n="nav.work">
+            Work
+          </a>
+          <a
+            class="button"
+            href="#email-panel"
+            data-email-open
+            data-i18n="contact.email"
+          >
+            Email
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <aside
+      class="email-drawer"
+      id="email-panel"
+      data-email-drawer
+      aria-hidden="true"
+    >
+      <div class="email-drawer-backdrop" data-email-close></div>
+      <div
+        class="email-drawer-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="email-drawer-title"
+      >
+        <button
+          class="email-drawer-close"
+          type="button"
+          data-email-close
+          aria-label="Close email form"
+        >
+          ×
+        </button>
+        <p class="eyebrow" data-i18n="emailDrawer.eyebrow">Contact</p>
+        <h2 id="email-drawer-title" data-i18n="emailDrawer.title">
+          Let’s connect
+        </h2>
+        <p class="email-drawer-copy" data-i18n="emailDrawer.copy">
+          Share a role, collaboration or project idea. This form opens your
+          default email draft when submitted.
+        </p>
+        <form
+          class="email-form"
+          action="mailto:zhuningli001@163.com"
+          method="post"
+          enctype="text/plain"
+        >
+          <label>
+            <span data-i18n="emailDrawer.name">Your name</span>
+            <input name="name" type="text" autocomplete="name" />
+          </label>
+          <label>
+            <span data-i18n="emailDrawer.reply">Reply email</span>
+            <input name="email" type="email" autocomplete="email" />
+          </label>
+          <label>
+            <span data-i18n="emailDrawer.message">Message</span>
+            <textarea name="message" rows="6"></textarea>
+          </label>
+          <button type="submit" data-i18n="emailDrawer.send">
+            Open email draft ↗
+          </button>
+        </form>
+        <a
+          class="email-direct-link"
+          href="mailto:zhuningli001@163.com"
+          data-i18n="emailDrawer.direct"
+        >
+          zhuningli001@163.com ↗
+        </a>
+      </div>
+    </aside>
+
+    <div class="cursor-aura" data-cursor-aura aria-hidden="true"></div>
+    <script src="./script.js"></script>
+  </body>
+</html>
