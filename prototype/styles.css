@@ -68,6 +68,41 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
+.notify-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.58rem;
+  min-height: 42px;
+  padding: 0.62rem clamp(1.25rem, 4vw, 4.5rem);
+  border-bottom: 1px solid var(--soft-line);
+  background: rgba(251, 248, 242, 0.74);
+  color: var(--muted);
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 500;
+  line-height: 1.35;
+  text-align: center;
+  backdrop-filter: blur(18px);
+}
+
+.notify-bar p {
+  margin: 0;
+}
+
+.notify-dot {
+  flex: 0 0 auto;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 50%;
+  background: var(--clay);
+  box-shadow: 0 0 0 0.28rem rgba(141, 75, 69, 0.1);
+}
+
+body[data-theme="dark"] .notify-bar {
+  background: rgba(33, 30, 26, 0.78);
+}
+
 .site-header {
   position: sticky;
   top: 0;
