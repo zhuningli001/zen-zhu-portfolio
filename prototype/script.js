@@ -13,7 +13,7 @@ const projects = [
       "An AI digital twin platform for entrepreneurship, social matching and resource discovery.",
     hover:
       "0-1 AI product framework for turning founder intent, memory and network resources into an executable digital twin system.",
-    role: "CDO / Product Design / Brand System / 0-1 AI Product Framework",
+    role: "CDO / Lead Product Designer",
     complexity:
       "Turning an abstract AI social concept into product structure across AI conversation, digital twin cards, social discovery, tasks and messaging.",
     output:
@@ -24,6 +24,7 @@ const projects = [
   {
     id: "momcozy-knowledge",
     title: "Momcozy AI Component & Module Knowledge System",
+    titleZh: "Momcozy AI组建&模块-知识系统",
     year: "2026",
     time: "2026",
     focus: ["ai-systems"],
@@ -35,7 +36,7 @@ const projects = [
       "An AI-ready PDP asset and module assembly system that turns components into reusable design knowledge.",
     hover:
       "From component library to AI-readable design knowledge: modules, rules, decision gates and QA loops for PDP generation.",
-    role: "Design Knowledge / Module System / AI Workflow / QA Logic",
+    role: "Senior UX Designer",
     complexity:
       "The project moves beyond a normal component library and defines rules, contracts, decision gates and QA logic that both people and AI can understand.",
     output:
@@ -46,6 +47,7 @@ const projects = [
   {
     id: "momcozy-web",
     title: "Momcozy Website Redesign & Upgrade",
+    titleZh: "Momcozy独立站升级优化",
     year: "2026",
     time: "2026",
     focus: ["ai-systems", "product-ux", "web-brand"],
@@ -57,7 +59,7 @@ const projects = [
       "A strategic redesign proposal connecting AI search, personalization, modular homepage strategy and brand storytelling.",
     hover:
       "Transforming an e-commerce site from listing logic into intent-driven search, personalized content and brand relationship design.",
-    role: "UX Strategy / AI Search / Homepage System / Web Redesign",
+    role: "Senior UX Designer",
     complexity:
       "The redesign connects fuzzy search, AI assistant interaction, two strategy models, four user tags and modular homepage combinations.",
     output:
@@ -68,6 +70,7 @@ const projects = [
   {
     id: "cxd-ai",
     title: "CXD AI Product Marketing Design Platform",
+    titleZh: "CXD中心 AI营销设计平台",
     year: "2026",
     time: "2026",
     focus: ["ai-systems", "product-ux"],
@@ -79,7 +82,7 @@ const projects = [
       "An internal AI-driven design platform for e-commerce and brand marketing scenarios.",
     hover:
       "An AI design platform connecting prompt templates, image generation, brand modules and scenario-based marketing workflows.",
-    role: "UX Flow / Design System / Scenario Modules / Prompt-to-design Interaction",
+    role: "Senior UX Designer",
     complexity:
       "Multiple scenarios needed to share a clear interaction model: industrial design, marketing sets, PDP pages, patterns and packaging.",
     output:
@@ -101,7 +104,7 @@ const projects = [
       "A brand identity and web platform for an SRHR content bank and collaborative knowledge space.",
     hover:
       "A visual identity system for trust, care and collaborative content exchange.",
-    role: "Brand Identity / Visual Guidelines / Website UI",
+    role: "Brand Designer / Website Designer",
     complexity:
       "The platform needed to balance trust, professionalism, care and inherited RNW brand DNA.",
     output:
@@ -112,6 +115,7 @@ const projects = [
   {
     id: "jing-qiong-er",
     title: "Jing Qiong Er",
+    titleZh: "蒋琼耳-艺术家官网",
     year: "2024",
     time: "2024",
     focus: ["web-brand", "culture-media"],
@@ -123,7 +127,7 @@ const projects = [
       "A refined artist website for presenting cross-cultural art, design and personal narrative.",
     hover:
       "Capturing an artist's cross-cultural practice through a clean content structure and quiet visual system.",
-    role: "Website Design / Content Structure / Visual Direction",
+    role: "Website Designer",
     complexity:
       "The work required a calm structure that could hold rich cultural projects, visual archives and personal narrative across devices.",
     output:
@@ -134,6 +138,7 @@ const projects = [
   {
     id: "cynergy",
     title: "Cynergy",
+    titleZh: "Cynergy 官网",
     year: "2024",
     time: "2024",
     focus: ["web-brand", "culture-media"],
@@ -145,7 +150,7 @@ const projects = [
       "A clean corporate website for a cross-cultural venture and relationship-building company.",
     hover:
       "A restrained website system for a company positioned around culture, events and cross-border relationships.",
-    role: "Website Design / Information Structure / Visual System",
+    role: "Website Designer",
     complexity:
       "The site needed to communicate a refined cross-cultural business identity without becoming visually noisy.",
     output:
@@ -156,6 +161,7 @@ const projects = [
   {
     id: "eca",
     title: "ECA International Cultural Creative Award",
+    titleZh: "ECA 国际设计大赛",
     year: "2024",
     time: "2024",
     focus: ["web-brand", "culture-media"],
@@ -167,7 +173,7 @@ const projects = [
       "A multi-touchpoint identity and communication system for an international cultural creative award.",
     hover:
       "A cultural award identity system spanning posters, web, campaign, exhibition and ceremony touchpoints.",
-    role: "Visual Identity / Campaign / Exhibition Materials / Motion",
+    role: "Visual Designer",
     complexity:
       "The project spanned multiple stages and media, from visual identity and campaign materials to exhibition and ceremony touchpoints.",
     output:
@@ -178,6 +184,7 @@ const projects = [
   {
     id: "studio-aiwen",
     title: "Studio AIWEN",
+    titleZh: "AIWEN艺术家网站",
     year: "2021-2023",
     time: "2021-2023",
     focus: ["web-brand", "culture-media"],
@@ -189,7 +196,7 @@ const projects = [
       "A website for a design theorist and artist working with speculative design and planetary communication technologies.",
     hover:
       "Research-led website structure for writing, speculative design and time-based art.",
-    role: "Website Design / Research / Prototype / Webflow",
+    role: "Website Designer / Webflow Builder",
     complexity:
       "The site needed to organize abstract research, writing and art practice into a clear public-facing structure.",
     output:
@@ -211,7 +218,7 @@ const projects = [
       "A documented living database for interviews, curated content and cultural research.",
     hover:
       "An early research and information mapping project for organizing audio, visual and text-based cultural content.",
-    role: "Research / Mapping / Wireframe / Prototype",
+    role: "Researcher / UX Designer",
     complexity:
       "The project emphasized organizing mixed-media cultural content into a readable database-like web experience.",
     output:
@@ -631,10 +638,9 @@ const translations = {
     "emailDrawer.send": "Open email draft ↗",
     "emailDrawer.direct": "zhuningli001@163.com ↗",
     "panel.close": "Close",
-    "panel.role": "Role",
-    "panel.complexity": "Complexity",
-    "panel.output": "System / output",
-    "panel.cta": "Full case later",
+    "panel.role": "My role",
+    "panel.intro": "Project intro",
+    "panel.output": "Output keywords",
     "panel.preview": "Preview",
     "theme.dark": "☾",
     "theme.light": "☼",
@@ -858,7 +864,7 @@ const translations = {
     "about.copy":
       "Zen-Zhu Studio 是我的独立设计实践，关注 AI 产品、网站、品牌系统与文化项目。它始于荷兰，也延续为一种灵活的工作室实践，服务于需要直接沟通、策略判断与细致交付的项目。",
     "contact.eyebrow": "联系",
-    "contact.heading": "期待 senior 设计岗位、AI 产品团队与精选合作机会。",
+    "contact.heading": "期待 senior 设计岗位、AI 产品团队与您的合作机会。",
     "contact.email": "邮件",
     "contact.cv": "CV ↓",
     "emailDrawer.eyebrow": "联系",
@@ -871,10 +877,9 @@ const translations = {
     "emailDrawer.send": "打开邮件草稿 ↗",
     "emailDrawer.direct": "zhuningli001@163.com ↗",
     "panel.close": "关闭",
-    "panel.role": "角色",
-    "panel.complexity": "复杂度",
-    "panel.output": "系统 / 产出",
-    "panel.cta": "完整案例稍后开放",
+    "panel.role": "我的角色",
+    "panel.intro": "项目简介",
+    "panel.output": "产出关键词",
     "panel.preview": "预览",
     "theme.dark": "☾",
     "theme.light": "☼",
@@ -1049,13 +1054,17 @@ function t(key) {
   return translations[currentLanguage][key] || translations.en[key] || key;
 }
 
+function getProjectTitle(project) {
+  return currentLanguage === "zh" && project.titleZh
+    ? project.titleZh
+    : project.title;
+}
+
 const panelNodes = {
-  visual: document.querySelector("[data-panel-visual]"),
   status: document.querySelector("[data-panel-status]"),
   title: document.querySelector("[data-panel-title]"),
   summary: document.querySelector("[data-panel-summary]"),
   role: document.querySelector("[data-panel-role]"),
-  complexity: document.querySelector("[data-panel-complexity]"),
   output: document.querySelector("[data-panel-output]"),
 };
 
@@ -1066,23 +1075,24 @@ function renderProjects() {
   grid.innerHTML = "";
 
   filtered.forEach((project) => {
+    const projectTitle = getProjectTitle(project);
     const card = document.createElement("article");
     card.className = `project-card ${project.size}`;
     card.dataset.projectId = project.id;
     card.tabIndex = 0;
     card.setAttribute("role", "button");
-    card.setAttribute("aria-label", `Preview ${project.title}`);
+    card.setAttribute("aria-label", `${t("panel.preview")} ${projectTitle}`);
     card.style.setProperty("--project-surface", project.surface);
 
     card.innerHTML = `
       <div class="project-visual ${project.imageTone}" aria-hidden="true">
         <div class="image-placeholder">
-          <span>${project.title}</span>
+          <span>${projectTitle}</span>
         </div>
       </div>
       <div class="project-content">
         <p class="project-meta">${project.context}</p>
-        <h3 class="project-title">${project.title}</h3>
+        <h3 class="project-title">${projectTitle}</h3>
         <p class="project-desc">${project.description}</p>
         <div class="project-tags">
           <span>${project.year}</span>
@@ -1112,21 +1122,22 @@ function renderFeaturedWork() {
   featuredRail.innerHTML = "";
 
   featuredProjects.forEach((project, index) => {
+    const projectTitle = getProjectTitle(project);
     const item = document.createElement("article");
     item.className = "featured-card";
     item.style.setProperty("--project-surface", project.surface);
     item.tabIndex = 0;
     item.setAttribute("role", "button");
-    item.setAttribute("aria-label", `${t("panel.preview")} ${project.title}`);
+    item.setAttribute("aria-label", `${t("panel.preview")} ${projectTitle}`);
 
     item.innerHTML = `
       <div class="featured-image ${project.imageTone}" aria-hidden="true">
         <div class="image-placeholder">
-          <span>${project.title}</span>
+          <span>${projectTitle}</span>
         </div>
       </div>
       <div class="featured-info" aria-hidden="true">
-        <h3>${project.title}</h3>
+        <h3>${projectTitle}</h3>
         <p>${project.description}</p>
       </div>
     `;
@@ -1316,12 +1327,10 @@ function openPanel(projectId) {
       card.classList.toggle("active", card.dataset.projectId === projectId),
     );
 
-  panelNodes.visual.style.setProperty("--project-surface", project.surface);
   panelNodes.status.textContent = `${project.status} · ${project.year}`;
-  panelNodes.title.textContent = project.title;
+  panelNodes.title.textContent = getProjectTitle(project);
   panelNodes.summary.textContent = project.description;
   panelNodes.role.textContent = project.role;
-  panelNodes.complexity.textContent = project.complexity;
   panelNodes.output.textContent = project.output;
 
   panel.classList.add("open");
@@ -1446,6 +1455,7 @@ function setLanguage(language) {
   });
   setTheme(document.body.dataset.theme || "light");
   updateFilterSummary(getFilteredProjects().length);
+  renderProjects();
   renderFeaturedWork();
   renderNotes();
   renderNotesIndex();
