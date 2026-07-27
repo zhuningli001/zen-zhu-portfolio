@@ -13,7 +13,10 @@ const projects = [
       "An AI digital twin platform for entrepreneurship, social matching and resource discovery.",
     hover:
       "0-1 AI product framework for turning founder intent, memory and network resources into an executable digital twin system.",
-    role: "CDO / Lead Product Designer",
+    mode: {
+      en: "0-1 independent product design",
+      zh: "0-1 独立产品设计",
+    },
     complexity:
       "Turning an abstract AI social concept into product structure across AI conversation, digital twin cards, social discovery, tasks and messaging.",
     output:
@@ -36,7 +39,10 @@ const projects = [
       "An AI-ready PDP asset and module assembly system that turns components into reusable design knowledge.",
     hover:
       "From component library to AI-readable design knowledge: modules, rules, decision gates and QA loops for PDP generation.",
-    role: "Senior UX Designer",
+    mode: {
+      en: "Company project · lead design",
+      zh: "职场项目 · 主设计",
+    },
     complexity:
       "The project moves beyond a normal component library and defines rules, contracts, decision gates and QA logic that both people and AI can understand.",
     output:
@@ -59,7 +65,10 @@ const projects = [
       "A strategic redesign proposal connecting AI search, personalization, modular homepage strategy and brand storytelling.",
     hover:
       "Transforming an e-commerce site from listing logic into intent-driven search, personalized content and brand relationship design.",
-    role: "Senior UX Designer",
+    mode: {
+      en: "Company project · lead design",
+      zh: "职场项目 · 主设计",
+    },
     complexity:
       "The redesign connects fuzzy search, AI assistant interaction, two strategy models, four user tags and modular homepage combinations.",
     output:
@@ -82,7 +91,10 @@ const projects = [
       "An internal AI-driven design platform for e-commerce and brand marketing scenarios.",
     hover:
       "An AI design platform connecting prompt templates, image generation, brand modules and scenario-based marketing workflows.",
-    role: "Senior UX Designer",
+    mode: {
+      en: "Company project · lead design",
+      zh: "职场项目 · 主设计",
+    },
     complexity:
       "Multiple scenarios needed to share a clear interaction model: industrial design, marketing sets, PDP pages, patterns and packaging.",
     output:
@@ -104,7 +116,10 @@ const projects = [
       "A brand identity and web platform for an SRHR content bank and collaborative knowledge space.",
     hover:
       "A visual identity system for trust, care and collaborative content exchange.",
-    role: "Brand Designer / Website Designer",
+    mode: {
+      en: "Studio collaboration · brand and website design",
+      zh: "工作室合作 · 品牌与网站设计",
+    },
     complexity:
       "The platform needed to balance trust, professionalism, care and inherited RNW brand DNA.",
     output:
@@ -127,7 +142,10 @@ const projects = [
       "A refined artist website for presenting cross-cultural art, design and personal narrative.",
     hover:
       "Capturing an artist's cross-cultural practice through a clean content structure and quiet visual system.",
-    role: "Website Designer",
+    mode: {
+      en: "0-1 independent design",
+      zh: "0-1 独立设计",
+    },
     complexity:
       "The work required a calm structure that could hold rich cultural projects, visual archives and personal narrative across devices.",
     output:
@@ -150,7 +168,10 @@ const projects = [
       "A clean corporate website for a cross-cultural venture and relationship-building company.",
     hover:
       "A restrained website system for a company positioned around culture, events and cross-border relationships.",
-    role: "Website Designer",
+    mode: {
+      en: "0-1 independent website design",
+      zh: "0-1 独立网站设计",
+    },
     complexity:
       "The site needed to communicate a refined cross-cultural business identity without becoming visually noisy.",
     output:
@@ -173,7 +194,10 @@ const projects = [
       "A multi-touchpoint identity and communication system for an international cultural creative award.",
     hover:
       "A cultural award identity system spanning posters, web, campaign, exhibition and ceremony touchpoints.",
-    role: "Visual Designer",
+    mode: {
+      en: "Company project · visual design lead",
+      zh: "职场项目 · 视觉主设计",
+    },
     complexity:
       "The project spanned multiple stages and media, from visual identity and campaign materials to exhibition and ceremony touchpoints.",
     output:
@@ -196,7 +220,10 @@ const projects = [
       "A website for a design theorist and artist working with speculative design and planetary communication technologies.",
     hover:
       "Research-led website structure for writing, speculative design and time-based art.",
-    role: "Website Designer / Webflow Builder",
+    mode: {
+      en: "Studio project · website design and build",
+      zh: "工作室项目 · 网站设计与搭建",
+    },
     complexity:
       "The site needed to organize abstract research, writing and art practice into a clear public-facing structure.",
     output:
@@ -218,7 +245,10 @@ const projects = [
       "A documented living database for interviews, curated content and cultural research.",
     hover:
       "An early research and information mapping project for organizing audio, visual and text-based cultural content.",
-    role: "Researcher / UX Designer",
+    mode: {
+      en: "Archive project · research and prototype",
+      zh: "早期项目 · 研究与原型",
+    },
     complexity:
       "The project emphasized organizing mixed-media cultural content into a readable database-like web experience.",
     output:
@@ -638,7 +668,7 @@ const translations = {
     "emailDrawer.send": "Open email draft ↗",
     "emailDrawer.direct": "zhuningli001@163.com ↗",
     "panel.close": "Close",
-    "panel.role": "My role",
+    "panel.mode": "Project mode",
     "panel.intro": "Project intro",
     "panel.output": "Output keywords",
     "panel.preview": "Preview",
@@ -877,7 +907,7 @@ const translations = {
     "emailDrawer.send": "打开邮件草稿 ↗",
     "emailDrawer.direct": "zhuningli001@163.com ↗",
     "panel.close": "关闭",
-    "panel.role": "我的角色",
+    "panel.mode": "项目身份",
     "panel.intro": "项目简介",
     "panel.output": "产出关键词",
     "panel.preview": "预览",
@@ -1064,7 +1094,7 @@ const panelNodes = {
   status: document.querySelector("[data-panel-status]"),
   title: document.querySelector("[data-panel-title]"),
   summary: document.querySelector("[data-panel-summary]"),
-  role: document.querySelector("[data-panel-role]"),
+  mode: document.querySelector("[data-panel-mode]"),
   output: document.querySelector("[data-panel-output]"),
 };
 
@@ -1330,7 +1360,7 @@ function openPanel(projectId) {
   panelNodes.status.textContent = `${project.status} · ${project.year}`;
   panelNodes.title.textContent = getProjectTitle(project);
   panelNodes.summary.textContent = project.description;
-  panelNodes.role.textContent = project.role;
+  panelNodes.mode.textContent = getLocalizedText(project.mode);
   panelNodes.output.textContent = project.output;
 
   panel.classList.add("open");
