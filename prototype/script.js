@@ -602,7 +602,7 @@ const translations = {
     "capabilities.culture.desc":
       "Digital experiences with atmosphere and cultural sensitivity.",
     "radar.eyebrow": "Industry radar",
-    "radar.heading": "People I am learning from lately.",
+    "radar.heading": "People I follow.",
     "radar.copy":
       "A compact watchlist across AI product, design leadership, creative tooling and independent writing.",
     "radar.ryo": "Cursor · Head of Design",
@@ -610,11 +610,8 @@ const translations = {
     "radar.jenny": "AI-native product design leadership",
     "radar.zara": "AI product and GTM writing",
     "radar.mc": "Design leadership and AI UX writing",
-    "radar.guoyu":
-      "Former Alibaba product designer and early product design practitioner in China",
+    "radar.guoyu": "Former Chief Designer at Baidu",
     "radar.lizheng": "AI builder community and product learning",
-    "radar.europe.name": "European designers",
-    "radar.europe": "Design culture and critical practice references",
     "work.eyebrow": "Selected work",
     "work.heading":
       "A visual index across AI-native products, product UX, websites, brand systems and cultural projects.",
@@ -860,7 +857,7 @@ const translations = {
     "capabilities.culture.title": "品牌与文化",
     "capabilities.culture.desc": "兼具氛围感、文化敏感度与数字体验的表达。",
     "radar.eyebrow": "行业关注",
-    "radar.heading": "近期关注和学习的人。",
+    "radar.heading": "关注的人",
     "radar.copy":
       "一个很小的行业观察清单，连接 AI 产品、设计领导力、创作工具与独立写作。",
     "radar.ryo": "Cursor · Head of Design",
@@ -868,10 +865,8 @@ const translations = {
     "radar.jenny": "AI 原生产品设计领导力",
     "radar.zara": "AI 产品与 GTM 写作",
     "radar.mc": "设计领导力与 AI UX 写作",
-    "radar.guoyu": "前阿里产品设计师 / 国内早期产品设计实践者",
+    "radar.guoyu": "前百度首席设计师",
     "radar.lizheng": "AI Builders 社群与产品学习",
-    "radar.europe.name": "欧洲设计师",
-    "radar.europe": "设计文化与批判性实践参考",
     "work.eyebrow": "精选作品",
     "work.heading":
       "一个横跨 AI 原生产品、产品 UX、网站、品牌系统与文化项目的视觉索引。",
