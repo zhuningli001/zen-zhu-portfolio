@@ -284,8 +284,8 @@ body[data-theme="dark"] .theme-toggle:hover {
     padding: 1.1rem clamp(1.25rem, 5vw, 1.8rem) 1.25rem;
     border: 0;
     border-radius: 0 0 8px 8px;
-    background: #2f3d4b;
-    box-shadow: 0 18px 48px rgba(23, 20, 17, 0.2);
+    background: #d8cbbd;
+    box-shadow: 0 18px 48px rgba(33, 24, 18, 0.16);
     opacity: 0;
     pointer-events: none;
     visibility: hidden;
@@ -295,7 +295,7 @@ body[data-theme="dark"] .theme-toggle:hover {
   }
 
   body[data-theme="dark"] .nav {
-    background: rgba(244, 239, 230, 0.94);
+    background: #d8cbbd;
     box-shadow: 0 18px 48px rgba(0, 0, 0, 0.34);
   }
 
@@ -317,7 +317,7 @@ body[data-theme="dark"] .theme-toggle:hover {
     border: 0;
     border-radius: 6px;
     background: transparent;
-    color: rgba(251, 248, 242, 0.82);
+    color: rgba(23, 20, 17, 0.72);
     font-family: var(--font-heading);
     font-size: clamp(1.34rem, 5vw, 1.68rem);
     font-weight: 500;
@@ -325,22 +325,9 @@ body[data-theme="dark"] .theme-toggle:hover {
     text-align: center;
   }
 
-  body[data-theme="dark"] .nav a,
-  body[data-theme="dark"] .nav .language-toggle,
-  body[data-theme="dark"] .nav .theme-toggle {
-    color: rgba(23, 20, 17, 0.78);
-  }
-
   .nav a:hover,
   .nav .language-toggle:hover,
   .nav .theme-toggle:hover {
-    background: rgba(251, 248, 242, 0.08);
-    color: #fbf8f2;
-  }
-
-  body[data-theme="dark"] .nav a:hover,
-  body[data-theme="dark"] .nav .language-toggle:hover,
-  body[data-theme="dark"] .nav .theme-toggle:hover {
     background: rgba(23, 20, 17, 0.06);
     color: #171411;
   }
@@ -353,7 +340,16 @@ body[data-theme="dark"] .theme-toggle:hover {
   .nav .theme-toggle {
     justify-content: center;
     min-height: 56px;
+    width: min(5rem, 100%);
     font-size: 1.26rem;
+  }
+
+  .nav .language-toggle {
+    justify-self: end;
+  }
+
+  .nav .theme-toggle {
+    justify-self: start;
   }
 }
 
