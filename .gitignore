@@ -1,4 +1,4 @@
 .DS_Store
+.playwright-mcp/
 tmp/
 output/zen-zhu-onecom-site.zip
-

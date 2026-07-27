@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Notes — Ningli Zhu</title>
+    <meta
+      name="description"
+      content="Research notes by Ningli Zhu on AI-native UX, agent systems, design knowledge and adaptive digital experiences."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="./index.html#top" aria-label="Ningli Zhu home">
+        <span>Ningli Zhu</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="./index.html#work" data-i18n="nav.work">Work</a>
+        <a href="./notes.html" data-i18n="nav.notes">Notes</a>
+        <a href="./about.html" data-i18n="nav.about">About</a>
+        <a href="./index.html#contact" data-i18n="nav.contact">Contact</a>
+        <button
+          class="language-toggle"
+          type="button"
+          data-language-toggle
+          aria-label="Switch language"
+        >
+          <span data-language-label>中</span>
+        </button>
+        <button class="theme-toggle" type="button" data-theme-toggle>
+          <span data-theme-label>☾</span>
+        </button>
+      </nav>
+    </header>
+
+    <main class="notes-page" id="top">
+      <section class="section notes-hero">
+        <div class="notes-hero-copy">
+          <p class="eyebrow" data-i18n="notesPage.eyebrow">
+            AI UX Research Notes
+          </p>
+          <h1 data-i18n="notesPage.title">
+            A living notebook on agent systems, design knowledge and adaptive
+            digital experience.
+          </h1>
+          <p data-i18n="notesPage.copy">
+            These notes collect my public writing, reading synthesis and product
+            observations. They are not a conventional blog, but a growing map of
+            questions behind my AI UX and design technology practice.
+          </p>
+        </div>
+        <div class="notes-constellation" aria-hidden="true">
+          <svg viewBox="0 0 520 360" role="img">
+            <rect class="note-block block-a" x="34" y="42" width="152" height="92" />
+            <rect class="note-block block-b" x="302" y="76" width="150" height="108" />
+            <rect class="note-block block-c" x="166" y="218" width="176" height="82" />
+            <path
+              class="note-doodle"
+              d="M92 124 C132 186, 210 130, 250 184 S356 246, 408 164"
+            />
+            <path
+              class="note-doodle secondary"
+              d="M126 82 C188 20, 286 40, 360 104"
+            />
+            <circle class="note-node" cx="92" cy="124" r="7" />
+            <circle class="note-node" cx="250" cy="184" r="7" />
+            <circle class="note-node" cx="408" cy="164" r="7" />
+            <circle class="note-node dark" cx="214" cy="258" r="5" />
+            <path class="note-signal" d="M386 250 h68 M386 268 h44 M386 286 h58" />
+          </svg>
+        </div>
+      </section>
+
+      <section class="section notes-index-section">
+        <div class="section-heading slim">
+          <div>
+            <p class="eyebrow" data-i18n="notesPage.indexEyebrow">
+              Notes index
+            </p>
+            <h2 data-i18n="notesPage.indexTitle">
+              Recent topics I keep thinking about.
+            </h2>
+          </div>
+        </div>
+        <div class="notes-topic-strip" aria-label="Notes topics">
+          <span>Agentic UX</span>
+          <span>Design Knowledge</span>
+          <span>AI Search</span>
+          <span>Adaptive Systems</span>
+          <span>Product Review</span>
+        </div>
+        <div class="notes-index-list" data-notes-index></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Ningli Zhu</p>
+      <a href="./index.html#top">Back to home</a>
+    </footer>
+
+    <div class="cursor-aura" data-cursor-aura aria-hidden="true"></div>
+    <script src="./script.js"></script>
+  </body>
+</html>

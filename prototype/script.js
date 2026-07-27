@@ -229,6 +229,10 @@ const state = {
 
 const grid = document.querySelector("[data-work-grid]");
 const featuredRail = document.querySelector("[data-featured-rail]");
+const notesGrid = document.querySelector("[data-notes-grid]");
+const notesPrev = document.querySelector("[data-notes-prev]");
+const notesNext = document.querySelector("[data-notes-next]");
+const notesIndex = document.querySelector("[data-notes-index]");
 const panel = document.querySelector("[data-panel]");
 const scrim = document.querySelector("[data-panel-scrim]");
 const summary = document.querySelector("[data-filter-summary]");
@@ -257,6 +261,280 @@ const cvFiles = {
     filename: "Ningli_Zhu_CV_Concise_CN.pdf",
   },
 };
+
+const notesData = [
+  {
+    id: "agents-ui-disappearing",
+    source: "LinkedIn Article",
+    url: "https://www.linkedin.com/pulse/when-agents-start-working-ui-starts-disappearing-ningli-zhu-oucuc/",
+    detailUrl: "./note-agents-ui-disappearing.html",
+    date: "Feb 18, 2026",
+    theme: "Agentic UX",
+    status: "featured",
+    priority: 1,
+    title: {
+      en: "When agents start working, UI starts transforming",
+      zh: "当 Agent 开始工作，UI 开始转化",
+    },
+    summary: {
+      en: "A reflection on delegation systems, invisible agent workflows and why future interfaces need to make autonomous work legible.",
+      zh: "关于委托式系统、不可见 Agent 工作流，以及未来界面为何需要让自主过程变得可理解的反思。",
+    },
+    tags: ["Agentic UX", "Trust", "Visibility"],
+  },
+  {
+    id: "agentic-ux-three-perspectives",
+    source: "LinkedIn",
+    url: "https://www.linkedin.com/posts/n-zhu_aiux-agenticux-share-7482644805479698432-wLva/",
+    date: "2026",
+    theme: "Agentic UX",
+    status: "featured",
+    priority: 2,
+    title: {
+      en: "Agentic UX: three perspectives on future AI product design",
+      zh: "Agentic UX：未来 AI 产品设计的三种视角",
+    },
+    summary: {
+      en: "A synthesis of agent design references across Microsoft, InstitutePM and AI UX Playground, distilled into trust, visibility and earned autonomy.",
+      zh: "整合 Microsoft、InstitutePM 与 AI UX Playground 的 Agent 设计资料，提炼出信任、可见性与逐步获得的自主性。",
+    },
+    tags: ["AI UX", "Autonomy", "Human in the Loop"],
+  },
+  {
+    id: "ai-readable-design-infrastructure",
+    source: "LinkedIn",
+    url: "https://www.linkedin.com/posts/n-zhu_over-the-last-month-ive-been-exploring-ugcPost-7480832996879532032-Njer/",
+    date: "2026",
+    theme: "Design Knowledge",
+    status: "featured",
+    priority: 3,
+    title: {
+      en: "Design assets as AI-readable infrastructure",
+      zh: "把设计资产转化为 AI 可读的基础设施",
+    },
+    summary: {
+      en: "A working direction for turning foundations, components and modules into structured design knowledge that humans and AI can maintain together.",
+      zh: "把基础样式、组件与模块变成结构化设计知识，让人和 AI 能共同理解、维护和生成体验。",
+    },
+    tags: ["Design Systems", "AI-ready Assets", "Modules"],
+  },
+  {
+    id: "ai-search-design",
+    source: "Medium",
+    url: "https://medium.com/@zhuningli001/lets-talk-about-ai-search-68f69109ab4a",
+    date: "Oct 8, 2025",
+    theme: "AI Search",
+    status: "featured",
+    priority: 4,
+    title: {
+      en: "AI search should balance intelligence, evidence and usability",
+      zh: "AI 搜索需要在智能感、证据与可用性之间取得平衡",
+    },
+    summary: {
+      en: "A design research note on focused answers, reduced jumps, citations, transparency and restrained visual expression for AI search products.",
+      zh: "一篇关于 AI 搜索设计的研究笔记，关注聚焦答案、减少跳转、引用透明度与克制的智能视觉表达。",
+    },
+    tags: ["AI Search", "Transparency", "Evidence"],
+  },
+  {
+    id: "living-brand-websites",
+    source: "LinkedIn",
+    url: "https://www.linkedin.com/posts/n-zhu_humancenteredai-uxdesign-uxstrategy-activity-7427384237340831744-_z4h/",
+    date: "2026",
+    theme: "Adaptive Systems",
+    status: "featured",
+    priority: 5,
+    title: {
+      en: "From static pages to living brand systems",
+      zh: "从静态页面到可生长的品牌系统",
+    },
+    summary: {
+      en: "A systems view of future brand websites: user signals, state modeling, modular assembly and continuous validation.",
+      zh: "从用户信号、状态建模、模块装配和实时验证出发，重新理解未来品牌网站的系统结构。",
+    },
+    tags: ["Personalization", "Brand UX", "Systems"],
+  },
+  {
+    id: "executable-ui-components",
+    source: "LinkedIn",
+    url: "https://www.linkedin.com/posts/n-zhu_uxdesign-designsystems-aiux-activity-7435160949805817856-8L-d/",
+    date: "2026",
+    theme: "Design Engineering",
+    status: "featured",
+    priority: 6,
+    title: {
+      en: "From Figma components to executable UI components",
+      zh: "从 Figma 组件到可执行 UI 组件",
+    },
+    summary: {
+      en: "A workflow reflection on turning design into H5 demos with Cursor, where components carry state, behavior and interaction logic.",
+      zh: "一次用 Cursor 将 Figma 设计转成 H5 互动 demo 的流程反思：组件不再只是视觉模板，也承载状态、行为和交互逻辑。",
+    },
+    tags: ["Figma", "Cursor", "Design Engineering"],
+  },
+  {
+    id: "teamo-ai-review",
+    source: "LinkedIn",
+    url: "https://www.linkedin.com/posts/n-zhu_teamo-ai-testimonio-activity-7420379478826188800-pKFf/",
+    date: "2026",
+    theme: "Product Review",
+    status: "supporting",
+    priority: 7,
+    title: {
+      en: "Teamo AI product review: an early Agentic OS signal",
+      zh: "Teamo AI 产品评测：一个早期 Agentic OS 信号",
+    },
+    summary: {
+      en: "A product testing note on Teamo AI for scholars and knowledge workers, focusing on product logic, structure and the potential of Agentic OS.",
+      zh: "针对 Teamo AI 的产品评测笔记，关注它面向学者与知识工作者的产品逻辑、结构，以及 Agentic OS 的可能性。",
+    },
+    tags: ["Product Review", "Agentic OS", "Knowledge Work"],
+  },
+  {
+    id: "decision-architecture",
+    source: "LinkedIn",
+    url: "https://www.linkedin.com/feed/update/urn:li:activity:7421861394154917888/",
+    date: "2026",
+    theme: "AI Decision Architecture",
+    status: "supporting",
+    priority: 8,
+    title: {
+      en: "AI UX is decision architecture over time",
+      zh: "AI UX 是随时间分配决策权的架构",
+    },
+    summary: {
+      en: "A concise positioning note: AI UX is about how decision power, responsibility and control are distributed over time.",
+      zh: "一条短笔记：AI UX 不只是界面，而是决策权、责任与控制感如何随时间被分配。",
+    },
+    tags: ["Decision Architecture", "Control", "Trust"],
+  },
+  {
+    id: "hax-guidelines",
+    source: "LinkedIn",
+    url: "https://www.linkedin.com/posts/n-zhu_hax-design-library-microsoft-hax-toolkit-activity-7406539739664699393-wAVB/",
+    date: "2026",
+    theme: "Human-AI Guidelines",
+    status: "supporting",
+    priority: 9,
+    title: {
+      en: "Microsoft HAX guidelines as Human-AI design foundations",
+      zh: "把 Microsoft HAX 指南作为 Human-AI 设计基础",
+    },
+    summary: {
+      en: "A compact reference note on 18 Human-AI interaction guidelines, useful as the method foundation behind future AI UX cases.",
+      zh: "一条关于 18 条 Human-AI 交互指南的资料型笔记，适合作为后续 AI UX 案例的方法论基础。",
+    },
+    tags: ["HAX", "Human-AI", "Guidelines"],
+  },
+  {
+    id: "ai-design-tool-landscape",
+    source: "LinkedIn",
+    url: "https://www.linkedin.com/posts/n-zhu_v0-by-vercel-build-agents-apps-and-websites-share-7449284637916442624-VsEY/",
+    date: "2026",
+    theme: "Design Tooling",
+    status: "supporting",
+    priority: 10,
+    title: {
+      en: "AI is shifting designers from executor to evaluator",
+      zh: "AI 正在让设计师从执行者转向评估者",
+    },
+    summary: {
+      en: "A weekly design-tech observation on AI tools, v0, Figma AI and the role shift toward judgment, taste systems and command.",
+      zh: "关于 AI 设计工具、v0、Figma AI 和设计师角色变化的周度观察，强调判断力、审美系统与指挥能力。",
+    },
+    tags: ["Design Tools", "AI Workflow", "Career Shift"],
+  },
+  {
+    id: "brand-design-judgment",
+    source: "LinkedIn",
+    url: "https://www.linkedin.com/feed/update/urn:li:activity:7481274520767725568/",
+    date: "2026",
+    theme: "Design Judgment",
+    status: "supporting",
+    priority: 11,
+    title: {
+      en: "AI does not lack generation capability; it lacks design judgment",
+      zh: "AI 不缺生成能力，缺的是设计判断",
+    },
+    summary: {
+      en: "A short thesis note pointing toward brand design knowledge and the judgment layer behind AI-assisted creation.",
+      zh: "一条指向品牌设计知识和 AI 协作中判断层的短论点：生成能力之外，真正稀缺的是设计判断。",
+    },
+    tags: ["Design Judgment", "Brand Knowledge", "AI Creation"],
+  },
+  {
+    id: "agentic-ai-lessons",
+    source: "LinkedIn",
+    url: "https://www.linkedin.com/feed/update/urn:li:activity:7420782458456997889/",
+    date: "2026",
+    theme: "Agentic UX",
+    status: "supporting",
+    priority: 12,
+    title: {
+      en: "Designing Agentic AI UX means designing intent",
+      zh: "设计 Agentic AI UX，本质上是在设计意图",
+    },
+    summary: {
+      en: "A working-map note that compares task execution, goal delegation, control, trust and behavioral frameworks.",
+      zh: "一张关于 Agentic AI UX 的工作地图，比较任务执行、目标委托、控制感、信任与行为框架。",
+    },
+    tags: ["Intent", "Delegation", "Agentic UX"],
+  },
+  {
+    id: "wechat-note-1",
+    source: "WeChat",
+    url: "https://mp.weixin.qq.com/s/pWcrMIdN99QqlkekToEf_Q",
+    date: "Pending",
+    theme: "WeChat Archive",
+    status: "pending",
+    priority: 90,
+    title: {
+      en: "WeChat note to review",
+      zh: "待补充的微信公众号文章",
+    },
+    summary: {
+      en: "Browser access is currently blocked for this WeChat article. Add title, thesis and tags after the source text is available.",
+      zh: "当前浏览器安全策略无法读取这篇微信公众号文章。拿到标题、正文或摘要后，可补充进 Notes 内容库。",
+    },
+    tags: ["Pending", "WeChat"],
+  },
+  {
+    id: "wechat-note-2",
+    source: "WeChat",
+    url: "https://mp.weixin.qq.com/s/D8RjpvRdY-cEkcS3j8-mOw",
+    date: "Pending",
+    theme: "WeChat Archive",
+    status: "pending",
+    priority: 91,
+    title: {
+      en: "WeChat note to review",
+      zh: "待补充的微信公众号文章",
+    },
+    summary: {
+      en: "Browser access is currently blocked for this WeChat article. Add title, thesis and tags after the source text is available.",
+      zh: "当前浏览器安全策略无法读取这篇微信公众号文章。拿到标题、正文或摘要后，可补充进 Notes 内容库。",
+    },
+    tags: ["Pending", "WeChat"],
+  },
+  {
+    id: "wechat-note-3",
+    source: "WeChat",
+    url: "https://mp.weixin.qq.com/s/ZfCjJV_0UawJpjMKzzPVnA",
+    date: "Pending",
+    theme: "WeChat Archive",
+    status: "pending",
+    priority: 92,
+    title: {
+      en: "WeChat note to review",
+      zh: "待补充的微信公众号文章",
+    },
+    summary: {
+      en: "Browser access is currently blocked for this WeChat article. Add title, thesis and tags after the source text is available.",
+      zh: "当前浏览器安全策略无法读取这篇微信公众号文章。拿到标题、正文或摘要后，可补充进 Notes 内容库。",
+    },
+    tags: ["Pending", "WeChat"],
+  },
+];
 
 const translations = {
   en: {
@@ -297,11 +575,39 @@ const translations = {
     "filters.project": "project",
     "filters.projects": "projects",
     "notes.eyebrow": "Notes",
-    "notes.heading": "Short observations on design, AI and cultural systems.",
-    "notes.link": "All notes later",
+    "notes.heading": "Notes from reading, building and thinking.",
+    "notes.link": "Notes index later",
     "notes.item1": "Design knowledge is the new design asset",
     "notes.item2": "From component library to AI-readable module system",
     "notes.item3": "Why AI search should start with user intent",
+    "notesPage.eyebrow": "AI UX Research Notes",
+    "notesPage.title":
+      "A living notebook on agent systems, design knowledge and adaptive digital experience.",
+    "notesPage.copy":
+      "These notes collect my public writing, reading synthesis and product observations. They are not a conventional blog, but a growing map of questions behind my AI UX and design technology practice.",
+    "notesPage.roadmapEyebrow": "Stage plan",
+    "notesPage.roadmapTitle":
+      "Build the Notes section in three controlled stages.",
+    "notesPage.stage1Title": "Curated index",
+    "notesPage.stage1Copy":
+      "Collect public writing into a structured notesData library and show the strongest pieces by theme.",
+    "notesPage.stage2Title": "Article pages",
+    "notesPage.stage2Copy":
+      "Turn selected posts into clean note pages with thesis, key insights, source links and related projects.",
+    "notesPage.stage3Title": "Research system",
+    "notesPage.stage3Copy":
+      "Connect notes with cases, methods and ongoing learning records so the site becomes a public design knowledge system.",
+    "notesPage.indexEyebrow": "Notes index",
+    "notesPage.indexTitle": "Recent topics I keep thinking about.",
+    "notesPage.statusFeatured": "Featured",
+    "notesPage.statusSupporting": "Supporting",
+    "notesPage.statusPending": "Pending source",
+    "notesPage.readSource": "Read source",
+    "notesPage.openNote": "Open note",
+    "noteDetail.nextEyebrow": "Read next",
+    "noteDetail.nextTitle":
+      "Agentic UX: three perspectives on future AI product design",
+    "noteDetail.nextAction": "Open source",
     "about.eyebrow": "About / Studio",
     "about.heading": "Independent practice between China and the Netherlands.",
     "about.copy":
@@ -511,11 +817,36 @@ const translations = {
     "filters.project": "个项目",
     "filters.projects": "个项目",
     "notes.eyebrow": "笔记",
-    "notes.heading": "一些关于设计、AI 与文化系统的短篇观察。",
-    "notes.link": "之后查看全部笔记",
+    "notes.heading": "边做边想，一些阅读和笔记。",
+    "notes.link": "之后查看笔记索引",
     "notes.item1": "设计知识正在成为新的设计资产",
     "notes.item2": "从组件库到 AI 可读的模块系统",
     "notes.item3": "为什么 AI 搜索应该从用户意图开始",
+    "notesPage.eyebrow": "AI UX 研究笔记",
+    "notesPage.title": "关于 Agent 系统、设计知识与自适应数字体验的持续笔记。",
+    "notesPage.copy":
+      "这里整理我的公开写作、阅读综合和产品观察。它不是传统博客，而是一张不断生长的问题地图，连接我的 AI UX 与设计技术实践。",
+    "notesPage.roadmapEyebrow": "阶段计划",
+    "notesPage.roadmapTitle": "用三个可控阶段搭建 Notes 部分。",
+    "notesPage.stage1Title": "精选索引",
+    "notesPage.stage1Copy":
+      "把公开写作整理进结构化 notesData 内容库，并按主题展示最有代表性的内容。",
+    "notesPage.stage2Title": "单篇文章页",
+    "notesPage.stage2Copy":
+      "把精选帖子整理成简洁文章页，包含 thesis、关键洞察、原文链接和关联项目。",
+    "notesPage.stage3Title": "研究系统",
+    "notesPage.stage3Copy":
+      "把笔记与案例、方法和持续学习记录连接起来，让网站逐步成为公开的设计知识系统。",
+    "notesPage.indexEyebrow": "笔记索引",
+    "notesPage.indexTitle": "近期关注的话题。",
+    "notesPage.statusFeatured": "精选",
+    "notesPage.statusSupporting": "支撑内容",
+    "notesPage.statusPending": "来源待补",
+    "notesPage.readSource": "阅读全文",
+    "notesPage.openNote": "打开笔记",
+    "noteDetail.nextEyebrow": "阅读下一篇",
+    "noteDetail.nextTitle": "Agentic UX：未来 AI 产品设计的三种视角",
+    "noteDetail.nextAction": "打开来源",
     "about.eyebrow": "关于 / 工作室",
     "about.heading": "往返于中国与荷兰之间的独立设计实践。",
     "about.copy":
@@ -806,6 +1137,118 @@ function renderFeaturedWork() {
   });
 }
 
+function getLocalizedText(value) {
+  if (typeof value === "string") return value;
+  return value[currentLanguage] || value.en || value.zh || "";
+}
+
+function renderNotes() {
+  if (!notesGrid) return;
+
+  const featuredNotes = notesData
+    .filter((note) => note.status === "featured")
+    .sort((a, b) => a.priority - b.priority)
+    .slice(0, 6);
+
+  notesGrid.innerHTML = "";
+
+  featuredNotes.forEach((note, index) => {
+    const card = document.createElement("article");
+    card.className = "note-card";
+
+    card.innerHTML = `
+      <div class="note-card-head">
+        <span class="note-card-index">${String(index + 1).padStart(2, "0")}</span>
+        <span class="note-card-theme">${note.theme}</span>
+      </div>
+      <div class="note-card-body">
+        <h3>${getLocalizedText(note.title)}</h3>
+      </div>
+      <div class="note-card-tags">
+        ${note.tags.map((tag) => `<span>${tag}</span>`).join("")}
+      </div>
+    `;
+
+    notesGrid.appendChild(card);
+  });
+
+  updateNotesRailControls();
+}
+
+function updateNotesRailControls() {
+  if (!notesGrid || !notesPrev || !notesNext) return;
+
+  const maxScroll = notesGrid.scrollWidth - notesGrid.clientWidth;
+  const atStart = notesGrid.scrollLeft <= 2;
+  const atEnd = notesGrid.scrollLeft >= maxScroll - 2;
+
+  notesPrev.disabled = atStart;
+  notesNext.disabled = atEnd || maxScroll <= 0;
+}
+
+function initNotesRailControls() {
+  if (!notesGrid || !notesPrev || !notesNext) return;
+
+  const scrollByPage = (direction) => {
+    notesGrid.scrollBy({
+      left: direction * notesGrid.clientWidth * 0.78,
+      behavior: "smooth",
+    });
+  };
+
+  notesPrev.addEventListener("click", () => scrollByPage(-1));
+  notesNext.addEventListener("click", () => scrollByPage(1));
+  notesGrid.addEventListener("scroll", updateNotesRailControls, {
+    passive: true,
+  });
+  window.addEventListener("resize", updateNotesRailControls);
+}
+
+function getNoteStatusLabel(status) {
+  if (status === "featured") return t("notesPage.statusFeatured");
+  if (status === "supporting") return t("notesPage.statusSupporting");
+  return t("notesPage.statusPending");
+}
+
+function renderNotesIndex() {
+  if (!notesIndex) return;
+
+  const sortedNotes = [...notesData].sort((a, b) => a.priority - b.priority);
+  notesIndex.innerHTML = "";
+
+  sortedNotes.forEach((note) => {
+    const item = document.createElement("a");
+    item.className = `notes-index-item ${note.status}`;
+    item.href = note.detailUrl || note.url;
+    if (!note.detailUrl) {
+      item.target = "_blank";
+      item.rel = "noopener noreferrer";
+    }
+
+    item.innerHTML = `
+      <div class="notes-index-meta">
+        <span>${note.theme}</span>
+        <span>${note.date}</span>
+      </div>
+      <div class="notes-index-main">
+        <div>
+          <span class="notes-index-status">${getNoteStatusLabel(note.status)}</span>
+          <h3>${getLocalizedText(note.title)}</h3>
+          <p>${getLocalizedText(note.summary)}</p>
+          <div class="note-card-tags">
+            ${note.tags.map((tag) => `<span>${tag}</span>`).join("")}
+          </div>
+        </div>
+        <span class="notes-index-link">
+          ${note.detailUrl ? t("notesPage.openNote") : t("notesPage.readSource")}
+        </span>
+      </div>
+    `;
+
+    notesIndex.appendChild(item);
+  });
+}
+
 function getFilteredProjects() {
   return projects.filter((project) => {
     const matchesFocus =
@@ -956,6 +1399,8 @@ function setLanguage(language) {
   setTheme(document.body.dataset.theme || "light");
   updateFilterSummary(getFilteredProjects().length);
   renderFeaturedWork();
+  renderNotes();
+  renderNotesIndex();
   localStorage.setItem("portfolio-language", language);
 }
 
@@ -1112,3 +1557,6 @@ initExperienceReveal();
 initEmailDrawer();
 renderFeaturedWork();
 renderProjects();
+renderNotes();
+renderNotesIndex();
+initNotesRailControls();
