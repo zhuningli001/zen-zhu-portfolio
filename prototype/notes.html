@@ -15,7 +15,24 @@
       <a class="brand" href="./index.html#top" aria-label="Ningli Zhu home">
         <span>Ningli Zhu</span>
       </a>
-      <nav class="nav" aria-label="Primary navigation">
+      <button
+        class="nav-menu-toggle"
+        type="button"
+        data-nav-toggle
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav
+        class="nav"
+        id="primary-navigation"
+        data-nav-menu
+        aria-label="Primary navigation"
+      >
         <a href="./index.html#work" data-i18n="nav.work">Work</a>
         <a href="./notes.html" data-i18n="nav.notes">Notes</a>
         <a href="./about.html" data-i18n="nav.about">About</a>

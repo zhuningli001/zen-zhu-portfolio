@@ -237,6 +237,8 @@ const panel = document.querySelector("[data-panel]");
 const scrim = document.querySelector("[data-panel-scrim]");
 const summary = document.querySelector("[data-filter-summary]");
 const header = document.querySelector("[data-header]");
+const navToggle = document.querySelector("[data-nav-toggle]");
+const navMenu = document.querySelector("[data-nav-menu]");
 const themeToggle = document.querySelector("[data-theme-toggle]");
 const themeLabel = document.querySelector("[data-theme-label]");
 const languageToggle = document.querySelector("[data-language-toggle]");
@@ -485,54 +487,54 @@ const notesData = [
     source: "WeChat",
     url: "https://mp.weixin.qq.com/s/pWcrMIdN99QqlkekToEf_Q",
     date: "Archive",
-    theme: "WeChat Archive",
+    theme: "AI UX",
     status: "supporting",
-    priority: 13,
+    priority: 15,
     title: {
-      en: "WeChat article archive 01",
-      zh: "微信公众号文章 01",
+      en: "UX to AX: when tools become partners",
+      zh: "UX→AX 当工具变成伙伴：AI 时代的体验设计革命",
     },
     summary: {
-      en: "A public-account article preserved in the Notes library. The title, thesis and tags can be refined after the source text is available outside WeChat verification.",
-      zh: "一篇已纳入 Notes 内容库的微信公众号文章。微信当前需要环境验证，后续拿到标题或正文后可继续补全 thesis、摘要和标签。",
+      en: "A WeChat reflection on the shift from UX to AX, where AI tools become partners and experience design moves toward relationship, collaboration and capability.",
+      zh: "一篇关于从 UX 到 AX 的思考：当 AI 工具逐渐成为协作伙伴，体验设计的对象也从界面操作转向关系、协作与能力延展。",
     },
-    tags: ["WeChat", "Writing", "Archive"],
+    tags: ["AI UX", "AX", "Experience Design"],
   },
   {
     id: "wechat-archive-d8r",
     source: "WeChat",
     url: "https://mp.weixin.qq.com/s/D8RjpvRdY-cEkcS3j8-mOw",
     date: "Archive",
-    theme: "WeChat Archive",
+    theme: "Product Review",
     status: "supporting",
     priority: 14,
     title: {
-      en: "WeChat article archive 02",
-      zh: "微信公众号文章 02",
+      en: "Testing Teamo AI: quick product notes",
+      zh: "前天测试了Teamo AI, 顺便记录下 :)",
     },
     summary: {
-      en: "A public-account article preserved in the Notes library. The title, thesis and tags can be refined after the source text is available outside WeChat verification.",
-      zh: "一篇已纳入 Notes 内容库的微信公众号文章。微信当前需要环境验证，后续拿到标题或正文后可继续补全 thesis、摘要和标签。",
+      en: "A quick product experience note on Teamo AI, keeping track of product structure, knowledge-work scenarios and early signals for agentic tools.",
+      zh: "一篇 Teamo AI 的快速产品体验记录，关注产品结构、知识工作场景，以及 agentic 工具早期形态中的一些信号。",
     },
-    tags: ["WeChat", "Writing", "Archive"],
+    tags: ["Teamo AI", "Product Review", "Agentic Tools"],
   },
   {
     id: "wechat-archive-zfc",
     source: "WeChat",
     url: "https://mp.weixin.qq.com/s/ZfCjJV_0UawJpjMKzzPVnA",
     date: "Archive",
-    theme: "WeChat Archive",
+    theme: "AI Decision Architecture",
     status: "supporting",
-    priority: 15,
+    priority: 13,
     title: {
-      en: "WeChat article archive 03",
-      zh: "微信公众号文章 03",
+      en: "AI UX is about when decision rights are handed over",
+      zh: "AI UX 的核心不是界面，而是“决策权在什么时候、被交给了谁”。",
     },
     summary: {
-      en: "A public-account article preserved in the Notes library. The title, thesis and tags can be refined after the source text is available outside WeChat verification.",
-      zh: "一篇已纳入 Notes 内容库的微信公众号文章。微信当前需要环境验证，后续拿到标题或正文后可继续补全 thesis、摘要和标签。",
+      en: "A concise WeChat note framing AI UX as decision architecture: when control moves between people and AI, and how that transfer should stay understandable.",
+      zh: "一篇把 AI UX 视为决策权架构的微信笔记：重点不是界面本身，而是控制权在人和 AI 之间如何移动，以及这个过程如何被理解。",
     },
-    tags: ["WeChat", "Writing", "Archive"],
+    tags: ["AI UX", "Decision Rights", "Control"],
   },
 ];
 
@@ -542,6 +544,8 @@ const translations = {
     "nav.notes": "Notes",
     "nav.about": "About",
     "nav.contact": "Contact",
+    "nav.menu.open": "Open navigation menu",
+    "nav.menu.close": "Close navigation menu",
     "featured.eyebrow": "Featured cases",
     "featured.hint": "Swipe horizontally to preview major projects.",
     "hero.static": "Hello, I am a",
@@ -576,7 +580,7 @@ const translations = {
     "filters.projects": "projects",
     "notes.eyebrow": "Notes",
     "notes.heading": "Notes from reading, building and thinking.",
-    "notes.link": "Notes index later",
+    "notes.link": "Read all",
     "notes.item1": "Design knowledge is the new design asset",
     "notes.item2": "From component library to AI-readable module system",
     "notes.item3": "Why AI search should start with user intent",
@@ -789,6 +793,8 @@ const translations = {
     "nav.notes": "笔记",
     "nav.about": "关于",
     "nav.contact": "联系",
+    "nav.menu.open": "打开导航菜单",
+    "nav.menu.close": "关闭导航菜单",
     "featured.eyebrow": "重点项目",
     "featured.hint": "横向滑动，快速预览主要作品。",
     "hero.static": "你好，我是",
@@ -818,7 +824,7 @@ const translations = {
     "filters.projects": "个项目",
     "notes.eyebrow": "笔记",
     "notes.heading": "边做边想，一些阅读和笔记。",
-    "notes.link": "之后查看笔记索引",
+    "notes.link": "查看全部",
     "notes.item1": "设计知识正在成为新的设计资产",
     "notes.item2": "从组件库到 AI 可读的模块系统",
     "notes.item3": "为什么 AI 搜索应该从用户意图开始",
@@ -1153,8 +1159,14 @@ function renderNotes() {
   notesGrid.innerHTML = "";
 
   featuredNotes.forEach((note, index) => {
-    const card = document.createElement("article");
+    const card = document.createElement("a");
     card.className = "note-card";
+    card.href = note.detailUrl || note.url;
+    if (!note.detailUrl) {
+      card.target = "_blank";
+      card.rel = "noopener noreferrer";
+    }
+    card.setAttribute("aria-label", getLocalizedText(note.title));
 
     card.innerHTML = `
       <div class="note-card-head">
@@ -1377,6 +1389,34 @@ themeToggle?.addEventListener("click", () => {
   setTheme(document.body.dataset.theme === "dark" ? "light" : "dark");
 });
 
+function setNavOpen(isOpen) {
+  if (!header || !navToggle) return;
+
+  header.classList.toggle("nav-open", isOpen);
+  navToggle.setAttribute("aria-expanded", String(isOpen));
+  navToggle.setAttribute(
+    "aria-label",
+    isOpen ? t("nav.menu.close") : t("nav.menu.open"),
+  );
+}
+
+navToggle?.addEventListener("click", () => {
+  const isOpen = navToggle.getAttribute("aria-expanded") === "true";
+  setNavOpen(!isOpen);
+});
+
+navMenu?.addEventListener("click", (event) => {
+  if (event.target.closest("a")) {
+    setNavOpen(false);
+  }
+});
+
+window.addEventListener("resize", () => {
+  if (window.matchMedia("(min-width: 721px)").matches) {
+    setNavOpen(false);
+  }
+});
+
 function setLanguage(language) {
   currentLanguage = language;
   document.documentElement.lang = language === "zh" ? "zh-Hans" : "en";
@@ -1387,6 +1427,14 @@ function setLanguage(language) {
   document.querySelectorAll("[data-i18n]").forEach((node) => {
     node.textContent = t(node.dataset.i18n);
   });
+  if (navToggle) {
+    navToggle.setAttribute(
+      "aria-label",
+      header?.classList.contains("nav-open")
+        ? t("nav.menu.close")
+        : t("nav.menu.open"),
+    );
+  }
   roleIndex = Math.min(roleIndex, roleLabels[currentLanguage].length - 1);
   if (roleRotator) {
     roleRotator.textContent = roleLabels[currentLanguage][roleIndex];
@@ -1424,7 +1472,7 @@ function initCursorAura() {
 
   document.addEventListener("pointerover", (event) => {
     const target = event.target.closest(
-      "a, button, .project-card, .featured-card, input, .capability-card, .notes-grid article",
+      "a, button, .project-card, .featured-card, input, .capability-card, .notes-grid .note-card",
     );
     cursorAura.classList.toggle("active", Boolean(target));
   });
