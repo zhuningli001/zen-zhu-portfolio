@@ -295,7 +295,7 @@ body[data-theme="dark"] .theme-toggle:hover {
   }
 
   body[data-theme="dark"] .nav {
-    background: #d8cbbd;
+    background: #211e1a;
     box-shadow: 0 18px 48px rgba(0, 0, 0, 0.34);
   }
 
@@ -330,6 +330,19 @@ body[data-theme="dark"] .theme-toggle:hover {
   .nav .theme-toggle:hover {
     background: rgba(23, 20, 17, 0.06);
     color: #171411;
+  }
+
+  body[data-theme="dark"] .nav a,
+  body[data-theme="dark"] .nav .language-toggle,
+  body[data-theme="dark"] .nav .theme-toggle {
+    color: rgba(244, 239, 230, 0.82);
+  }
+
+  body[data-theme="dark"] .nav a:hover,
+  body[data-theme="dark"] .nav .language-toggle:hover,
+  body[data-theme="dark"] .nav .theme-toggle:hover {
+    background: rgba(244, 239, 230, 0.08);
+    color: #f4efe6;
   }
 
   .nav a {
