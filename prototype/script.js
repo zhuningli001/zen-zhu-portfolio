@@ -21,6 +21,7 @@ const projects = [
       "Turning an abstract AI social concept into product structure across AI conversation, digital twin cards, social discovery, tasks and messaging.",
     output:
       "Product framework, user flow, brand system, interface direction and design system foundations.",
+    evidence: ["0-1 AI product", "Digital twin flows", "Brand + UI system"],
     surface: "#eaded3",
     imageTone: "warm",
   },
@@ -47,6 +48,7 @@ const projects = [
       "The project moves beyond a normal component library and defines rules, contracts, decision gates and QA logic that both people and AI can understand.",
     output:
       "Component Knowledge Layer, Module Assembly Layer, PDP Layer, module contracts, preview portal and QA gates.",
+    evidence: ["Module contracts", "AI-ready PDP rules", "QA gates"],
     surface: "#d9d4ca",
     imageTone: "system",
   },
@@ -73,6 +75,7 @@ const projects = [
       "The redesign connects fuzzy search, AI assistant interaction, two strategy models, four user tags and modular homepage combinations.",
     output:
       "Sitemap, AI search model, assistant interaction, personalized homepage strategy and desktop/mobile demos.",
+    evidence: ["AI search model", "Personalized homepage", "Mobile + desktop demos"],
     surface: "#d8c2bd",
     imageTone: "web",
   },
@@ -99,6 +102,7 @@ const projects = [
       "Multiple scenarios needed to share a clear interaction model: industrial design, marketing sets, PDP pages, patterns and packaging.",
     output:
       "Scenario module overview, canvas editing flow, prompt-to-design workflow and design system foundations.",
+    evidence: ["Prompt workflow", "Canvas editing", "Scenario modules"],
     surface: "#dce0e4",
     imageTone: "product",
   },
@@ -124,6 +128,7 @@ const projects = [
       "The platform needed to balance trust, professionalism, care and inherited RNW brand DNA.",
     output:
       "Logo design, visual language, website interface direction and full brand guideline system.",
+    evidence: ["Brand system", "Web platform", "Guidelines"],
     surface: "#d8d1e4",
     imageTone: "brand",
   },
@@ -150,6 +155,7 @@ const projects = [
       "The work required a calm structure that could hold rich cultural projects, visual archives and personal narrative across devices.",
     output:
       "Website structure, desktop/mobile page designs, gallery logic and visual direction.",
+    evidence: ["Gallery logic", "Editorial structure", "Responsive website"],
     surface: "#e6ded2",
     imageTone: "culture",
   },
@@ -176,6 +182,7 @@ const projects = [
       "The site needed to communicate a refined cross-cultural business identity without becoming visually noisy.",
     output:
       "Homepage design, portfolio structure, visual system and editorial grid direction.",
+    evidence: ["Homepage system", "Editorial grid", "Cross-cultural identity"],
     surface: "#ddd9cf",
     imageTone: "web",
   },
@@ -202,13 +209,14 @@ const projects = [
       "The project spanned multiple stages and media, from visual identity and campaign materials to exhibition and ceremony touchpoints.",
     output:
       "Logo, posters, website/media assets, award materials, exhibition visuals and motion direction.",
+    evidence: ["Campaign identity", "Exhibition assets", "Award materials"],
     surface: "#ded8c8",
     imageTone: "event",
   },
   {
     id: "studio-aiwen",
     title: "Studio AIWEN",
-    titleZh: "AIWEN艺术家网站",
+    titleZh: "AIWEN 艺术家网站",
     year: "2021-2023",
     time: "2021-2023",
     focus: ["web-brand", "culture-media"],
@@ -228,6 +236,7 @@ const projects = [
       "The site needed to organize abstract research, writing and art practice into a clear public-facing structure.",
     output:
       "Research, sitemap, prototype, Webflow implementation and content structure.",
+    evidence: ["Research sitemap", "Webflow build", "Content structure"],
     surface: "#d9d5cc",
     imageTone: "archive",
   },
@@ -253,6 +262,7 @@ const projects = [
       "The project emphasized organizing mixed-media cultural content into a readable database-like web experience.",
     output:
       "Information hierarchy, research mapping, wireframes and prototype structure.",
+    evidence: ["Research mapping", "Information hierarchy", "Prototype"],
     surface: "#d1cabd",
     imageTone: "archive",
   },
@@ -289,6 +299,46 @@ const cvDownloadLinks = document.querySelectorAll("[data-cv-download]");
 
 let currentLanguage = "en";
 let roleIndex = 0;
+let activePanelOpener = null;
+let activeNavOpener = null;
+
+const focusableSelector = [
+  "a[href]",
+  "button:not([disabled])",
+  "input:not([disabled])",
+  "textarea:not([disabled])",
+  "select:not([disabled])",
+  "[tabindex]:not([tabindex='-1'])",
+].join(",");
+
+function getFocusableNodes(container) {
+  if (!container) return [];
+
+  return Array.from(container.querySelectorAll(focusableSelector)).filter(
+    (node) =>
+      node.getAttribute("aria-hidden") !== "true" &&
+      node.getClientRects().length > 0,
+  );
+}
+
+function trapFocus(event, container) {
+  const focusableNodes = getFocusableNodes(container);
+  if (!focusableNodes.length) return;
+
+  const firstNode = focusableNodes[0];
+  const lastNode = focusableNodes[focusableNodes.length - 1];
+
+  if (event.shiftKey && document.activeElement === firstNode) {
+    event.preventDefault();
+    lastNode.focus();
+    return;
+  }
+
+  if (!event.shiftKey && document.activeElement === lastNode) {
+    event.preventDefault();
+    firstNode.focus();
+  }
+}
 
 const cvFiles = {
   en: {
@@ -602,9 +652,7 @@ const translations = {
     "capabilities.culture.desc":
       "Digital experiences with atmosphere and cultural sensitivity.",
     "radar.eyebrow": "Industry radar",
-    "radar.heading": "People I follow.",
-    "radar.copy":
-      "A compact watchlist across AI product, design leadership, creative tooling and independent writing.",
+    "radar.heading": "Creators I follow lately.",
     "radar.ryo": "Cursor · Head of Design",
     "radar.maeda": "Design, AI and useful business learning",
     "radar.jenny": "AI-native product design leadership",
@@ -623,12 +671,18 @@ const translations = {
     "filters.showingAll": "Showing all selected work",
     "filters.empty":
       "No public projects in this filter yet. More cases are being structured.",
+    "filters.emptyTitle": "No matching public cases yet",
+    "filters.emptyCopy":
+      "Try a broader focus or reset the filters to return to the full work index.",
+    "filters.reset": "Reset filters",
     "filters.showing": "Showing",
     "filters.project": "project",
     "filters.projects": "projects",
     "notes.eyebrow": "Notes",
     "notes.heading": "Notes from reading, building and thinking.",
     "notes.link": "Read all",
+    "atlasEntry.heading": "Page map",
+    "atlasEntry.title": "Rolling Atlas",
     "notes.item1": "Design knowledge is the new design asset",
     "notes.item2": "From component library to AI-readable module system",
     "notes.item3": "Why AI search should start with user intent",
@@ -680,7 +734,11 @@ const translations = {
     "emailDrawer.direct": "zhuningli001@163.com ↗",
     "panel.close": "Close",
     "panel.mode": "Project mode",
-    "panel.intro": "Project intro",
+    "panel.scope": "Role / Scope",
+    "panel.intro": "Intro",
+    "panel.challenge": "Challenge",
+    "panel.outcome": "Outcome",
+    "panel.evidence": "Evidence",
     "panel.output": "Output keywords",
     "panel.preview": "Preview",
     "theme.dark": "☾",
@@ -700,7 +758,7 @@ const translations = {
     "aboutPage.greetingCopy":
       "I care about how ideas become usable, beautiful and durable. My work often begins with ambiguity: a fuzzy AI concept, a fragmented content system, a brand that needs a digital voice, or a product journey that needs structure.",
     "aboutPage.greetingCopy1":
-      "I’m Ningli, an UX Designer / Media creator focused on future interactions and human values.",
+      "I’m Ningli, a UX designer and media creator focused on future interactions and human values.",
     "aboutPage.greetingCopy2":
       "My path moves across art, design and product, with a few identity shifts along the way. Looking back, the work has kept circling one question: as technology reshapes expression, relationships and everyday life, how might we preserve and deepen the emotions, trust and connections that matter most to people?",
     "aboutPage.greetingCopy2Lead":
@@ -728,6 +786,8 @@ const translations = {
     "aboutPage.recordsCareer": "Career path",
     "aboutPage.recordsEducation": "Education",
     "aboutPage.recordsExperience": "Experience & Volunteer",
+    "aboutPage.recordsHint":
+      "Recent product and AI design roles are shown first. Education, exhibitions and volunteering stay one tap away.",
     "aboutPage.eduEyebrow": "Education",
     "aboutPage.eduHeading":
       "Academic foundations in information design and art research.",
@@ -857,9 +917,7 @@ const translations = {
     "capabilities.culture.title": "品牌与文化",
     "capabilities.culture.desc": "兼具氛围感、文化敏感度与数字体验的表达。",
     "radar.eyebrow": "行业关注",
-    "radar.heading": "关注的人",
-    "radar.copy":
-      "一个很小的行业观察清单，连接 AI 产品、设计领导力、创作工具与独立写作。",
+    "radar.heading": "近期关注的创作者",
     "radar.ryo": "Cursor · Head of Design",
     "radar.maeda": "设计、AI 与商业学习",
     "radar.jenny": "AI 原生产品设计领导力",
@@ -877,12 +935,17 @@ const translations = {
     "filters.all": "全部",
     "filters.showingAll": "正在展示全部精选作品",
     "filters.empty": "这个筛选下暂时没有公开项目，更多案例还在整理中。",
+    "filters.emptyTitle": "暂时没有匹配的公开案例",
+    "filters.emptyCopy": "可以放宽筛选条件，或重置后回到完整作品索引。",
+    "filters.reset": "重置筛选",
     "filters.showing": "正在展示",
     "filters.project": "个项目",
     "filters.projects": "个项目",
     "notes.eyebrow": "笔记",
     "notes.heading": "边做边想，一些阅读和笔记。",
     "notes.link": "查看全部",
+    "atlasEntry.heading": "页签地图",
+    "atlasEntry.title": "Rolling Atlas",
     "notes.item1": "设计知识正在成为新的设计资产",
     "notes.item2": "从组件库到 AI 可读的模块系统",
     "notes.item3": "为什么 AI 搜索应该从用户意图开始",
@@ -930,7 +993,11 @@ const translations = {
     "emailDrawer.direct": "zhuningli001@163.com ↗",
     "panel.close": "关闭",
     "panel.mode": "项目身份",
-    "panel.intro": "项目简介",
+    "panel.scope": "角色 / 范围",
+    "panel.intro": "简介",
+    "panel.challenge": "挑战",
+    "panel.outcome": "产出",
+    "panel.evidence": "证据",
     "panel.output": "产出关键词",
     "panel.preview": "预览",
     "theme.dark": "☾",
@@ -950,7 +1017,7 @@ const translations = {
     "aboutPage.greetingCopy":
       "我关心想法如何变得可用、好看且经得起交付。我的工作常常从模糊处开始：一个还不清晰的 AI 概念，一个碎片化的内容系统，一个需要数字声音的品牌，或一段需要重新梳理的产品旅程。",
     "aboutPage.greetingCopy1":
-      "我是 Ningli，一名关注未来交互与人文价值的 UX Designer / Media creator。",
+      "我是 Ningli，一名关注未来交互与人文价值的 UX 设计师和数字内容创作者。",
     "aboutPage.greetingCopy2":
       "我的经历横跨艺术、设计和产品，也经历过几次身份和方向的转换。回头看，这些探索其实一直围绕着一个问题：当技术不断改变表达、关系和生活方式时，我们如何保留并增进人最宝贵的情感、信任与连接。",
     "aboutPage.greetingCopy2Lead":
@@ -977,6 +1044,8 @@ const translations = {
     "aboutPage.recordsCareer": "职业路径",
     "aboutPage.recordsEducation": "教育",
     "aboutPage.recordsExperience": "经历与志愿",
+    "aboutPage.recordsHint":
+      "默认先展示近期产品与 AI 设计经历；教育、参展和志愿实践可以通过上方标签切换查看。",
     "aboutPage.eduEyebrow": "教育",
     "aboutPage.eduHeading": "信息设计与艺术研究构成了我的学术基础。",
     "aboutPage.eduHint": "2016 到 2019 · 艺术研究与信息设计",
@@ -1117,7 +1186,9 @@ const panelNodes = {
   title: document.querySelector("[data-panel-title]"),
   summary: document.querySelector("[data-panel-summary]"),
   mode: document.querySelector("[data-panel-mode]"),
+  challenge: document.querySelector("[data-panel-challenge]"),
   output: document.querySelector("[data-panel-output]"),
+  evidence: document.querySelector("[data-panel-evidence]"),
 };
 
 function renderProjects() {
@@ -1126,8 +1197,24 @@ function renderProjects() {
   const filtered = getFilteredProjects();
   grid.innerHTML = "";
 
-  filtered.forEach((project) => {
+  if (!filtered.length) {
+    grid.innerHTML = `
+      <div class="project-empty" role="status">
+        <p>${t("filters.emptyTitle")}</p>
+        <span>${t("filters.emptyCopy")}</span>
+        <button type="button" data-reset-filters>${t("filters.reset")}</button>
+      </div>
+    `;
+    grid
+      .querySelector("[data-reset-filters]")
+      ?.addEventListener("click", resetFilters);
+    updateFilterSummary(0);
+    return;
+  }
+
+  filtered.forEach((project, index) => {
     const projectTitle = getProjectTitle(project);
+    const projectIndex = String(index + 1).padStart(2, "0");
     const card = document.createElement("article");
     card.className = `project-card ${project.size}`;
     card.dataset.projectId = project.id;
@@ -1139,13 +1226,23 @@ function renderProjects() {
     card.innerHTML = `
       <div class="project-visual ${project.imageTone}" aria-hidden="true">
         <div class="image-placeholder">
-          <span>${projectTitle}</span>
+          <div class="project-cover-head">
+            <span>${projectIndex}</span>
+            <span>${project.status}</span>
+          </div>
+          <strong>${projectTitle}</strong>
+          <div class="project-cover-evidence">
+            ${project.evidence.slice(0, 2).map((item) => `<span>${item}</span>`).join("")}
+          </div>
         </div>
       </div>
       <div class="project-content">
         <p class="project-meta">${project.context}</p>
         <h3 class="project-title">${projectTitle}</h3>
         <p class="project-desc">${project.description}</p>
+        <div class="project-evidence" aria-label="Project evidence">
+          ${project.evidence.slice(0, 3).map((item) => `<span>${item}</span>`).join("")}
+        </div>
         <div class="project-tags">
           <span>${project.year}</span>
           ${project.tags.slice(0, 2).map((tag) => `<span>${tag}</span>`).join("")}
@@ -1185,10 +1282,18 @@ function renderFeaturedWork() {
     item.innerHTML = `
       <div class="featured-image ${project.imageTone}" aria-hidden="true">
         <div class="image-placeholder">
-          <span>${projectTitle}</span>
+          <div class="project-cover-head">
+            <span>${String(index + 1).padStart(2, "0")}</span>
+            <span>${project.status}</span>
+          </div>
+          <strong>${projectTitle}</strong>
+          <div class="project-cover-evidence">
+            ${project.evidence.slice(0, 2).map((item) => `<span>${item}</span>`).join("")}
+          </div>
         </div>
       </div>
-      <div class="featured-info" aria-hidden="true">
+      <div class="featured-info">
+        <span>${String(index + 1).padStart(2, "0")} · ${project.status}</span>
         <h3>${projectTitle}</h3>
         <p>${project.description}</p>
       </div>
@@ -1277,6 +1382,22 @@ function initNotesRailControls() {
     passive: true,
   });
   window.addEventListener("resize", updateNotesRailControls);
+}
+
+function initRadarMarquee() {
+  const radarTrack = document.querySelector(".radar-track");
+  const radarList = radarTrack?.querySelector(".radar-list");
+  if (!radarTrack || !radarList || radarTrack.dataset.radarCloned === "true") {
+    return;
+  }
+
+  const clone = radarList.cloneNode(true);
+  clone.setAttribute("aria-hidden", "true");
+  clone.querySelectorAll("a, button").forEach((node) => {
+    node.setAttribute("tabindex", "-1");
+  });
+  radarTrack.appendChild(clone);
+  radarTrack.dataset.radarCloned = "true";
 }
 
 function getNoteStatusLabel(status) {
@@ -1372,6 +1493,8 @@ function openPanel(projectId) {
   const project = projects.find((item) => item.id === projectId);
   if (!project) return;
 
+  activePanelOpener =
+    document.activeElement instanceof HTMLElement ? document.activeElement : null;
   state.activeProjectId = projectId;
   document
     .querySelectorAll(".project-card")
@@ -1382,22 +1505,38 @@ function openPanel(projectId) {
   panelNodes.status.textContent = `${project.status} · ${project.year}`;
   panelNodes.title.textContent = getProjectTitle(project);
   panelNodes.summary.textContent = project.description;
-  panelNodes.mode.textContent = getLocalizedText(project.mode);
+  panelNodes.mode.textContent = `${getLocalizedText(project.mode)} · ${project.tags
+    .slice(0, 2)
+    .join(" / ")}`;
+  panelNodes.challenge.textContent = project.complexity;
   panelNodes.output.textContent = project.output;
+  panelNodes.evidence.innerHTML = project.evidence
+    .map((item) => `<span>${item}</span>`)
+    .join("");
 
   panel.classList.add("open");
   scrim.classList.add("open");
   panel.setAttribute("aria-hidden", "false");
+  document.body.classList.add("panel-open");
+  window.requestAnimationFrame(() => {
+    document.querySelector("[data-panel-close]")?.focus({ preventScroll: true });
+  });
 }
 
-function closePanel() {
+function closePanel(restoreFocus = true) {
+  const panelWasOpen = panel?.classList.contains("open");
   state.activeProjectId = null;
   panel?.classList.remove("open");
   scrim?.classList.remove("open");
   panel?.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("panel-open");
   document
     .querySelectorAll(".project-card")
     .forEach((card) => card.classList.remove("active"));
+  if (panelWasOpen && restoreFocus && activePanelOpener?.isConnected) {
+    activePanelOpener.focus({ preventScroll: true });
+  }
+  activePanelOpener = null;
 }
 
 function setFilter(group, value) {
@@ -1410,6 +1549,18 @@ function setFilter(group, value) {
       button.setAttribute("aria-pressed", String(isActive));
     });
   closePanel();
+  renderProjects();
+}
+
+function resetFilters() {
+  state.focus = "all";
+  state.time = "all";
+  document.querySelectorAll("[data-filter-group] .filter-chip").forEach((button) => {
+    const isActive = button.dataset.value === "all";
+    button.classList.toggle("active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+  });
+  closePanel(false);
   renderProjects();
 }
 
@@ -1427,8 +1578,27 @@ document
 scrim?.addEventListener("click", closePanel);
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
+  if (event.key === "Tab" && panel?.classList.contains("open")) {
+    trapFocus(event, panel);
+    return;
+  }
+
+  if (
+    event.key === "Tab" &&
+    header?.classList.contains("nav-open") &&
+    window.matchMedia("(max-width: 720px)").matches
+  ) {
+    trapFocus(event, header);
+    return;
+  }
+
+  if (event.key === "Escape" && panel?.classList.contains("open")) {
     closePanel();
+    return;
+  }
+
+  if (event.key === "Escape" && header?.classList.contains("nav-open")) {
+    setNavOpen(false, true);
   }
 });
 
@@ -1437,6 +1607,17 @@ function setTheme(theme) {
   if (themeLabel) {
     themeLabel.textContent =
       theme === "dark" ? t("theme.light") : t("theme.dark");
+  }
+  if (themeToggle) {
+    const nextTheme = theme === "dark" ? "light" : "dark";
+    const isZh = currentLanguage === "zh";
+    themeToggle.setAttribute("aria-pressed", String(theme === "dark"));
+    themeToggle.setAttribute(
+      "aria-label",
+      isZh
+        ? `切换到${nextTheme === "dark" ? "深色" : "浅色"}模式`
+        : `Switch to ${nextTheme} theme`,
+    );
   }
   localStorage.setItem("portfolio-theme", theme);
 }
@@ -1450,15 +1631,27 @@ themeToggle?.addEventListener("click", () => {
   setTheme(document.body.dataset.theme === "dark" ? "light" : "dark");
 });
 
-function setNavOpen(isOpen) {
+function setNavOpen(isOpen, restoreFocus = false) {
   if (!header || !navToggle) return;
 
+  if (isOpen) {
+    activeNavOpener =
+      document.activeElement instanceof HTMLElement
+        ? document.activeElement
+        : navToggle;
+  }
   header.classList.toggle("nav-open", isOpen);
   navToggle.setAttribute("aria-expanded", String(isOpen));
   navToggle.setAttribute(
     "aria-label",
     isOpen ? t("nav.menu.close") : t("nav.menu.open"),
   );
+  if (!isOpen && restoreFocus && activeNavOpener?.isConnected) {
+    activeNavOpener.focus({ preventScroll: true });
+  }
+  if (!isOpen) {
+    activeNavOpener = null;
+  }
 }
 
 navToggle?.addEventListener("click", () => {
@@ -1588,9 +1781,18 @@ function initEmailDrawer() {
   const emailClosers = emailDrawer.querySelectorAll("[data-email-close]");
   const emailForm = emailDrawer.querySelector(".email-form");
   const firstField = emailDrawer.querySelector("input, textarea");
+  let emailDrawerOpener = null;
+
+  const getFocusableEmailNodes = () =>
+    Array.from(
+      emailDrawer.querySelectorAll(
+        'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])',
+      ),
+    ).filter((node) => node.offsetParent !== null);
 
   const openEmailDrawer = (event) => {
     event?.preventDefault();
+    emailDrawerOpener = event?.currentTarget || document.activeElement;
     emailDrawer.classList.add("open");
     emailDrawer.setAttribute("aria-hidden", "false");
     document.body.classList.add("email-drawer-open");
@@ -1601,6 +1803,8 @@ function initEmailDrawer() {
     emailDrawer.classList.remove("open");
     emailDrawer.setAttribute("aria-hidden", "true");
     document.body.classList.remove("email-drawer-open");
+    emailDrawerOpener?.focus?.();
+    emailDrawerOpener = null;
   };
 
   emailOpeners.forEach((opener) => {
@@ -1627,8 +1831,27 @@ function initEmailDrawer() {
   });
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && emailDrawer.classList.contains("open")) {
+    if (!emailDrawer.classList.contains("open")) return;
+
+    if (event.key === "Escape") {
       closeEmailDrawer();
+      return;
+    }
+
+    if (event.key !== "Tab") return;
+
+    const focusableNodes = getFocusableEmailNodes();
+    if (!focusableNodes.length) return;
+
+    const firstNode = focusableNodes[0];
+    const lastNode = focusableNodes[focusableNodes.length - 1];
+
+    if (event.shiftKey && document.activeElement === firstNode) {
+      event.preventDefault();
+      lastNode.focus();
+    } else if (!event.shiftKey && document.activeElement === lastNode) {
+      event.preventDefault();
+      firstNode.focus();
     }
   });
 }
@@ -1661,6 +1884,7 @@ window.addEventListener("scroll", () => {
 
 initTheme();
 initLanguage();
+initRadarMarquee();
 initCursorAura();
 initRoleRotator();
 initExperienceReveal();

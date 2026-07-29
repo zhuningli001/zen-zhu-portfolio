@@ -2,11 +2,20 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
     <title>Ningli Zhu — Portfolio Prototype</title>
     <meta
       name="description"
       content="Static homepage prototype for Ningli Zhu's portfolio."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
@@ -50,7 +59,13 @@
         >
           <span data-language-label>中</span>
         </button>
-        <button class="theme-toggle" type="button" data-theme-toggle>
+        <button
+          class="theme-toggle"
+          type="button"
+          data-theme-toggle
+          aria-label="Switch to dark theme"
+          aria-pressed="false"
+        >
           <span data-theme-label>☾</span>
         </button>
       </nav>
@@ -116,52 +131,6 @@
           <p data-i18n="capabilities.culture.desc">
             Digital experiences with atmosphere and cultural sensitivity.
           </p>
-        </div>
-      </section>
-
-      <section class="section industry-radar" aria-labelledby="industry-radar-title">
-        <div class="radar-layout">
-          <div class="radar-heading">
-            <p class="eyebrow" data-i18n="radar.eyebrow">Industry radar</p>
-            <h2 id="industry-radar-title" data-i18n="radar.heading">
-              People I follow.
-            </h2>
-            <p data-i18n="radar.copy">
-              A compact watchlist across AI product, design leadership,
-              creative tooling and independent writing.
-            </p>
-          </div>
-          <div class="radar-list" aria-label="People Ningli follows">
-            <a class="radar-person" href="https://ryo.lu/" target="_blank" rel="noreferrer">
-              <strong>Ryo Lu</strong>
-              <span data-i18n="radar.ryo">Cursor · Head of Design</span>
-            </a>
-            <a class="radar-person" href="https://www.youtube.com/@usefulmba" target="_blank" rel="noreferrer">
-              <strong>John Maeda</strong>
-              <span data-i18n="radar.maeda">Design, AI and useful business learning</span>
-            </a>
-            <div class="radar-person">
-              <strong>Jenny Wen</strong>
-              <span data-i18n="radar.jenny">AI-native product design leadership</span>
-            </div>
-            <a class="radar-person" href="https://substack.com/@zarazhang" target="_blank" rel="noreferrer">
-              <strong>Zara Zhang</strong>
-              <span data-i18n="radar.zara">AI product and GTM writing</span>
-            </a>
-            <a class="radar-person" href="https://substack.com/@marieclairedean" target="_blank" rel="noreferrer">
-              <strong>MC Dean</strong>
-              <span data-i18n="radar.mc">Design leadership and AI UX writing</span>
-            </a>
-            <div class="radar-person">
-              <strong>Guo Yu 郭宇</strong>
-              <span data-i18n="radar.guoyu">Former Chief Designer at Baidu</span>
-            </div>
-            <div class="radar-person">
-              <strong>课代表 立正</strong>
-              <span data-i18n="radar.lizheng">AI builder community and product learning</span>
-            </div>
-            <span class="radar-more" aria-label="More people">...</span>
-          </div>
         </div>
       </section>
 
@@ -286,6 +255,85 @@
         </div>
       </section>
 
+      <section class="section industry-radar" aria-labelledby="industry-radar-title">
+        <div class="radar-layout">
+          <div class="radar-heading">
+            <p class="eyebrow" data-i18n="radar.eyebrow">Industry radar</p>
+            <h2 id="industry-radar-title" data-i18n="radar.heading">
+              Creators I follow lately.
+            </h2>
+          </div>
+          <div
+            class="radar-marquee"
+            aria-label="People Ningli follows"
+            tabindex="0"
+          >
+            <div class="radar-track">
+              <div class="radar-list">
+                <a class="radar-person" href="https://ryo.lu/" target="_blank" rel="noreferrer">
+                  <strong>Ryo Lu</strong>
+                  <span data-i18n="radar.ryo">Cursor · Head of Design</span>
+                </a>
+                <a class="radar-person" href="https://www.youtube.com/@usefulmba" target="_blank" rel="noreferrer">
+                  <strong>John Maeda</strong>
+                  <span data-i18n="radar.maeda">Design, AI and useful business learning</span>
+                </a>
+                <div class="radar-person">
+                  <strong>Jenny Wen</strong>
+                  <span data-i18n="radar.jenny">AI-native product design leadership</span>
+                </div>
+                <a class="radar-person" href="https://substack.com/@zarazhang" target="_blank" rel="noreferrer">
+                  <strong>Zara Zhang</strong>
+                  <span data-i18n="radar.zara">AI product and GTM writing</span>
+                </a>
+                <a class="radar-person" href="https://substack.com/@marieclairedean" target="_blank" rel="noreferrer">
+                  <strong>MC Dean</strong>
+                  <span data-i18n="radar.mc">Design leadership and AI UX writing</span>
+                </a>
+                <div class="radar-person">
+                  <strong>Guo Yu 郭宇</strong>
+                  <span data-i18n="radar.guoyu">Former Chief Designer at Baidu</span>
+                </div>
+                <div class="radar-person">
+                  <strong>课代表 立正</strong>
+                  <span data-i18n="radar.lizheng">AI builder community and product learning</span>
+                </div>
+                <span class="radar-more" aria-label="More people">...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section rolling-atlas-entry"
+        aria-labelledby="rolling-atlas-title"
+      >
+        <h2 id="rolling-atlas-title" data-i18n="atlasEntry.heading">
+          Page map
+        </h2>
+        <a
+          class="rolling-atlas-link"
+          href="./career-atlas-preview.html"
+          aria-label="Open Rolling Atlas, a small bookmark draw game"
+        >
+          <span class="rolling-atlas-die" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+          <span class="rolling-atlas-name" data-i18n="atlasEntry.title">
+            Rolling Atlas
+          </span>
+        </a>
+      </section>
+
       <section class="section about-preview" id="about">
         <p class="eyebrow" data-i18n="about.eyebrow">About / Studio</p>
         <div>
@@ -345,7 +393,14 @@
       </nav>
     </footer>
 
-    <aside class="project-panel" data-panel aria-hidden="true">
+    <aside
+      class="project-panel"
+      data-panel
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="project-panel-title"
+    >
       <button
         class="panel-close"
         data-panel-close
@@ -356,10 +411,10 @@
       </button>
       <div class="panel-content">
         <p class="panel-status" data-panel-status></p>
-        <h2 data-panel-title></h2>
+        <h2 id="project-panel-title" data-panel-title></h2>
         <dl class="panel-facts">
           <div>
-            <dt data-i18n="panel.mode">Project mode</dt>
+            <dt data-i18n="panel.scope">Scope</dt>
             <dd data-panel-mode></dd>
           </div>
           <div>
@@ -367,8 +422,16 @@
             <dd data-panel-summary></dd>
           </div>
           <div>
-            <dt data-i18n="panel.output">Output keywords</dt>
+            <dt data-i18n="panel.challenge">Challenge</dt>
+            <dd data-panel-challenge></dd>
+          </div>
+          <div>
+            <dt data-i18n="panel.outcome">Outcome</dt>
             <dd data-panel-output></dd>
+          </div>
+          <div>
+            <dt data-i18n="panel.evidence">Evidence</dt>
+            <dd class="panel-evidence" data-panel-evidence></dd>
           </div>
         </dl>
       </div>

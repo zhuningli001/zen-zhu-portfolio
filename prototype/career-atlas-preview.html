@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Rolling Atlas Preview — Ningli Zhu</title>
+    <meta
+      name="description"
+      content="Standalone preview of Ningli Zhu's attention atlas interaction."
+    />
+    <script>
+      (() => {
+        const storedTheme = localStorage.getItem("portfolio-theme");
+        document.documentElement.dataset.theme =
+          storedTheme === "dark" ? "dark" : "light";
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    />
+    <link rel="stylesheet" href="./career-atlas-preview.css" />
+  </head>
+  <body>
+    <main class="atlas-page">
+      <header class="atlas-hero">
+        <a class="back-link" href="./index.html">Back to portfolio</a>
+        <div class="atlas-hero-grid">
+          <div>
+            <p class="eyebrow" data-atlas-eyebrow></p>
+            <h1 data-atlas-title></h1>
+          </div>
+          <p data-atlas-intro></p>
+        </div>
+      </header>
+
+      <section class="atlas-shell" aria-labelledby="atlas-map-title">
+        <div class="atlas-toolbar">
+          <div>
+            <p class="eyebrow">Map mode</p>
+            <h2 id="atlas-map-title">Explore the public traces</h2>
+          </div>
+          <div class="atlas-controls" aria-label="Atlas view controls">
+            <button
+              class="atlas-control active"
+              type="button"
+              data-view-mode="topic"
+            >
+              Topic islands
+            </button>
+            <button class="atlas-control" type="button" data-view-mode="phase">
+              Timeline
+            </button>
+            <button class="atlas-reset" type="button" data-reset-atlas>
+              Reset
+            </button>
+          </div>
+        </div>
+
+        <div class="atlas-body panel-collapsed" data-atlas-body>
+          <aside
+            class="atlas-index"
+            id="atlas-theme-panel"
+            aria-label="Theme islands"
+          >
+            <button
+              class="atlas-index-toggle"
+              type="button"
+              data-panel-toggle
+              aria-controls="atlas-theme-panel-content"
+              aria-expanded="false"
+              aria-label="Expand theme panel"
+            >
+              <span data-panel-label>Themes</span>
+            </button>
+            <div
+              class="atlas-index-content"
+              id="atlas-theme-panel-content"
+              data-panel-content
+              aria-hidden="true"
+              inert
+            >
+              <div class="atlas-stat">
+                <strong data-node-count>24</strong>
+                <span>clickable nodes</span>
+              </div>
+              <div class="atlas-island-list" data-island-list></div>
+              <p class="atlas-source-note" data-source-note></p>
+            </div>
+          </aside>
+
+          <div class="atlas-stage-wrap">
+            <div class="atlas-stage" data-atlas-stage>
+              <div class="atlas-grid" aria-hidden="true"></div>
+              <div class="atlas-game" aria-label="Bookmark draw game">
+                <span class="atlas-game-orbit" aria-hidden="true"></span>
+                <div class="atlas-game-copy">
+                  <p class="eyebrow" data-game-step>Step 1 · Draw</p>
+                  <h3>Draw from my bookmark map</h3>
+                  <p data-game-status>
+                    This mini game is built from my public-safe bookmark
+                    archive. Let the map pick one reference link, then use the
+                    keywords and my note as a reading prompt.
+                  </p>
+                </div>
+                <div class="atlas-game-actions">
+                  <button class="atlas-draw" type="button" data-draw-node>
+                    <span class="dice-face" data-dice-face aria-hidden="true">1</span>
+                    <span data-draw-label>Roll the dice</span>
+                  </button>
+                  <button class="atlas-free-play" type="button" data-free-explore>
+                    Explore freely
+                  </button>
+                  <span data-seen-count>0 / 25 opened</span>
+                </div>
+              </div>
+              <svg
+                class="atlas-lines"
+                data-atlas-lines
+                viewBox="0 0 100 100"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+              ></svg>
+              <div class="atlas-islands" data-islands></div>
+              <div class="atlas-nodes" data-nodes></div>
+              <div class="atlas-zoom" aria-label="Map zoom controls">
+                <button type="button" data-zoom-out aria-label="Zoom out">−</button>
+                <span data-zoom-label>100%</span>
+                <button type="button" data-zoom-in aria-label="Zoom in">+</button>
+              </div>
+            </div>
+          </div>
+
+          <aside
+            class="atlas-card is-empty"
+            data-detail-card
+            aria-live="polite"
+          ></aside>
+        </div>
+      </section>
+    </main>
+
+    <script src="./career-atlas-data.js"></script>
+    <script src="./career-atlas-preview.js"></script>
+  </body>
+</html>

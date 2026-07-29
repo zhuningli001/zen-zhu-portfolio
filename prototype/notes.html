@@ -2,11 +2,20 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
     <title>Notes — Ningli Zhu</title>
     <meta
       name="description"
       content="Research notes by Ningli Zhu on AI-native UX, agent systems, design knowledge and adaptive digital experiences."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
@@ -45,7 +54,13 @@
         >
           <span data-language-label>中</span>
         </button>
-        <button class="theme-toggle" type="button" data-theme-toggle>
+        <button
+          class="theme-toggle"
+          type="button"
+          data-theme-toggle
+          aria-label="Switch to dark theme"
+          aria-pressed="false"
+        >
           <span data-theme-label>☾</span>
         </button>
       </nav>

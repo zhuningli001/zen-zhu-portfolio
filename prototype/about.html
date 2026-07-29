@@ -2,11 +2,20 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
     <title>About — Ningli Zhu</title>
     <meta
       name="description"
       content="About Ningli Zhu, senior UX designer and digital creator."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
@@ -47,7 +56,13 @@
         >
           <span data-language-label>中</span>
         </button>
-        <button class="theme-toggle" type="button" data-theme-toggle>
+        <button
+          class="theme-toggle"
+          type="button"
+          data-theme-toggle
+          aria-label="Switch to dark theme"
+          aria-pressed="false"
+        >
           <span data-theme-label>☾</span>
         </button>
       </nav>
@@ -85,17 +100,44 @@
                 CV ↓
               </a>
             </div>
+            <div class="about-signal-grid" aria-label="Profile signals">
+              <div>
+                <span>01</span>
+                <p data-i18n="aboutPage.signal1">China ↔ Netherlands</p>
+              </div>
+              <div>
+                <span>02</span>
+                <p data-i18n="aboutPage.signal2">
+                  Senior UX / AI-native design
+                </p>
+              </div>
+              <div>
+                <span>03</span>
+                <p data-i18n="aboutPage.signal3">
+                  Studio practice + company work
+                </p>
+              </div>
+              <div>
+                <span>04</span>
+                <p data-i18n="aboutPage.signal4">
+                  Product, web, brand, culture
+                </p>
+              </div>
+            </div>
           </div>
           <div class="about-hero-copy">
             <div class="about-photo-placeholder">
               <img
                 src="./assets/ningli-portrait.png"
                 alt="Ningli Zhu portrait"
+                width="3744"
+                height="5616"
+                decoding="async"
+                fetchpriority="high"
               />
             </div>
           </div>
           <div class="about-intro-card about-hero-greeting">
-            <p class="eyebrow" data-i18n="aboutPage.greetingLabel">Greeting</p>
             <div class="about-intro-copy">
               <p data-i18n="aboutPage.greetingCopy1">
                 I’m Ningli, an UX Designer / Media creator focused on future
@@ -685,6 +727,10 @@
               <img
                 src="./assets/gallery-day.jpg"
                 alt="Ningli at a museum with Girl with a Pearl Earring"
+                width="4480"
+                height="6720"
+                loading="lazy"
+                decoding="async"
               />
               <span data-i18n="aboutPage.life1">Gallery day</span>
             </div>
@@ -698,6 +744,10 @@
               <img
                 src="./assets/life-yoga-practice.jpg"
                 alt="Yoga and meditation practice with Isha Foundation"
+                width="1024"
+                height="768"
+                loading="lazy"
+                decoding="async"
               />
               <span data-i18n="aboutPage.life4">Yoga practice</span>
             </div>
@@ -705,6 +755,10 @@
               <img
                 src="./assets/life-community-fieldwork.jpg"
                 alt="Community fieldwork and cultural volunteering"
+                width="1024"
+                height="768"
+                loading="lazy"
+                decoding="async"
               />
               <span data-i18n="aboutPage.life5">Cultural fieldwork</span>
             </div>
@@ -783,11 +837,11 @@
           </label>
           <label>
             <span data-i18n="emailDrawer.reply">Reply email</span>
-            <input name="email" type="email" autocomplete="email" />
+            <input name="email" type="email" autocomplete="email" required />
           </label>
           <label>
             <span data-i18n="emailDrawer.message">Message</span>
-            <textarea name="message" rows="6"></textarea>
+            <textarea name="message" rows="6" required></textarea>
           </label>
           <button type="submit" data-i18n="emailDrawer.send">
             Open email draft ↗

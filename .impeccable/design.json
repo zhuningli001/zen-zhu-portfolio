@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-29T00:00:00+08:00",
+  "title": "Design System: Ningli Zhu Portfolio",
+  "extensions": {
+    "northStar": "Warm Editorial Atlas",
+    "colorMeta": {
+      "warm-paper": {
+        "role": "neutral",
+        "displayName": "Warm Paper",
+        "canonical": "#f4f0ea",
+        "purpose": "Global light background."
+      },
+      "paper-panel": {
+        "role": "neutral",
+        "displayName": "Panel Paper",
+        "canonical": "#fbf8f2",
+        "purpose": "Content panels, raised surfaces, and button text on ink."
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Near Black Ink",
+        "canonical": "#171411",
+        "purpose": "Primary text, active controls, and structural contrast."
+      },
+      "human-clay": {
+        "role": "secondary",
+        "displayName": "Human Clay",
+        "canonical": "#8d4b45",
+        "tonalRamp": ["#8d4b45", "#c88775"],
+        "purpose": "Human warmth, About emphasis, cultural tone."
+      },
+      "attention-orange": {
+        "role": "primary",
+        "displayName": "Attention Orange",
+        "canonical": "#f54e00",
+        "tonalRamp": ["#f54e00", "#ff6a22"],
+        "purpose": "Rare action, focus, alert, cursor, and high-signal accents."
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Modern Product Display",
+        "purpose": "Hero and major editorial headings."
+      },
+      "body": {
+        "displayName": "Readable Product Body",
+        "purpose": "Long copy, navigation, buttons, fields, and operational UI."
+      },
+      "zh": {
+        "displayName": "Chinese System Stack",
+        "purpose": "Chinese headings and body text; removes negative tracking."
+      }
+    },
+    "shadows": [
+      {
+        "name": "panel",
+        "value": "0 18px 48px rgba(33, 24, 18, 0.16)",
+        "purpose": "Mobile navigation and compact elevated panels."
+      },
+      {
+        "name": "drawer",
+        "value": "-24px 0 80px rgba(33, 24, 18, 0.18)",
+        "purpose": "Project and email drawers."
+      },
+      {
+        "name": "ambient",
+        "value": "0 24px 80px rgba(33, 24, 18, 0.16)",
+        "purpose": "Large soft elevation when a surface separates from the page."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-standard",
+        "value": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+        "purpose": "Default easing for hover, drawer, panel, and theme transitions."
+      },
+      {
+        "name": "state-fast",
+        "value": "160ms-240ms",
+        "purpose": "Buttons, chips, hover states, and small UI reactions."
+      },
+      {
+        "name": "drawer-open",
+        "value": "320ms-420ms",
+        "purpose": "Project and email drawer transitions."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "nav-mobile",
+        "value": "720px"
+      },
+      {
+        "name": "layout-tablet",
+        "value": "980px"
+      },
+      {
+        "name": "about-mobile",
+        "value": "760px"
+      },
+      {
+        "name": "phone",
+        "value": "560px"
+      }
+    ],
+    "rules": [
+      "Use attention orange rarely and only from --color-attention.",
+      "Chinese mode keeps native Chinese font stacks and removes negative tracking.",
+      "Surfaces are flat by default; shadows indicate real layering.",
+      "Mobile must not depend on hover for critical information.",
+      "Project cards should be evidence-led, not decorative.",
+      "Do not fake product screenshots, architecture, or UI previews inside project image areas before real assets exist."
+    ]
+  }
+}
