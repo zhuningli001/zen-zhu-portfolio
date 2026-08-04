@@ -24,7 +24,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     />
-    <link rel="stylesheet" href="./career-atlas-preview.css" />
+    <link rel="stylesheet" href="./career-atlas-preview.css?v=20260802-atlas-previews-hitfix" />
   </head>
   <body>
     <main class="atlas-page">
@@ -41,10 +41,7 @@
 
       <section class="atlas-shell" aria-labelledby="atlas-map-title">
         <div class="atlas-toolbar">
-          <div>
-            <p class="eyebrow">Map mode</p>
-            <h2 id="atlas-map-title">Explore the public traces</h2>
-          </div>
+          <h2 id="atlas-map-title" class="sr-only">Rolling Atlas map controls</h2>
           <div class="atlas-controls" aria-label="Atlas view controls">
             <button
               class="atlas-control active"
@@ -145,7 +142,7 @@
       </section>
     </main>
 
-    <script src="./career-atlas-data.js"></script>
-    <script src="./career-atlas-preview.js"></script>
+    <script src="./career-atlas-data.js?v=20260802-atlas-previews"></script>
+    <script src="./career-atlas-preview.js?v=20260802-atlas-previews-eager"></script>
   </body>
 </html>

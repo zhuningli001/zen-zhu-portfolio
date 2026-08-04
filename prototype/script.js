@@ -660,11 +660,7 @@ const translations = {
     "radar.mc": "Design leadership and AI UX writing",
     "radar.guoyu": "Former Chief Designer at Baidu",
     "radar.lizheng": "AI builder community and product learning",
-    "work.eyebrow": "Selected work",
-    "work.heading":
-      "A visual index across AI-native products, product UX, websites, brand systems and cultural projects.",
-    "work.copy":
-      "Focus labels are intentionally provisional. The cards also carry context labels such as independent practice, company work, studio projects and archive work.",
+    "work.heading": "Selected work",
     "filters.focus": "Focus draft",
     "filters.time": "Time",
     "filters.all": "All",
@@ -687,8 +683,9 @@ const translations = {
     "notes.item2": "From component library to AI-readable module system",
     "notes.item3": "Why AI search should start with user intent",
     "notesPage.eyebrow": "AI UX Research Notes",
-    "notesPage.title":
-      "A living notebook on agent systems, design knowledge and adaptive digital experience.",
+    "notesPage.titleLead": "A living notebook",
+    "notesPage.titleRest":
+      "on agent systems, design knowledge and adaptive digital experience.",
     "notesPage.copy":
       "These notes collect my public writing, reading synthesis and product observations. They are not a conventional blog, but a growing map of questions behind my AI UX and design technology practice.",
     "notesPage.roadmapEyebrow": "Stage plan",
@@ -925,11 +922,7 @@ const translations = {
     "radar.mc": "设计领导力与 AI UX 写作",
     "radar.guoyu": "前百度首席设计师",
     "radar.lizheng": "AI Builders 社群与产品学习",
-    "work.eyebrow": "精选作品",
-    "work.heading":
-      "一个横跨 AI 原生产品、产品 UX、网站、品牌系统与文化项目的视觉索引。",
-    "work.copy":
-      "当前分类仍是草稿。项目卡片也保留独立实践、公司项目、工作室项目和归档项目等上下文。",
+    "work.heading": "精选作品",
     "filters.focus": "方向草稿",
     "filters.time": "时间",
     "filters.all": "全部",
@@ -950,7 +943,8 @@ const translations = {
     "notes.item2": "从组件库到 AI 可读的模块系统",
     "notes.item3": "为什么 AI 搜索应该从用户意图开始",
     "notesPage.eyebrow": "AI UX 研究笔记",
-    "notesPage.title": "关于 Agent 系统、设计知识与自适应数字体验的持续笔记。",
+    "notesPage.titleLead": "持续笔记",
+    "notesPage.titleRest": "关于 Agent 系统、设计知识与自适应数字体验。",
     "notesPage.copy":
       "这里整理我的公开写作、阅读综合和产品观察。它不是传统博客，而是一张不断生长的问题地图，连接我的 AI UX 与设计技术实践。",
     "notesPage.roadmapEyebrow": "阶段计划",
@@ -1212,9 +1206,8 @@ function renderProjects() {
     return;
   }
 
-  filtered.forEach((project, index) => {
+  filtered.forEach((project) => {
     const projectTitle = getProjectTitle(project);
-    const projectIndex = String(index + 1).padStart(2, "0");
     const card = document.createElement("article");
     card.className = `project-card ${project.size}`;
     card.dataset.projectId = project.id;
@@ -1225,24 +1218,12 @@ function renderProjects() {
 
     card.innerHTML = `
       <div class="project-visual ${project.imageTone}" aria-hidden="true">
-        <div class="image-placeholder">
-          <div class="project-cover-head">
-            <span>${projectIndex}</span>
-            <span>${project.status}</span>
-          </div>
-          <strong>${projectTitle}</strong>
-          <div class="project-cover-evidence">
-            ${project.evidence.slice(0, 2).map((item) => `<span>${item}</span>`).join("")}
-          </div>
-        </div>
+        <div class="image-placeholder"></div>
       </div>
       <div class="project-content">
         <p class="project-meta">${project.context}</p>
         <h3 class="project-title">${projectTitle}</h3>
         <p class="project-desc">${project.description}</p>
-        <div class="project-evidence" aria-label="Project evidence">
-          ${project.evidence.slice(0, 3).map((item) => `<span>${item}</span>`).join("")}
-        </div>
         <div class="project-tags">
           <span>${project.year}</span>
           ${project.tags.slice(0, 2).map((tag) => `<span>${tag}</span>`).join("")}
@@ -1281,16 +1262,7 @@ function renderFeaturedWork() {
 
     item.innerHTML = `
       <div class="featured-image ${project.imageTone}" aria-hidden="true">
-        <div class="image-placeholder">
-          <div class="project-cover-head">
-            <span>${String(index + 1).padStart(2, "0")}</span>
-            <span>${project.status}</span>
-          </div>
-          <strong>${projectTitle}</strong>
-          <div class="project-cover-evidence">
-            ${project.evidence.slice(0, 2).map((item) => `<span>${item}</span>`).join("")}
-          </div>
-        </div>
+        <div class="image-placeholder"></div>
       </div>
       <div class="featured-info">
         <span>${String(index + 1).padStart(2, "0")} · ${project.status}</span>
@@ -1459,6 +1431,14 @@ function updateFilterSummary(count) {
 
   const focusLabel = getActiveLabel("focus");
   const timeLabel = getActiveLabel("time");
+  const isDefaultFilters = state.focus === "all" && state.time === "all";
+
+  summary.hidden = isDefaultFilters && count > 0;
+
+  if (isDefaultFilters && count > 0) {
+    summary.textContent = "";
+    return;
+  }
 
   if (count === projects.length) {
     summary.textContent = t("filters.showingAll");

@@ -289,7 +289,7 @@ function renderDetailCard() {
     <div class="detail-preview ${hasPreviewImage ? "has-image" : ""}" aria-label="Reference preview">
       ${
         hasPreviewImage
-          ? `<img src="${node.previewImage}" alt="" loading="lazy">`
+          ? `<img src="${node.previewImage}" alt="" loading="eager" decoding="async" fetchpriority="high">`
           : `<span class="detail-preview-dot"></span>
             <span class="detail-preview-line"></span>
             <span class="detail-preview-line detail-preview-line-short"></span>`
@@ -301,7 +301,9 @@ function renderDetailCard() {
     </div>
 
     <div class="detail-content">
-      <button class="detail-close detail-close-top" type="button" data-close-detail aria-label="Close detail card">Close</button>
+      <button class="detail-close detail-close-top" type="button" data-close-detail aria-label="Close detail card">
+        <span aria-hidden="true">&times;</span>
+      </button>
 
       <div>
         <p class="eyebrow">${island.label}</p>

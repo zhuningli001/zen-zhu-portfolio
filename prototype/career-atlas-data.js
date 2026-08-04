@@ -71,6 +71,7 @@ const careerAtlasData = {
       title: "Life and art as daily reference",
       phase: "2017",
       sourceType: "Public bookmark · Visual Reference Platforms",
+      previewImage: "./assets/atlas/voicer-life-art.png",
       topics: ["Visual culture", "Life archive", "Ambient intelligence"],
       roleSignal:
         "Early collection behavior is not only visual inspiration; it is a habit of reading culture through small, repeatable references.",
@@ -91,6 +92,7 @@ const careerAtlasData = {
       title: "Design archives as taste memory",
       phase: "2017",
       sourceType: "Public bookmark · Product, UX & AI",
+      previewImage: "./assets/atlas/aiga-design-archives.png",
       topics: ["Design archive", "Warm documentary", "Reference memory"],
       roleSignal:
         "The archive turns visual taste into something retrievable: examples, standards, lineage, and judgment.",
@@ -111,6 +113,7 @@ const careerAtlasData = {
       title: "Creative autonomy as a worldview",
       phase: "2018",
       sourceType: "Public bookmark · Reading & Humanities",
+      previewImage: "./assets/atlas/creative-independent.png",
       topics: ["Creative autonomy", "Editorial", "Practice voice"],
       roleSignal:
         "A repeated interest in independent creators suggests a preference for practice-led knowledge, not only polished outputs.",
@@ -131,6 +134,7 @@ const careerAtlasData = {
       title: "Hybrid documentary thinking",
       phase: "2018",
       sourceType: "Public bookmark · Reading & Humanities",
+      previewImage: "./assets/atlas/hybrid-documentary.png",
       topics: ["Documentary", "Hybrid reality", "Cultural research"],
       roleSignal:
         "The attention pattern values evidence, constructed reality, and narrative framing: useful later for AI trust and explanation.",
@@ -151,6 +155,7 @@ const careerAtlasData = {
       title: "Independent studio references return",
       phase: "2024",
       sourceType: "Public bookmark · Portfolios & Artists",
+      previewImage: "./assets/atlas/studio-airport.png",
       topics: ["Studio reference", "Creative autonomy", "Portfolio memory"],
       roleSignal:
         "Later references still return to independent studios, showing that visual taste remains active even as the work becomes more systemic.",
@@ -171,6 +176,7 @@ const careerAtlasData = {
       title: "Graph tools for thinking spatially",
       phase: "2017",
       sourceType: "Public bookmark · Creative Coding & Graphics",
+      previewImage: "./assets/atlas/gephi-graph-tool.png",
       topics: ["Graph thinking", "Mapping tool", "Soft tech"],
       roleSignal:
         "Gephi marks a shift from collecting visual references to arranging relationships, clusters, and structure.",
@@ -191,6 +197,7 @@ const careerAtlasData = {
       title: "Information mapping as a language",
       phase: "2017",
       sourceType: "Public bookmark · Reading & Humanities",
+      previewImage: "./assets/atlas/parsons-information-mapping.png",
       topics: ["Information mapping", "Editorial systems", "Reference"],
       roleSignal:
         "The saved link points to mapping as a design and research language, not only a data visualization technique.",
@@ -211,6 +218,7 @@ const careerAtlasData = {
       title: "Visual storytelling under data overload",
       phase: "2017",
       sourceType: "Public bookmark · Product, UX & AI",
+      previewImage: "./assets/atlas/visual-storytelling-data.png",
       topics: ["Data overload", "Visual storytelling", "Legibility"],
       roleSignal:
         "The archive already asks how complexity becomes readable, which later becomes central to product UX and AI evidence design.",
@@ -231,6 +239,7 @@ const careerAtlasData = {
       title: "Critical making and soft infrastructure",
       phase: "2018",
       sourceType: "Public bookmark · Utilities & Misc",
+      previewImage: "./assets/atlas-critical-making.jpg",
       topics: ["Critical making", "Calm technology", "Archive"],
       roleSignal:
         "The focus moves from information as content toward information as situated practice and infrastructure.",
@@ -251,6 +260,7 @@ const careerAtlasData = {
       title: "Future ecosystems over single artifacts",
       phase: "2021",
       sourceType: "Public bookmark · Utilities & Misc",
+      previewImage: "./assets/atlas/future-art-ecosystems.png",
       topics: ["Future systems", "Creative economy", "Systemic thinking"],
       roleSignal:
         "The attention pattern starts to favor ecosystems, roles, and long-term infrastructures over isolated works.",
@@ -271,6 +281,7 @@ const careerAtlasData = {
       title: "Emotion AI as early technical curiosity",
       phase: "2018",
       sourceType: "Public bookmark · Build Tools & Development",
+      previewImage: "./assets/atlas/emopy.png",
       topics: ["Emotional computing", "Machine learning", "Human-AI"],
       roleSignal:
         "The AI interest begins as embodied and emotional interaction, not as generic automation.",
@@ -291,6 +302,7 @@ const careerAtlasData = {
       title: "Camera emotion demo as interaction probe",
       phase: "2019",
       sourceType: "Public bookmark · Product, UX & AI",
+      previewImage: "./assets/atlas/emotion-camera-jsfiddle.png",
       topics: ["Prototype", "Emotion recognition", "Interface probe"],
       roleSignal:
         "Saved demos show an interest in what AI feels like in use: visible input, immediate feedback, and human interpretation.",
@@ -311,6 +323,7 @@ const careerAtlasData = {
       title: "AI tools as embodied product signals",
       phase: "2018",
       sourceType: "Public bookmark · Product, UX & AI",
+      previewImage: "./assets/atlas/single-photo-3d-face.png",
       topics: ["AI tool", "3D face model", "Human-AI coexistence"],
       roleSignal:
         "The bookmark captures a pattern of watching AI tools through human representation, identity, and product affordance.",
@@ -331,6 +344,7 @@ const careerAtlasData = {
       title: "Machine learning for creative practice",
       phase: "2019",
       sourceType: "Public bookmark · Portfolios & Artists",
+      previewImage: "./assets/atlas/machine-learning-artists.png",
       topics: ["ML literacy", "Creative tools", "AI learning"],
       roleSignal:
         "AI appears as a creative medium to learn, not only a product feature to consume.",
@@ -351,6 +365,7 @@ const careerAtlasData = {
       title: "AI creation enters the portfolio field",
       phase: "2023",
       sourceType: "Public bookmark · Portfolios & Artists",
+      previewImage: "./assets/atlas/dreamstudio.png",
       topics: ["Generative AI", "Creative autonomy", "Poetic tools"],
       roleSignal:
         "By 2023, AI is no longer a distant technical reference; it becomes part of the creative tool landscape.",
@@ -371,6 +386,7 @@ const careerAtlasData = {
       title: "Visual programming as a tool habit",
       phase: "2018",
       sourceType: "Public bookmark · Design Resources",
+      previewImage: "./assets/atlas/quartz-composer.png",
       topics: ["Visual programming", "Docs", "Prototype logic"],
       roleSignal:
         "The archive shows an appetite for tools that combine visual thinking with executable behavior.",
@@ -391,6 +407,7 @@ const careerAtlasData = {
       title: "Scripted layout as reusable logic",
       phase: "2018",
       sourceType: "Public bookmark · Design Resources",
+      previewImage: "./assets/atlas/pagenetwork-pagebot.png",
       topics: ["PageBot", "Scripted layout", "Collective intelligence"],
       roleSignal:
         "A design resource becomes interesting when it carries rules and can generate layout behavior.",
@@ -411,6 +428,7 @@ const careerAtlasData = {
       title: "API docs as product material",
       phase: "2019",
       sourceType: "Public bookmark · Build Tools & Development",
+      previewImage: "./assets/atlas/affectiva-javascript-docs.png",
       topics: ["JavaScript", "API docs", "Emotional computing"],
       roleSignal:
         "The bookmark points to a maker's reading mode: docs are saved as building blocks, not just references.",
@@ -431,6 +449,7 @@ const careerAtlasData = {
       title: "Daily code sketching as archive",
       phase: "2017",
       sourceType: "Public bookmark · Product, UX & AI",
+      previewImage: "./assets/atlas/daily-drawbot.png",
       topics: ["DrawBot", "Creative coding", "Archive"],
       roleSignal:
         "The collection includes tool-driven visual practice: daily making, procedural output, and experimental form.",
@@ -451,6 +470,7 @@ const careerAtlasData = {
       title: "Local documents as collective systems",
       phase: "2020",
       sourceType: "Public bookmark · Build Tools & Development",
+      previewImage: "./assets/atlas/reunion-network-docs.png",
       topics: ["Docs", "P2P care", "Collective intelligence"],
       roleSignal:
         "Tooling is not only software; documents, shared protocols, and local systems also become design materials.",
@@ -471,6 +491,7 @@ const careerAtlasData = {
       title: "Design systems as learnable infrastructure",
       phase: "2021",
       sourceType: "Public bookmark · Design Resources",
+      previewImage: "./assets/atlas/ux-collective-design-systems.png",
       topics: ["Design systems", "Systemic thinking", "Reusable knowledge"],
       roleSignal:
         "The focus sharpens from references into reusable design logic, components, and shared standards.",
@@ -491,6 +512,7 @@ const careerAtlasData = {
       title: "Typography as interactive judgment",
       phase: "2017",
       sourceType: "Public bookmark · Design Resources",
+      previewImage: "./assets/atlas/kern-type.png",
       topics: ["Typography", "Interaction", "Visual judgment"],
       roleSignal:
         "Type references are not only aesthetic; they train spacing, precision, and interface sensitivity.",
@@ -511,6 +533,7 @@ const careerAtlasData = {
       title: "Readable type as design knowledge",
       phase: "2017",
       sourceType: "Public bookmark · Design Resources",
+      previewImage: "./assets/atlas/typechina-reading.png",
       topics: ["Chinese typography", "Readability", "Design craft"],
       roleSignal:
         "The bookmark shows attention to practical typographic decision-making, not just style references.",
@@ -531,6 +554,7 @@ const careerAtlasData = {
       title: "Portfolio networks as reference systems",
       phase: "2017",
       sourceType: "Public bookmark · Portfolios & Artists",
+      previewImage: "./assets/atlas/behance-portfolio-network.png",
       topics: ["Portfolio network", "Community", "Creative autonomy"],
       roleSignal:
         "Studio and portfolio references form a personal benchmark system: what good work looks like, how it is presented, and how taste evolves.",
@@ -551,6 +575,7 @@ const careerAtlasData = {
       title: "Design legacy as judgment layer",
       phase: "2017",
       sourceType: "Public bookmark · Design Resources",
+      previewImage: "./assets/atlas/kan-tai-keung.png",
       topics: ["Design legacy", "Brand identity", "Archive"],
       roleSignal:
         "The archive includes design lineage and cultural legacy, suggesting that judgment is learned historically, not generated instantly.",
