@@ -275,7 +275,6 @@ const state = {
 };
 
 const grid = document.querySelector("[data-work-grid]");
-const featuredRail = document.querySelector("[data-featured-rail]");
 const notesGrid = document.querySelector("[data-notes-grid]");
 const notesPrev = document.querySelector("[data-notes-prev]");
 const notesNext = document.querySelector("[data-notes-next]");
@@ -291,14 +290,12 @@ const themeLabel = document.querySelector("[data-theme-label]");
 const languageToggle = document.querySelector("[data-language-toggle]");
 const languageLabel = document.querySelector("[data-language-label]");
 const cursorAura = document.querySelector("[data-cursor-aura]");
-const roleRotator = document.querySelector("[data-role-rotator]");
 const recordTabs = document.querySelectorAll("[data-record-tab]");
 const recordPanels = document.querySelectorAll("[data-record-panel]");
 const recordJumps = document.querySelectorAll("[data-record-jump]");
 const cvDownloadLinks = document.querySelectorAll("[data-cv-download]");
 
 let currentLanguage = "en";
-let roleIndex = 0;
 let activePanelOpener = null;
 let activeNavOpener = null;
 
@@ -633,24 +630,15 @@ const translations = {
     "nav.contact": "Contact",
     "nav.menu.open": "Open navigation menu",
     "nav.menu.close": "Close navigation menu",
-    "featured.eyebrow": "Featured cases",
-    "featured.hint": "Swipe horizontally to preview major projects.",
-    "hero.static": "Hello, I am a",
+    "hero.heading":
+      "Senior Product & Experience Designer focused on AI-native products, complex systems and design infrastructure.",
     "hero.copy":
-      "I design at the intersection of people, technology, and meaning. My work spans UX, brand experience, design systems, and AI-powered products.",
+      "My cross-border practice brings together product strategy, brand experience and cultural perspective to turn ambiguity into clear, durable systems.",
     "hero.more": "More about me",
-    "capabilities.ai.title": "AI-native UX",
-    "capabilities.ai.desc":
-      "Workflows, intent understanding and agent-like interactions.",
+    "capabilities.ai.title": "AI-native Products",
     "capabilities.systems.title": "Complex Systems",
-    "capabilities.systems.desc":
-      "Information architecture, journeys and reusable structures.",
-    "capabilities.tech.title": "Design Technology",
-    "capabilities.tech.desc":
-      "Design knowledge, module logic and AI-readable assets.",
+    "capabilities.tech.title": "Design Infrastructure",
     "capabilities.culture.title": "Brand & Culture",
-    "capabilities.culture.desc":
-      "Digital experiences with atmosphere and cultural sensitivity.",
     "radar.eyebrow": "Industry radar",
     "radar.heading": "Creators I follow lately.",
     "radar.ryo": "Cursor · Head of Design",
@@ -661,7 +649,7 @@ const translations = {
     "radar.guoyu": "Former Chief Designer at Baidu",
     "radar.lizheng": "AI builder community and product learning",
     "work.heading": "Selected work",
-    "filters.focus": "Focus draft",
+    "filters.focus": "Focus",
     "filters.time": "Time",
     "filters.all": "All",
     "filters.showingAll": "Showing all selected work",
@@ -677,8 +665,10 @@ const translations = {
     "notes.eyebrow": "Notes",
     "notes.heading": "Notes from reading, building and thinking.",
     "notes.link": "Read all",
-    "atlasEntry.heading": "Page map",
+    "atlasEntry.heading": "Lab / Experiment",
     "atlasEntry.title": "Rolling Atlas",
+    "atlasEntry.copy":
+      "A playful career-map experiment for browsing paths, pivots and side quests.",
     "notes.item1": "Design knowledge is the new design asset",
     "notes.item2": "From component library to AI-readable module system",
     "notes.item3": "Why AI search should start with user intent",
@@ -712,9 +702,11 @@ const translations = {
       "Agentic UX: three perspectives on future AI product design",
     "noteDetail.nextAction": "Open source",
     "about.eyebrow": "About / Studio",
-    "about.heading": "Independent practice between China and the Netherlands.",
+    "about.heading":
+      "A cross-border design practice shaped by product, systems and culture.",
     "about.copy":
-      "Zen-Zhu Studio is my independent design practice for AI products, websites, brand systems and cultural projects. It began in the Netherlands and continues as a flexible studio practice for projects that need direct communication, strategic judgment and careful execution.",
+      "Based between China and the Netherlands, I work across AI products, design infrastructure and selected brand and cultural experiences.",
+    "about.link": "About me →",
     "contact.eyebrow": "Contact",
     "contact.heading":
       "Open to senior design roles, AI product teams and selected collaborations.",
@@ -899,20 +891,15 @@ const translations = {
     "nav.contact": "联系",
     "nav.menu.open": "打开导航菜单",
     "nav.menu.close": "关闭导航菜单",
-    "featured.eyebrow": "重点项目",
-    "featured.hint": "横向滑动，快速预览主要作品。",
-    "hero.static": "你好，我是",
+    "hero.heading":
+      "专注 AI 原生产品、复杂系统与设计基础设施的资深产品体验设计师。",
     "hero.copy":
-      "我在人的需求、技术可能性与意义感的交汇处进行设计。我的工作横跨 UX、品牌体验、设计系统与 AI 驱动产品。",
+      "跨越中国与荷兰的实践经历，让我能够结合产品策略、品牌体验与文化视角，将复杂问题转化为清晰、可持续的系统。",
     "hero.more": "更多关于我",
-    "capabilities.ai.title": "AI 原生 UX",
-    "capabilities.ai.desc": "围绕工作流、意图理解与类 Agent 交互的体验设计。",
+    "capabilities.ai.title": "AI 原生产品",
     "capabilities.systems.title": "复杂系统",
-    "capabilities.systems.desc": "信息架构、用户旅程与可复用结构的梳理和搭建。",
-    "capabilities.tech.title": "设计技术",
-    "capabilities.tech.desc": "设计知识、模块逻辑与可被 AI 读取的资产系统。",
+    "capabilities.tech.title": "设计基础设施",
     "capabilities.culture.title": "品牌与文化",
-    "capabilities.culture.desc": "兼具氛围感、文化敏感度与数字体验的表达。",
     "radar.eyebrow": "行业关注",
     "radar.heading": "近期关注的创作者",
     "radar.ryo": "Cursor · Head of Design",
@@ -923,7 +910,7 @@ const translations = {
     "radar.guoyu": "前百度首席设计师",
     "radar.lizheng": "AI Builders 社群与产品学习",
     "work.heading": "精选作品",
-    "filters.focus": "方向草稿",
+    "filters.focus": "方向",
     "filters.time": "时间",
     "filters.all": "全部",
     "filters.showingAll": "正在展示全部精选作品",
@@ -937,8 +924,9 @@ const translations = {
     "notes.eyebrow": "笔记",
     "notes.heading": "边做边想，一些阅读和笔记。",
     "notes.link": "查看全部",
-    "atlasEntry.heading": "页签地图",
+    "atlasEntry.heading": "实验 / Lab",
     "atlasEntry.title": "Rolling Atlas",
+    "atlasEntry.copy": "一个用于浏览职业路径、转折与支线经历的趣味地图实验。",
     "notes.item1": "设计知识正在成为新的设计资产",
     "notes.item2": "从组件库到 AI 可读的模块系统",
     "notes.item3": "为什么 AI 搜索应该从用户意图开始",
@@ -969,9 +957,10 @@ const translations = {
     "noteDetail.nextTitle": "Agentic UX：未来 AI 产品设计的三种视角",
     "noteDetail.nextAction": "打开来源",
     "about.eyebrow": "关于 / 工作室",
-    "about.heading": "往返于中国与荷兰之间的独立设计实践。",
+    "about.heading": "一段由产品、系统与文化共同塑造的跨境设计实践。",
     "about.copy":
-      "Zen-Zhu Studio 是我的独立设计实践，关注 AI 产品、网站、品牌系统与文化项目。它始于荷兰，也延续为一种灵活的工作室实践，服务于需要直接沟通、策略判断与细致交付的项目。",
+      "往返于中国与荷兰之间，聚焦 AI 产品、设计基础设施，以及精选品牌与文化体验。",
+    "about.link": "了解更多 →",
     "contact.eyebrow": "联系",
     "contact.heading": "期待 senior 设计岗位、AI 产品团队与您的合作机会。",
     "contact.email": "邮件",
@@ -1144,27 +1133,6 @@ const translations = {
   },
 };
 
-const roleLabels = {
-  en: [
-    "UX Designer",
-    "Product Builder",
-    "Design Researcher",
-    "Digital Creator",
-    "Media-art Lover",
-    "Cultural Explorer",
-    "Yogi 🧘‍♀️",
-  ],
-  zh: [
-    "UX 设计师",
-    "产品构建者",
-    "设计研究者",
-    "数字创作者",
-    "媒体艺术爱好者",
-    "文化探索者",
-    "瑜伽练习者 🧘‍♀️",
-  ],
-};
-
 function t(key) {
   return translations[currentLanguage][key] || translations.en[key] || key;
 }
@@ -1243,44 +1211,6 @@ function renderProjects() {
   });
 
   updateFilterSummary(filtered.length);
-}
-
-function renderFeaturedWork() {
-  if (!featuredRail) return;
-
-  const featuredProjects = projects.slice(0, 4);
-  featuredRail.innerHTML = "";
-
-  featuredProjects.forEach((project, index) => {
-    const projectTitle = getProjectTitle(project);
-    const item = document.createElement("article");
-    item.className = "featured-card";
-    item.style.setProperty("--project-surface", project.surface);
-    item.tabIndex = 0;
-    item.setAttribute("role", "button");
-    item.setAttribute("aria-label", `${t("panel.preview")} ${projectTitle}`);
-
-    item.innerHTML = `
-      <div class="featured-image ${project.imageTone}" aria-hidden="true">
-        <div class="image-placeholder"></div>
-      </div>
-      <div class="featured-info">
-        <span>${String(index + 1).padStart(2, "0")} · ${project.status}</span>
-        <h3>${projectTitle}</h3>
-        <p>${project.description}</p>
-      </div>
-    `;
-
-    item.addEventListener("click", () => openPanel(project.id));
-    item.addEventListener("keydown", (event) => {
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        openPanel(project.id);
-      }
-    });
-
-    featuredRail.appendChild(item);
-  });
 }
 
 function getLocalizedText(value) {
@@ -1669,10 +1599,6 @@ function setLanguage(language) {
         : t("nav.menu.open"),
     );
   }
-  roleIndex = Math.min(roleIndex, roleLabels[currentLanguage].length - 1);
-  if (roleRotator) {
-    roleRotator.textContent = roleLabels[currentLanguage][roleIndex];
-  }
   cvDownloadLinks.forEach((link) => {
     const file = cvFiles[currentLanguage];
     link.setAttribute("href", file.href);
@@ -1681,7 +1607,6 @@ function setLanguage(language) {
   setTheme(document.body.dataset.theme || "light");
   updateFilterSummary(getFilteredProjects().length);
   renderProjects();
-  renderFeaturedWork();
   renderNotes();
   renderNotesIndex();
   localStorage.setItem("portfolio-language", language);
@@ -1707,7 +1632,7 @@ function initCursorAura() {
 
   document.addEventListener("pointerover", (event) => {
     const target = event.target.closest(
-      "a, button, .project-card, .featured-card, input, .capability-card, .notes-grid .note-card",
+      "a, button, .project-card, input, .notes-grid .note-card",
     );
     cursorAura.classList.toggle("active", Boolean(target));
   });
@@ -1715,21 +1640,6 @@ function initCursorAura() {
   document.addEventListener("pointerleave", () => {
     cursorAura.classList.remove("visible", "active");
   });
-}
-
-function initRoleRotator() {
-  if (!roleRotator) return;
-
-  window.setInterval(() => {
-    const roles = roleLabels[currentLanguage];
-    roleIndex = (roleIndex + 1) % roles.length;
-    roleRotator.classList.add("is-changing");
-
-    window.setTimeout(() => {
-      roleRotator.textContent = roles[roleIndex];
-      roleRotator.classList.remove("is-changing");
-    }, 260);
-  }, 2500);
 }
 
 function initExperienceReveal() {
@@ -1866,10 +1776,8 @@ initTheme();
 initLanguage();
 initRadarMarquee();
 initCursorAura();
-initRoleRotator();
 initExperienceReveal();
 initEmailDrawer();
-renderFeaturedWork();
 renderProjects();
 renderNotes();
 renderNotesIndex();

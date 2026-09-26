@@ -97,7 +97,7 @@ The interface is not a startup landing page, a decorative personal portfolio, or
 - Editorial grid, subtle system lines, and generous horizontal breathing room.
 - Warm neutral surfaces with near-black type and rare orange action highlights.
 - Product-system clarity for Work and Notes, with softer personal texture on About.
-- One strong interaction idea per area: role rotator, work previews, radar motion, or panel disclosure.
+- One strong interaction idea per area: filtered work index, radar motion, project-panel disclosure, or focused Lab experiments.
 
 ## Colors
 

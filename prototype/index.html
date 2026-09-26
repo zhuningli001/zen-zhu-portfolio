@@ -17,13 +17,9 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     />
-    <link rel="stylesheet" href="./styles.css?v=20260802-work-cards" />
+    <link rel="stylesheet" href="./styles.css?v=20260926-home-subtraction" />
   </head>
   <body>
-    <aside class="notify-bar" aria-label="Site notice">
-      <span class="notify-dot" aria-hidden="true"></span>
-      <p>网站正在更新中....</p>
-    </aside>
 
     <header class="site-header" data-header>
       <a class="brand" href="#top" aria-label="Ningli Zhu home">
@@ -74,23 +70,15 @@
     <main id="top">
       <section class="hero section">
         <div class="hero-grid">
-          <h1 class="hero-title">
-            <span class="hero-title-static" data-i18n="hero.static">
-              Hello, I am a
-            </span>
-            <span
-              class="hero-title-rotator"
-              data-role-rotator
-              aria-live="polite"
-            >
-              UX Designer
-            </span>
+          <h1 class="hero-title" data-i18n="hero.heading">
+            Senior Product &amp; Experience Designer focused on AI-native products,
+            complex systems and design infrastructure.
           </h1>
           <div class="hero-copy">
             <p data-i18n="hero.copy">
-              I design at the intersection of people, technology, and meaning.
-              My work spans UX, brand experience, design systems, and
-              AI-powered products.
+              My cross-border practice brings together product strategy, brand
+              experience and cultural perspective to turn ambiguity into clear,
+              durable systems.
             </p>
             <a
               class="button primary hero-more-link"
@@ -104,53 +92,23 @@
       </section>
 
       <section class="section capability-section" aria-label="Capabilities">
-        <div class="capability-card">
-          <span>01</span>
-          <h2 data-i18n="capabilities.ai.title">AI-native UX</h2>
-          <p data-i18n="capabilities.ai.desc">
-            Workflows, intent understanding and agent-like interactions.
-          </p>
-        </div>
-        <div class="capability-card">
-          <span>02</span>
-          <h2 data-i18n="capabilities.systems.title">Complex Systems</h2>
-          <p data-i18n="capabilities.systems.desc">
-            Information architecture, journeys and reusable structures.
-          </p>
-        </div>
-        <div class="capability-card">
-          <span>03</span>
-          <h2 data-i18n="capabilities.tech.title">Design Technology</h2>
-          <p data-i18n="capabilities.tech.desc">
-            Design knowledge, module logic and AI-readable assets.
-          </p>
-        </div>
-        <div class="capability-card">
-          <span>04</span>
-          <h2 data-i18n="capabilities.culture.title">Brand & Culture</h2>
-          <p data-i18n="capabilities.culture.desc">
-            Digital experiences with atmosphere and cultural sensitivity.
-          </p>
+        <div class="capability-strip">
+          <span class="capability-item" data-i18n="capabilities.ai.title">
+            AI-native Products
+          </span>
+          <span class="capability-item" data-i18n="capabilities.systems.title">
+            Complex Systems
+          </span>
+          <span class="capability-item" data-i18n="capabilities.tech.title">
+            Design Infrastructure
+          </span>
+          <span class="capability-item" data-i18n="capabilities.culture.title">
+            Brand &amp; Culture
+          </span>
         </div>
       </section>
 
       <section class="section work-section" id="work">
-        <div class="featured-work" aria-label="Featured work carousel">
-          <div class="featured-work-head">
-            <p class="eyebrow" data-i18n="featured.eyebrow">
-              Featured cases
-            </p>
-            <p data-i18n="featured.hint">
-              Swipe horizontally to preview major projects.
-            </p>
-          </div>
-          <div
-            class="featured-rail"
-            data-featured-rail
-            aria-live="polite"
-          ></div>
-        </div>
-
         <div class="section-heading">
           <div>
             <h2 data-i18n="work.heading">Selected work</h2>
@@ -160,7 +118,7 @@
         <div class="filter-panel" aria-label="Work filters">
           <div class="filter-row">
             <span class="filter-label" data-i18n="filters.focus">
-              Focus draft
+              Focus
             </span>
             <div class="filter-options" data-filter-group="focus">
               <button class="filter-chip active" data-value="all" data-i18n="filters.all">
@@ -246,98 +204,21 @@
         </div>
       </section>
 
-      <section class="section industry-radar" aria-labelledby="industry-radar-title">
-        <div class="radar-layout">
-          <div class="radar-heading">
-            <p class="eyebrow" data-i18n="radar.eyebrow">Industry radar</p>
-            <h2 id="industry-radar-title" data-i18n="radar.heading">
-              Creators I follow lately.
-            </h2>
-          </div>
-          <div
-            class="radar-marquee"
-            aria-label="People Ningli follows"
-            tabindex="0"
-          >
-            <div class="radar-track">
-              <div class="radar-list">
-                <a class="radar-person" href="https://ryo.lu/" target="_blank" rel="noreferrer">
-                  <strong>Ryo Lu</strong>
-                  <span data-i18n="radar.ryo">Cursor · Head of Design</span>
-                </a>
-                <a class="radar-person" href="https://www.youtube.com/@usefulmba" target="_blank" rel="noreferrer">
-                  <strong>John Maeda</strong>
-                  <span data-i18n="radar.maeda">Design, AI and useful business learning</span>
-                </a>
-                <div class="radar-person">
-                  <strong>Jenny Wen</strong>
-                  <span data-i18n="radar.jenny">AI-native product design leadership</span>
-                </div>
-                <a class="radar-person" href="https://substack.com/@zarazhang" target="_blank" rel="noreferrer">
-                  <strong>Zara Zhang</strong>
-                  <span data-i18n="radar.zara">AI product and GTM writing</span>
-                </a>
-                <a class="radar-person" href="https://substack.com/@marieclairedean" target="_blank" rel="noreferrer">
-                  <strong>MC Dean</strong>
-                  <span data-i18n="radar.mc">Design leadership and AI UX writing</span>
-                </a>
-                <div class="radar-person">
-                  <strong>Guo Yu 郭宇</strong>
-                  <span data-i18n="radar.guoyu">Former Chief Designer at Baidu</span>
-                </div>
-                <div class="radar-person">
-                  <strong>课代表 立正</strong>
-                  <span data-i18n="radar.lizheng">AI builder community and product learning</span>
-                </div>
-                <span class="radar-more" aria-label="More people">...</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <section
-        class="section rolling-atlas-entry"
-        aria-labelledby="rolling-atlas-title"
-      >
-        <h2 id="rolling-atlas-title" data-i18n="atlasEntry.heading">
-          Page map
-        </h2>
-        <a
-          class="rolling-atlas-link"
-          href="./career-atlas-preview.html"
-          aria-label="Open Rolling Atlas, a small bookmark draw game"
-        >
-          <span class="rolling-atlas-die" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-          <span class="rolling-atlas-name" data-i18n="atlasEntry.title">
-            Rolling Atlas
-          </span>
-        </a>
-      </section>
 
       <section class="section about-preview" id="about">
         <p class="eyebrow" data-i18n="about.eyebrow">About / Studio</p>
         <div>
           <h2 data-i18n="about.heading">
-            Independent practice between China and the Netherlands.
+            A cross-border design practice shaped by product, systems and culture.
           </h2>
           <p data-i18n="about.copy">
-            Zen-Zhu Studio is my independent design practice for AI products,
-            websites, brand systems and cultural projects. It began in the
-            Netherlands and continues as a flexible studio practice for projects
-            that need direct communication, strategic judgment and careful
-            execution.
+            Based between China and the Netherlands, I work across AI products,
+            design infrastructure and selected brand and cultural experiences.
           </p>
+          <a class="about-preview-link" href="./about.html" data-i18n="about.link">
+            About me →
+          </a>
         </div>
       </section>
 

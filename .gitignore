@@ -2,3 +2,5 @@
 .playwright-mcp/
 tmp/
 output/zen-zhu-onecom-site.zip
+
+.codex-qa/
