@@ -1,0 +1,42 @@
+/* Shared case presentation primitives. Project stories remain independent. */
+.experience-sitemap{margin:40px 0 48px;padding:28px 24px;background:var(--panel);border-radius:16px}
+.experience-sitemap figcaption{font-size:12px;letter-spacing:.05em;color:var(--muted);margin-bottom:28px}
+.sitemap-root{width:fit-content;max-width:100%;margin:0 auto;padding:14px 24px;border:1px solid var(--line);border-radius:12px;text-align:center}
+.sitemap-root strong{font-size:17px;font-weight:600}
+.sitemap-branches{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;padding-top:36px}
+.sitemap-branches::before{content:"";position:absolute;top:0;left:50%;height:36px;border-left:1px solid var(--line)}
+.sitemap-branch{position:relative;padding-top:18px;min-width:0}
+.sitemap-branch::before{content:"";position:absolute;top:0;left:-8px;right:-8px;border-top:1px solid var(--line)}
+.sitemap-branch:first-child::before{left:50%}.sitemap-branch:last-child::before{right:50%}
+.sitemap-branch::after{content:"";position:absolute;top:0;left:50%;height:18px;border-left:1px solid var(--line)}
+.sitemap-branch a{display:flex;align-items:center;justify-content:center;min-height:68px;text-align:center;padding:12px 8px;border-radius:10px;background:var(--soft-line);text-decoration:none;color:var(--ink)}
+.sitemap-branch a:hover{background:var(--color-accent-human-soft)}.sitemap-branch a:focus-visible{outline:var(--focus-ring);outline-offset:4px}
+.sitemap-branch strong{font-size:14px;font-weight:600;line-height:1.6}
+.sitemap-branch ul{list-style:none;padding:0 10px;margin:16px 0 0;border-left:1px solid var(--line)}
+.sitemap-branch li{font-size:13px;line-height:1.75;padding:7px 0;color:var(--muted)}
+.experience-sitemap .sitemap-foundation{margin:28px 0 12px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;text-align:center}
+.experience-sitemap .note{font-size:12px;margin:12px 0 0;text-align:center}
+
+@media(max-width:1100px){.sitemap-branches{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.sitemap-branches::before,.sitemap-branch::before,.sitemap-branch::after{display:none}.sitemap-branch{padding-top:0}.sitemap-branches{padding-top:24px}}
+@media(max-width:760px){.problem-grid{grid-template-columns:1fr;gap:16px}.problem-grid article{display:grid;grid-template-columns:36px 1fr;column-gap:16px}.problem-grid h3{margin:5px 0 12px}.problem-grid p{grid-column:2;margin-top:0}.experience-sitemap{padding:24px 16px}.sitemap-branches{gap:16px 12px}.sitemap-branch a{min-height:76px}.sitemap-branch ul{padding-left:8px}.sitemap-branch strong{font-size:13px}.sitemap-branch li{font-size:12px}}
+
+/* White architecture canvas, neutral node surfaces. */
+.experience-sitemap{background:#fff}.sitemap-branch a{background:#f3f3f2}
+body[data-theme="dark"] .experience-sitemap{background:var(--panel)}
+body[data-theme="dark"] .sitemap-branch a{background:var(--soft-line)}
+.iphone-display{position:relative;width:min(100%,340px);margin-inline:auto;padding:9px;border-radius:42px;background:linear-gradient(120deg,#d5d5d3,#fafafa 35%,#b8b9b8);box-shadow:0 18px 35px rgba(0,0,0,.12),inset 0 0 0 1px rgba(0,0,0,.12)}
+.iphone-screen{overflow:hidden;border-radius:34px;background:#faf8f5}
+.motion-media .iphone-screen video{max-height:none;border-radius:0;background:#faf8f5;width:100%;height:auto}
+.iphone-home-indicator{display:none}
+.iphone-source-display{width:100%;filter:drop-shadow(0 12px 14px rgba(0,0,0,.12))}
+.motion-media .iphone-source-display video{max-height:none;background:transparent;border-radius:0;clip-path:inset(1% 9% 1.5% 9% round 12% / 6%);width:100%;height:auto}
+.motion-media .media-play{display:block;min-width:88px;min-height:44px;margin-top:16px;padding:10px 20px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:var(--ink);font:inherit;font-size:14px;cursor:pointer}
+
+/* Case view selectors sit outside the artwork, as readable pill controls. */
+.case-media [data-case-showcase]{overflow:visible;border-radius:0;box-shadow:none}
+.case-media .showcase-stage{border-radius:16px;overflow:hidden;box-shadow:var(--shadow-float)}
+.case-media .showcase-controls{margin-top:20px;padding:0;gap:12px;background:transparent;flex-wrap:wrap}
+.case-media .showcase-controls button{flex:1 1 150px;min-height:52px;padding:14px 20px;border:1px solid var(--line);border-radius:999px;background:var(--panel);font-size:16px;line-height:1.4}
+.case-media .showcase-controls button .showcase-step{font-size:13px}
+.case-media .showcase-controls button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+@media(max-width:600px){.case-media .showcase-controls{gap:10px}.case-media .showcase-controls button{flex-basis:calc(50% - 10px);font-size:15px;padding:12px 14px}}

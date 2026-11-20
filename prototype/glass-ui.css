@@ -1,0 +1,18 @@
+/* Translucent material is limited to navigation. */
+:root{--glass-fill:rgba(255,255,255,.28);--glass-edge:rgba(255,255,255,.82);--glass-inner:rgba(255,255,255,.65);--glass-shadow:0 14px 36px rgba(42,36,27,.10),0 3px 7px rgba(42,36,27,.035);--glass-reflection:rgba(255,255,255,.72);--glass-ink:#252320}
+body[data-theme="dark"]{--glass-fill:rgba(45,46,48,.24);--glass-edge:rgba(255,255,255,.24);--glass-inner:rgba(255,255,255,.12);--glass-shadow:0 14px 36px rgba(0,0,0,.24),0 3px 7px rgba(0,0,0,.15);--glass-reflection:rgba(255,255,255,.17);--glass-ink:#f5f3ed}
+.ui-icon{display:inline-block;width:1.15em;height:1.15em;flex-shrink:0;vertical-align:-.18em;overflow:visible}
+a .ui-icon,button .ui-icon{margin-inline:.1em}.nav-home .ui-icon,.theme-toggle .ui-icon,.nav-toggle .ui-icon{width:22px;height:22px;margin:0}
+.prototype-links .ui-icon,.next-case .ui-icon{width:20px;height:20px;vertical-align:-.15em;margin-left:.25em}
+html body .nav,html body .nav-toggle{
+ color:var(--glass-ink);border:1px solid var(--glass-edge);border-radius:999px;
+ background:radial-gradient(ellipse at 10% 0%,var(--glass-reflection),transparent 64%),linear-gradient(150deg,rgba(255,255,255,.12),transparent 48%,rgba(255,255,255,.08)),var(--glass-fill)!important;
+ box-shadow:inset 0 1px 0 var(--glass-inner),inset 0 -1px 0 rgba(255,255,255,.1),inset 1px 0 0 rgba(255,255,255,.18),var(--glass-shadow)!important;
+ -webkit-backdrop-filter:blur(24px) saturate(165%);backdrop-filter:blur(24px) saturate(165%);
+ transition:background 200ms ease,box-shadow 200ms ease,transform 180ms cubic-bezier(.2,.8,.2,1);text-shadow:0 1px 1px rgba(255,255,255,.08)
+}
+html body .nav a[aria-current]{background:rgba(255,255,255,.35);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 2px 8px rgba(0,0,0,.05);border:1px solid rgba(255,255,255,.38)}
+body[data-theme="dark"] .nav a[aria-current]{background:rgba(255,255,255,.12);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 2px 8px rgba(0,0,0,.12);border-color:rgba(255,255,255,.12)}
+@supports not (backdrop-filter:blur(1px)){html body .nav,html body .nav-toggle{background:var(--panel)!important}}
+@media(prefers-reduced-transparency:reduce){html body .nav,html body .nav-toggle{background:var(--panel)!important;backdrop-filter:none;-webkit-backdrop-filter:none}}
+@media(prefers-reduced-motion:reduce){html body .nav,html body .nav-toggle{transition:none;transform:none!important}}

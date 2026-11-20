@@ -266,7 +266,349 @@ const projects = [
     surface: "#d1cabd",
     imageTone: "archive",
   },
+
+  {
+    id: "halovida", title: "HALOVIDA", titleZh: "HALOVIDA 品牌与独立站",
+    year: "—", time: "undated", focus: ["web-brand"],
+    context: "Brand / Website", size: "large", status: "Case Preview",
+    tags: ["Brand", "E-commerce", "Visual system"],
+    description: "A connected brand and e-commerce design scope spanning identity, product storytelling, website and channel visuals.",
+    mode: {en: "Brand and website design · contribution scope under review", zh: "品牌与独立站设计 · 具体采用范围待核对"},
+    complexity: "Connecting the brand story, product-line visuals, packaging proposals and website experience across channels.",
+    output: "Brand visual direction, website upgrade, channel assets and packaging proposals. Adoption and individual production responsibilities need confirmation.",
+    evidence: ["Visual identity", "Website", "Channel assets"],
+    surface: "#e5e5e1", imageTone: "brand",
+  },
+  {
+    id: "mauritshuis", title: "Mauritshuis", titleZh: "海牙皇家美术馆小程序",
+    year: "—", time: "undated", focus: ["product-ux", "culture-media"],
+    context: "Museum / Mobile", size: "small", status: "Case Preview",
+    tags: ["Mini Program", "Information Architecture", "Culture"],
+    description: "A mobile experience connecting Chinese audiences with artworks, museum information and bilingual guides.",
+    mode: {en: "Museum mini program · design contribution", zh: "美术馆小程序 · 设计贡献"},
+    complexity: "Organizing visit information, collection highlights and bilingual guides for a lightweight mobile experience.",
+    output: "Collection research, sitemap, information structure and mobile designs. Dates and individual ownership remain to be confirmed.",
+    evidence: ["Collection research", "Information architecture", "Mobile design"],
+    surface: "#e6e6e6", imageTone: "culture",
+  },
 ];
+
+const workPresentation = {
+  "cxd-ai": {
+    "zh": [
+      "AI 设计平台",
+      "从内部 Excel 需求出发，衔接需求理解、套图规划与设计师确认的 AI 协作流程。",
+      "内部平台 / 产品体验",
+      [
+        "AI 协作",
+        "营销设计"
+      ],
+      "二期 UI/UX 完成，未进入技术开发；一期已开发内测。"
+    ],
+    "en": [
+      "AI Design Platform",
+      "An AI workflow connecting Excel briefs, image-set planning and designer approval.",
+      "Internal platform / Product UX",
+      [
+        "AI workflow",
+        "Marketing design"
+      ],
+      "Phase 2 UI/UX complete; engineering has not started. Phase 1 is in internal testing."
+    ]
+  },
+  "momcozy-web": {
+    "zh": [
+      "Momcozy 独立站升级",
+      "围绕不同育儿阶段，组织导航、智慧搜索与个性化购物发现路径。",
+      "设计提案 / 电商体验",
+      [
+        "智慧搜索",
+        "个性化体验"
+      ],
+      "调研与设计提案，未完全落地，尚无用户反馈。"
+    ],
+    "en": [
+      "Momcozy Website Experience",
+      "Navigation, smart search and personalized discovery for different parenting stages.",
+      "Proposal / E-commerce UX",
+      [
+        "Smart search",
+        "Personalization"
+      ],
+      "Research and design proposal; not fully implemented, with no user feedback collected."
+    ]
+  },
+  "yione": {
+    "zh": [
+      "YIOne / 亿万 APP",
+      "将 AI 分身、对话与资源发现组织为创业协作产品体验。",
+      "独立项目 / 0–1 产品",
+      [
+        "AI 产品",
+        "移动体验"
+      ],
+      "PDF 展示产品框架、用户旅程与设计系统；开发状态待核对。",
+      "把 AI 分身概念转化为对话、名片、资源发现与社交互动的产品结构。",
+      "产品框架、用户旅程、品牌和移动界面设计系统。"
+    ],
+    "en": [
+      "YIOne",
+      "An AI venture collaboration experience connecting digital twins, conversation and resource discovery.",
+      "Independent / 0–1 product",
+      [
+        "AI product",
+        "Mobile UX"
+      ],
+      "Product framework, user journeys and design system are documented; development status needs confirmation."
+    ]
+  },
+  "momcozy-knowledge": {
+    "zh": [
+      "Momcozy 组件与模块知识系统",
+      "将组件、场景和使用规则组织为可供人与 AI 理解的设计知识。",
+      "设计基础设施 / 系统",
+      [
+        "组件与模块",
+        "设计知识"
+      ],
+      "展示知识系统方案与预览；不将规划模块描述为已上线能力。",
+      "让组件、模块、使用场景和规则能够作为连续的设计知识被理解。",
+      "知识分层、组件预览、模块组织与使用规则方案。"
+    ],
+    "en": [
+      "Momcozy Design Knowledge System",
+      "Organizing components, contexts and usage rules into design knowledge for people and AI.",
+      "Infrastructure / Systems",
+      [
+        "Components",
+        "Design knowledge"
+      ],
+      "System proposal and preview; planned capabilities are not presented as shipped features."
+    ]
+  },
+  "eca": {
+    "zh": [
+      "ECA 国际文创设计大赛",
+      "从品牌识别与动画传播，到展览、书籍和物料，构建贯穿活动全程的设计体验。",
+      "全链路设计 / 综合文化活动",
+      [
+        "品牌与动画",
+        "展览与出版"
+      ],
+      "覆盖品牌、传播、展览、书籍与活动物料，具体个人贡献以案例证据展开。",
+      "在大赛各阶段、空间和媒介间保持连贯识别，并支撑活动推进。",
+      "Logo、海报宣传、动画、展览展示、书籍设计及活动物料。"
+    ],
+    "en": [
+      "ECA Creative Award",
+      "An end-to-end event design experience across identity, motion, exhibition, books and physical materials.",
+      "End-to-end design / Cultural event",
+      [
+        "Identity & motion",
+        "Exhibition & books"
+      ],
+      "Identity, communication, exhibition, book and event-material design; individual contributions to be detailed in the case."
+    ]
+  },
+  "jing-qiong-er": {
+    "zh": [
+      "蒋琼耳艺术家网站",
+      "用图库、编辑结构与跨设备体验，组织艺术家的跨文化创作。",
+      "独立设计 / 艺术家网站",
+      [
+        "编辑设计",
+        "响应式网站"
+      ],
+      "PDF 的 2025 项目分组与旧站 2024 标记不一致，具体年份待核对。",
+      "组织多类型艺术作品、项目与个人叙事，并兼顾不同设备阅读。",
+      "网站信息结构、桌面与移动页面、作品图库设计。"
+    ],
+    "en": [
+      "Jing Qiong Er",
+      "An editorial gallery and cross-device website for a cross-cultural artistic practice.",
+      "Independent / Artist website",
+      [
+        "Editorial design",
+        "Responsive web"
+      ],
+      "The PDF groups this under 2025, while the old site says 2024. Exact dates need confirmation."
+    ]
+  },
+  "factualist": {
+    "zh": [
+      "Factualist",
+      "为内容分享与协作平台建立兼顾信任、关怀与专业感的品牌和网站。",
+      "品牌 / 内容平台",
+      [
+        "品牌与网站",
+        "内容组织"
+      ],
+      "PDF 支持品牌升级与 0–1 网站设计；具体日期和上线状态待核对。",
+      "在内容共享平台中平衡专业感、信任与关怀，并延续品牌基础。",
+      "品牌升级、视觉规范与桌面／移动网站设计。"
+    ],
+    "en": [
+      "Factualist",
+      "A brand and website balancing trust, care and professionalism for a collaborative content platform.",
+      "Brand / Content platform",
+      [
+        "Brand & web",
+        "Content structure"
+      ],
+      "Brand upgrade and 0–1 website design are documented; exact dates and launch status need confirmation."
+    ]
+  },
+  "cynergy": {
+    "zh": [
+      "Cynergy 官网",
+      "以克制的编辑网格呈现跨文化活动与客户项目。",
+      "独立设计 / 企业网站",
+      [
+        "编辑网格",
+        "项目展示"
+      ],
+      "PDF 的 2025 分组与旧站 2024 标记冲突，年份待核对。",
+      "以简洁秩序呈现跨文化业务、活动案例与项目内容。",
+      "网站与项目详情页、编辑网格与视觉方向。"
+    ],
+    "en": [
+      "Cynergy",
+      "An editorial grid presenting cross-cultural events and client projects.",
+      "Independent / Corporate web",
+      [
+        "Editorial grid",
+        "Portfolio"
+      ],
+      "The PDF groups this under 2025, while the old site says 2024. Exact dates need confirmation."
+    ]
+  },
+  "studio-aiwen": {
+    "zh": [
+      "Studio AIWEN",
+      "为艺术实践、写作与思辨研究建立清晰的网站内容结构。",
+      "网站 / 研究实践",
+      [
+        "内容结构",
+        "Webflow"
+      ],
+      "PDF 展示研究、原型及 Webflow 搭建流程；精确日期待核对。",
+      "把写作、思辨研究与艺术实践组织成清晰的网站入口。",
+      "研究、站点地图、原型、Webflow 网站与内容结构。"
+    ],
+    "en": [
+      "Studio AIWEN",
+      "A website structure for artistic practice, writing and speculative research.",
+      "Website / Research practice",
+      [
+        "Content structure",
+        "Webflow"
+      ],
+      "Research, prototyping and Webflow work are documented; exact dates need confirmation."
+    ]
+  },
+  "future-past": {
+    "zh": [
+      "Future of the Past",
+      "通过信息映射组织访谈、研究与混合媒体文化内容。",
+      "档案 / 研究网站",
+      [
+        "信息映射",
+        "文化研究"
+      ],
+      "PDF 标注 2017 年协作项目。",
+      "将访谈、影像与文本研究连接成可阅读的信息体系。",
+      "研究与信息映射、信息层级、线框和网站原型。"
+    ],
+    "en": [
+      "Future of the Past",
+      "Information mapping for interviews, research and mixed-media cultural content.",
+      "Archive / Research website",
+      [
+        "Information mapping",
+        "Cultural research"
+      ],
+      "The PDF identifies this as a collaborative project from 2017."
+    ]
+  },
+  "halovida": {
+    "zh": [
+      "HALOVIDA 品牌与独立站",
+      "从品牌叙事与产品视觉延伸到独立站及渠道表达，建立连续的品牌体验。",
+      "品牌策略 / 网站设计",
+      [
+        "品牌与网站",
+        "多渠道视觉"
+      ],
+      "品牌、网站与传播设计；精确时间、采用范围及拍摄职责待核对。",
+      "协调品牌定位、产品线视觉、包装与网站之间的表达关系。",
+      "视觉升级、独立站设计、渠道素材与包装方案；区分提案和实际采用。"
+    ],
+    "en": [
+      "HALOVIDA",
+      "Connecting brand storytelling and product visuals to e-commerce and channel expression.",
+      "Brand strategy / Website",
+      [
+        "Brand & web",
+        "Channel visuals"
+      ],
+      "Brand, website and communication design; dates, adoption and photography responsibilities need confirmation."
+    ]
+  },
+  "mauritshuis": {
+    "zh": [
+      "海牙皇家美术馆小程序",
+      "以轻量移动体验连接中文观众、馆藏作品与双语导览。",
+      "文化体验 / 小程序",
+      [
+        "信息架构",
+        "移动设计"
+      ],
+      "馆藏研究、站点地图与移动界面；精确时间及职责范围待核对。",
+      "在轻量移动入口中组织参观信息、馆藏作品、商店与双语导览。",
+      "馆藏研究、站点地图、信息结构与移动界面。"
+    ],
+    "en": [
+      "Mauritshuis",
+      "A lightweight mobile experience connecting Chinese audiences, artworks and bilingual guides.",
+      "Culture / Mini program",
+      [
+        "Information architecture",
+        "Mobile design"
+      ],
+      "Collection research, sitemap and mobile designs; dates and individual ownership need confirmation."
+    ]
+  }
+};
+const workCoverHeights = {"factualist": 854, "yione": 519, "future-past": 750, "momcozy-web": 669, "cynergy": 661, "halovida": 810, "mauritshuis": 1015, "eca": 495, "cxd-ai": 674, "momcozy-knowledge": 409, "jing-qiong-er": 565, "studio-aiwen": 1012};
+const curatedOrder = ['cxd-ai','momcozy-web','eca','halovida','yione','momcozy-knowledge','factualist','jing-qiong-er','cynergy','studio-aiwen','future-past','mauritshuis'];
+projects.sort((a,b) => curatedOrder.indexOf(a.id)-curatedOrder.indexOf(b.id));
+projects.forEach(project => {
+  if (project.id === 'eca') { project.focus = ['culture-media']; project.complexity = 'Maintaining a coherent identity across award stages, communication, exhibition, books and physical materials.'; project.output = 'Logo, posters, animation, exhibition design, book design and event materials.'; }
+  project.size = ['cxd-ai','momcozy-web','eca','halovida'].includes(project.id) ? 'large' : 'small';
+  if (['jing-qiong-er','cynergy'].includes(project.id)) { project.year = '2024–2025'; project.time = '2024-2025'; }
+  if (project.id === 'future-past') project.year = '2017';
+});
+// Card eyebrows describe discipline / project type, separately from delivery status.
+const workCategories = {
+ 'cxd-ai': {zh:'交互设计 / AI 设计平台', en:'Interaction Design / AI Design Platform'},
+ 'momcozy-web': {zh:'网站设计 / 品牌独立站', en:'Website Design / E-commerce'},
+ 'eca': {zh:'全链设计 / 文化活动', en:'All-around Design / Cultural Event'},
+ 'halovida': {zh:'品牌 & 网站 / 品牌独立站', en:'Brand & Website / E-commerce'},
+ 'yione': {zh:'App 设计 / AI 协作产品', en:'App Design / AI Collaboration'},
+ 'momcozy-knowledge': {zh:'设计系统 / 设计知识库', en:'Design Systems / Knowledge Base'},
+ 'factualist': {zh:'品牌 & 网站 / Chatbot 平台', en:'Brand & Website / Chatbot Platform'},
+ 'jing-qiong-er': {zh:'网站设计 / 艺术家网站', en:'Website Design / Artist Website'},
+ 'cynergy': {zh:'网站设计 / Agency 官网', en:'Website Design / Agency Website'},
+ 'studio-aiwen': {zh:'网站设计 / 研究型工作室', en:'Website Design / Research Studio'},
+ 'future-past': {zh:'设计研究 / 艺术探索', en:'Design Research / Art Exploration'},
+ 'mauritshuis': {zh:'小程序设计 / 文化机构', en:'Mini Program / Cultural Institution'}
+};
+function getWorkPresentation(project) {
+ const language = currentLanguage === 'zh' ? 'zh' : 'en';
+ const presentation = [...workPresentation[project.id][language]];
+ if (workCategories[project.id]) presentation[2] = workCategories[project.id][language];
+ return presentation;
+}
 
 const state = {
   focus: "all",
@@ -285,6 +627,8 @@ const summary = document.querySelector("[data-filter-summary]");
 const header = document.querySelector("[data-header]");
 const navToggle = document.querySelector("[data-nav-toggle]");
 const navMenu = document.querySelector("[data-nav-menu]");
+const additionalFocus = {'eca':['integrated','brand-vi','motion','print'],'halovida':['integrated','brand-vi'],'factualist':['brand-vi'],'yione':['app-h5'],'mauritshuis':['app-h5']};
+projects.forEach(p=>{p.focus=[...new Set([...p.focus,...(additionalFocus[p.id]||[])])];if(p.id==='future-past')p.time='2017-2020';});
 const themeToggle = document.querySelector("[data-theme-toggle]");
 const themeLabel = document.querySelector("[data-theme-label]");
 const languageToggle = document.querySelector("[data-language-toggle]");
@@ -624,8 +968,11 @@ const notesData = [
 
 const translations = {
   en: {
+    "nav.home": "Home",
     "nav.work": "Work",
     "nav.notes": "Notes",
+    "nav.artboard": "Artboard",
+    "work.artboard": "2013–2020 visual work · Artboard ↗",
     "nav.about": "About",
     "nav.contact": "Contact",
     "nav.menu.open": "Open navigation menu",
@@ -633,14 +980,19 @@ const translations = {
     "hero.heading":
       "Senior Product & Experience Designer focused on AI-native products, complex systems and design infrastructure.",
     "hero.copy":
-      "My cross-border practice brings together product strategy, brand experience and cultural perspective to turn ambiguity into clear, durable systems.",
+      "I’m Ningli. My work has taken me between China and the Netherlands, from media art and brand design to product UX. I’m currently exploring how people work with AI.",
     "hero.more": "More about me",
     "capabilities.ai.title": "AI-native Products",
     "capabilities.systems.title": "Complex Systems",
     "capabilities.tech.title": "Design Infrastructure",
     "capabilities.culture.title": "Brand & Culture",
     "radar.eyebrow": "Industry radar",
-    "radar.heading": "Creators I follow lately.",
+    "radar.heading": "What I’m following lately.",
+    "radar.people": "People",
+    "radar.fields": "Fields",
+    "radar.products": "Products",
+    "radar.agents": "Multi-agent systems & personal agents",
+    "radar.aiiot": "AI × IoT design",
     "radar.ryo": "Cursor · Head of Design",
     "radar.maeda": "Design, AI and useful business learning",
     "radar.jenny": "AI-native product design leadership",
@@ -709,7 +1061,7 @@ const translations = {
     "about.link": "About me →",
     "contact.eyebrow": "Contact",
     "contact.heading":
-      "Open to senior design roles, AI product teams and selected collaborations.",
+      "Open to collaborations. Let's talk 💬",
     "contact.email": "Email",
     "contact.cv": "CV ↓",
     "emailDrawer.eyebrow": "Contact",
@@ -885,8 +1237,11 @@ const translations = {
       "Want the short version? Download CV or start with selected work.",
   },
   zh: {
+    "nav.home": "首页",
     "nav.work": "作品",
     "nav.notes": "笔记",
+    "nav.artboard": "艺术墙",
+    "work.artboard": "2013–2020 视觉作品 · 艺术墙 ↗",
     "nav.about": "关于",
     "nav.contact": "联系",
     "nav.menu.open": "打开导航菜单",
@@ -894,14 +1249,19 @@ const translations = {
     "hero.heading":
       "专注 AI 原生产品、复杂系统与设计基础设施的资深产品体验设计师。",
     "hero.copy":
-      "跨越中国与荷兰的实践经历，让我能够结合产品策略、品牌体验与文化视角，将复杂问题转化为清晰、可持续的系统。",
+      "我是寜莉。在中国与荷兰之间，我做过媒体艺术、品牌和网站，也逐渐走进产品体验设计。最近，我在研究人与 AI 如何一起工作。",
     "hero.more": "更多关于我",
     "capabilities.ai.title": "AI 原生产品",
     "capabilities.systems.title": "复杂系统",
     "capabilities.tech.title": "设计基础设施",
     "capabilities.culture.title": "品牌与文化",
     "radar.eyebrow": "行业关注",
-    "radar.heading": "近期关注的创作者",
+    "radar.heading": "近期关注",
+    "radar.people": "人物",
+    "radar.fields": "领域",
+    "radar.products": "产品",
+    "radar.agents": "多 Agent 系统与个人 Agent",
+    "radar.aiiot": "AI × IoT 设计",
     "radar.ryo": "Cursor · Head of Design",
     "radar.maeda": "设计、AI 与商业学习",
     "radar.jenny": "AI 原生产品设计领导力",
@@ -962,7 +1322,7 @@ const translations = {
       "往返于中国与荷兰之间，聚焦 AI 产品、设计基础设施，以及精选品牌与文化体验。",
     "about.link": "了解更多 →",
     "contact.eyebrow": "联系",
-    "contact.heading": "期待 senior 设计岗位、AI 产品团队与您的合作机会。",
+    "contact.heading": "期待与你合作。聊聊吧 💬",
     "contact.email": "邮件",
     "contact.cv": "CV ↓",
     "emailDrawer.eyebrow": "联系",
@@ -1175,47 +1535,102 @@ function renderProjects() {
   }
 
   filtered.forEach((project) => {
-    const projectTitle = getProjectTitle(project);
+    const copy = getWorkPresentation(project);
+    const projectTitle = copy[0];
+    const hasCase = ['cxd-ai', 'momcozy-web'].includes(project.id);
+    const entryLabel = ['jing-qiong-er','cynergy'].includes(project.id) ? (currentLanguage === 'zh' ? '访问官网' : 'Visit website') : currentLanguage === 'zh'
+      ? (hasCase ? '阅读案例' : '项目速览')
+      : (hasCase ? 'Read case' : 'Quick look');
     const card = document.createElement("article");
     card.className = `project-card ${project.size}`;
     card.dataset.projectId = project.id;
-    card.tabIndex = 0;
-    card.setAttribute("role", "button");
-    card.setAttribute("aria-label", `${t("panel.preview")} ${projectTitle}`);
+    card.setAttribute("aria-label", projectTitle);
     card.style.setProperty("--project-surface", project.surface);
 
     card.innerHTML = `
-      <div class="project-visual ${project.imageTone}" aria-hidden="true">
-        <div class="image-placeholder"></div>
+      <div class="project-visual ${project.imageTone}">
+        ${project.id === "mauritshuis" ? `<img class="work-cover" src="./assets/work/mauritshuis-cover.png" width="1474" height="857" alt="${copy[0]}" loading="lazy" decoding="async">` : ["jing-qiong-er", "cynergy"].includes(project.id) ? `<img class="work-cover" src="./assets/work/${project.id === "cynergy" ? "cynergy-home" : "jiang-home"}.png" alt="${copy[0]}" loading="lazy" decoding="async" style="width:100%;height:auto;object-fit:contain">` : projectShowcases[project.id] ? renderProjectShowcase(project, { controls: false }) : `<img class="work-cover" src="./assets/work/${project.id}-1200.webp?v=artwork3" srcset="./assets/work/${project.id}-640.webp?v=artwork3 640w, ./assets/work/${project.id}-1200.webp?v=artwork3 1200w" sizes="(max-width: 760px) 100vw, (max-width: 1100px) 50vw, 45vw" width="1200" height="${workCoverHeights[project.id]}" alt="${copy[0]}" loading="lazy" decoding="async">`}
       </div>
       <div class="project-content">
-        <p class="project-meta">${project.context}</p>
-        <h3 class="project-title">${projectTitle}</h3>
-        <p class="project-desc">${project.description}</p>
+        <p class="project-meta">${copy[2]}</p>
+        <h3 class="project-title"><button class="project-open" type="button" aria-label="${entryLabel}: ${projectTitle}">${projectTitle}</button></h3>
+        <p class="project-desc">${copy[1]}</p>
         <div class="project-tags">
           <span>${project.year}</span>
-          ${project.tags.slice(0, 2).map((tag) => `<span>${tag}</span>`).join("")}
+          ${copy[3].map((tag) => `<span>${tag}</span>`).join("")}
         </div>
       </div>
     `;
 
     card.addEventListener("click", () => openPanel(project.id));
-    card.addEventListener("keydown", (event) => {
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        openPanel(project.id);
-      }
-    });
+
 
     grid.appendChild(card);
   });
 
-  updateFilterSummary(filtered.length);
+
+  updateFilterSummary(filtered.length + visualArchive.length);
 }
 
 function getLocalizedText(value) {
   if (typeof value === "string") return value;
   return value[currentLanguage] || value.en || value.zh || "";
+}
+
+// Small conceptual sketches accompany the writing; they are not research artifacts.
+function noteDeskSketch(index) {
+  const marks = [
+    '<path d="M25 57q-5-24 20-25t26 24q1 25-25 25T25 57m49 0 39-3m-7-4 7 4-6 5M118 35l50-2 3 45-52 2zM178 55l34-1m-6-4 6 4-5 5M219 36l59 1-1 39-58 1z"/><path class="desk-ink" d="M21 88q30 8 56-3M64 27q15-20 53-18m-8-4 8 4-7 6"/>',
+    '<path d="M72 28q-33-2-35 34t35 35q35 1 35-35T72 28m72 0q-34 0-35 34t35 35q35 1 36-35t-36-34m72 0q-34 0-35 34t35 35q35 1 36-35t-36-34"/><path class="desk-ink" d="m126 62 13 12 24-27M73 110q80 8 144-3"/>',
+    '<path d="m47 42 69-9 7 58-69 9zm65-13 69 4-3 59-69-4zm67 16 71-7 6 58-71 8zM66 57l27-3m-25 15 34-4m23-12 35 2m-36 11 24 1m50-4 37-4m-35 17 28-3"/><path class="desk-ink" d="M114 14q44-18 78 1m-8-7 8 7-10 3"/>',
+    '<path d="M43 28l207 1-2 75-204-2zM59 45h83m-83 16h167m-167 16h134m-134 13h74"/><path class="desk-ink" d="M152 39q41-11 79 0l-1 15q-36 5-80 0zM153 89q38 8 74-3"/>',
+    '<path d="M36 72q24-44 57-20t56-9 63 12 64-14M37 87h241"/><path class="desk-ink" d="m126 56 23-13-4 24M222 28q27-10 49 4"/>',
+    '<path d="m71 31-31 27 31 26m151-53 31 27-31 26m-57-67-27 86M91 113h132"/><path class="desk-ink" d="M99 40q49-11 105 0m-99 18 76-2m-74 17 91-1"/>'
+  ];
+  return `<svg class="note-desk-sketch" viewBox="0 0 310 130" aria-hidden="true">${marks[index % marks.length]}</svg>`;
+}
+
+function initNotesPaperMotion() {
+  if (!notesGrid) return;
+  const motion = matchMedia("(prefers-reduced-motion: reduce)");
+  const pointer = matchMedia("(hover: hover) and (pointer: fine)");
+  let active = null;
+  let bounds = null;
+  let frame = 0;
+  let x = 0, y = 0;
+  const reset = () => {
+    cancelAnimationFrame(frame);
+    frame = 0;
+    if (active) {
+      active.style.removeProperty("--desk-rx");
+      active.style.removeProperty("--desk-ry");
+    }
+    active = null;
+    bounds = null;
+  };
+  notesGrid.addEventListener("pointermove", (event) => {
+    if (motion.matches || !pointer.matches || event.pointerType === "touch") return;
+    const card = event.target.closest(".note-card");
+    if (!card) { reset(); return; }
+    if (active !== card) {
+      reset();
+      active = card;
+      bounds = card.getBoundingClientRect();
+    }
+    x = Math.max(-1, Math.min(1, (event.clientX - bounds.left) / bounds.width * 2 - 1));
+    y = Math.max(-1, Math.min(1, (event.clientY - bounds.top) / bounds.height * 2 - 1));
+    if (!frame) frame = requestAnimationFrame(() => {
+      if (active) {
+        active.style.setProperty("--desk-rx", `${(-y * 3).toFixed(2)}deg`);
+        active.style.setProperty("--desk-ry", `${(x * 4).toFixed(2)}deg`);
+      }
+      frame = 0;
+    });
+  });
+  notesGrid.addEventListener("pointerleave", reset);
+  notesGrid.addEventListener("scroll", reset, { passive: true });
+  window.addEventListener("resize", reset, { passive: true });
+  motion.addEventListener("change", reset);
 }
 
 function renderNotes() {
@@ -1242,6 +1657,18 @@ function renderNotes() {
       <div class="note-card-head">
         <span class="note-card-index">${String(index + 1).padStart(2, "0")}</span>
         <span class="note-card-theme">${note.theme}</span>
+      </div>
+      <span class="note-desk-tape" aria-hidden="true"></span>
+      <div class="note-desk-art" aria-hidden="true">
+        ${noteDeskSketch(index)}
+        <span class="note-margin-mark">${getLocalizedText([
+          { zh: "判断，留给人", en: "Keep human judgment" },
+          { zh: "换个视角？", en: "Another perspective?" },
+          { zh: "从组件到知识", en: "Components → knowledge" },
+          { zh: "答案之外，证据呢？", en: "Where’s the evidence?" },
+          { zh: "持续生长", en: "Always evolving" },
+          { zh: "边做边学", en: "Learn by building" }
+        ][index])}</span>
       </div>
       <div class="note-card-body">
         <h3>${getLocalizedText(note.title)}</h3>
@@ -1274,7 +1701,7 @@ function initNotesRailControls() {
   const scrollByPage = (direction) => {
     notesGrid.scrollBy({
       left: direction * notesGrid.clientWidth * 0.78,
-      behavior: "smooth",
+      behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
     });
   };
 
@@ -1351,7 +1778,7 @@ function getFilteredProjects() {
   return projects.filter((project) => {
     const matchesFocus =
       state.focus === "all" || project.focus.includes(state.focus);
-    const matchesTime = state.time === "all" || project.time === state.time;
+    const matchesTime = state.time === "all" || project.time === state.time || (project.time === "2024-2025" && ["2024","2025"].includes(state.time));
     return matchesFocus && matchesTime;
   });
 }
@@ -1398,6 +1825,11 @@ function getActiveLabel(group) {
 }
 
 function openPanel(projectId) {
+  if (projectId === "cynergy") { window.location.href = "https://www.cynergy-ventures.com/"; return; }
+  if (projectId === "jing-qiong-er") { window.location.href = "https://www.jiangqionger.com/"; return; }
+  const casePages = { 'momcozy-web': './momcozy-web.html', 'cxd-ai': './ai-design-platform.html' };
+  if (casePages[projectId]) { window.location.href = casePages[projectId]; return; }
+
   if (!panel || !scrim) return;
 
   const project = projects.find((item) => item.id === projectId);
@@ -1412,15 +1844,16 @@ function openPanel(projectId) {
       card.classList.toggle("active", card.dataset.projectId === projectId),
     );
 
-  panelNodes.status.textContent = `${project.status} · ${project.year}`;
-  panelNodes.title.textContent = getProjectTitle(project);
-  panelNodes.summary.textContent = project.description;
-  panelNodes.mode.textContent = `${getLocalizedText(project.mode)} · ${project.tags
-    .slice(0, 2)
-    .join(" / ")}`;
-  panelNodes.challenge.textContent = project.complexity;
-  panelNodes.output.textContent = project.output;
-  panelNodes.evidence.innerHTML = project.evidence
+  const copy = getWorkPresentation(project);
+  panelNodes.status.textContent = copy[4];
+  const panelImage = document.querySelector('[data-panel-image]');
+  if (panelImage) { panelImage.src = `./assets/work/${project.id}-1200.webp?v=artwork3`; panelImage.alt = copy[0]; }
+  panelNodes.title.textContent = copy[0];
+  panelNodes.summary.textContent = copy[1];
+  panelNodes.mode.textContent = `${getLocalizedText(project.mode)} · ${copy[3].join(" / ")}`;
+  panelNodes.challenge.textContent = currentLanguage === "zh" ? (copy[5] || copy[1]) : project.complexity;
+  panelNodes.output.textContent = currentLanguage === "zh" ? (copy[6] || copy[4]) : project.output;
+  panelNodes.evidence.innerHTML = copy[3]
     .map((item) => `<span>${item}</span>`)
     .join("");
 
@@ -1515,8 +1948,7 @@ document.addEventListener("keydown", (event) => {
 function setTheme(theme) {
   document.body.dataset.theme = theme;
   if (themeLabel) {
-    themeLabel.textContent =
-      theme === "dark" ? t("theme.light") : t("theme.dark");
+    themeLabel.innerHTML = theme === "dark" ? '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></svg>' : '<svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M20.6 14.3A8.6 8.6 0 0 1 9.7 3.4a9 9 0 1 0 10.9 10.9Z"/></svg>';
   }
   if (themeToggle) {
     const nextTheme = theme === "dark" ? "light" : "dark";
@@ -1582,14 +2014,28 @@ window.addEventListener("resize", () => {
 });
 
 function setLanguage(language) {
+  const focusNames = { 'integrated':['综合设计','Integrated Design'], 'app-h5':['APP / H5','APP / H5'], 'brand-vi':['品牌 VI','Brand Identity'], 'motion':['视频动画','Motion & Video'], 'print':['纸媒','Print & Editorial'], 'ai-systems': ['AI 与系统', 'AI & Systems'], 'product-ux': ['产品体验', 'Product UX'], 'web-brand': ['网站设计', 'Website design'], 'culture-media': ['文化与新媒体', 'Culture & New Media'] };
+  document.querySelectorAll('[data-filter-group="focus"] [data-value]').forEach(button => {
+    const labels = focusNames[button.dataset.value];
+    if (labels) button.textContent = labels[language === 'zh' ? 0 : 1];
+  });
+  const archive = document.querySelector('[data-filter-group="time"] [data-value="archive"]');
+  if (archive) archive.textContent = language === 'zh' ? '2012 及以前' : '2012 & earlier';
   currentLanguage = language;
   document.documentElement.lang = language === "zh" ? "zh-Hans" : "en";
   document.body.dataset.language = language;
+  document.dispatchEvent(new Event("portfolio:language"));
   if (languageLabel) {
     languageLabel.textContent = t("language.next");
   }
   document.querySelectorAll("[data-i18n]").forEach((node) => {
-    node.textContent = t(node.dataset.i18n);
+    if (node.dataset.i18n === "about.heading") {
+      node.innerHTML = currentLanguage === "zh"
+        ? '<span class="about-soft">一段</span><em class="about-border">跨境设计实践</em><span class="about-soft">，由</span><span class="about-term">产品<span class="about-sticker" aria-hidden="true">💡</span></span>、<span class="about-term">系统<span class="about-sticker" aria-hidden="true">🧩</span></span><span class="about-soft">与</span><span class="about-term">文化<span class="about-sticker" aria-hidden="true">🌏</span></span><span class="about-soft">共同塑造。</span>'
+        : '<span class="about-soft">A </span><em class="about-border">cross-border</em> design practice <span class="about-soft">shaped by </span><span class="about-term">product<span class="about-sticker" aria-hidden="true">💡</span></span>, <span class="about-term">systems<span class="about-sticker" aria-hidden="true">🧩</span></span><span class="about-soft"> and </span><span class="about-term">culture<span class="about-sticker" aria-hidden="true">🌏</span></span>.';
+    } else {
+      node.textContent = t(node.dataset.i18n);
+    }
   });
   if (navToggle) {
     navToggle.setAttribute(
@@ -1684,6 +2130,7 @@ function initEmailDrawer() {
     event?.preventDefault();
     emailDrawerOpener = event?.currentTarget || document.activeElement;
     emailDrawer.classList.add("open");
+    emailOpeners.forEach((opener) => opener.setAttribute("aria-expanded", "true"));
     emailDrawer.setAttribute("aria-hidden", "false");
     document.body.classList.add("email-drawer-open");
     window.setTimeout(() => firstField?.focus(), 180);
@@ -1691,6 +2138,7 @@ function initEmailDrawer() {
 
   const closeEmailDrawer = () => {
     emailDrawer.classList.remove("open");
+    emailOpeners.forEach((opener) => opener.setAttribute("aria-expanded", "false"));
     emailDrawer.setAttribute("aria-hidden", "true");
     document.body.classList.remove("email-drawer-open");
     emailDrawerOpener?.focus?.();
@@ -1768,9 +2216,32 @@ recordJumps.forEach((jump) => {
   jump.addEventListener("click", () => setRecordTab(jump.dataset.recordJump));
 });
 
-window.addEventListener("scroll", () => {
-  header?.classList.toggle("scrolled", window.scrollY > 12);
-});
+// Desktop: reveal near the top edge. Touch: reveal when scrolling upward.
+if (header) {
+  const hoverPointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+  let nearTop = false;
+  let previousY = window.scrollY;
+  const updateHeader = () => {
+    const y = window.scrollY;
+    header.classList.toggle("scrolled", y > 12);
+    const hide = y > 120 && !nearTop &&
+      (hoverPointer.matches || y >= previousY);
+    header.classList.toggle("header-hidden", hide);
+    previousY = y;
+  };
+  window.addEventListener("scroll", updateHeader, { passive: true });
+  window.addEventListener("pointermove", (event) => {
+    if (!hoverPointer.matches) return;
+    const next = event.clientY <= 48 ||
+      (!header.classList.contains("header-hidden") && event.clientY <= header.getBoundingClientRect().bottom + 32);
+    if (nearTop !== next) { nearTop = next; updateHeader(); }
+  }, { passive: true });
+  document.addEventListener("pointerleave", () => {
+    nearTop = false;
+    if (hoverPointer.matches) updateHeader();
+  });
+  updateHeader();
+}
 
 initTheme();
 initLanguage();
@@ -1782,3 +2253,4 @@ renderProjects();
 renderNotes();
 renderNotesIndex();
 initNotesRailControls();
+initNotesPaperMotion();

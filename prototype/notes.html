@@ -15,10 +15,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&display=swap"
     />
-    <link rel="stylesheet" href="./styles.css?v=20260926-home-subtraction" />
-  </head>
+    <link rel="stylesheet" href="./styles.css?v=20261111-product-layer" />
+  <link rel="stylesheet" href="./product-layer.css?v=20261113-pill-controls"><link rel="stylesheet" href="./typography.css?v=20261113-cabinet-songti"><link rel="stylesheet" href="./glass-ui.css?v=20261114-nav-only"><link rel="stylesheet" href="./editorial-rhythm.css?v=3"><link rel="stylesheet" href="./type-system.css?v=20261114-1"></head>
   <body>
     <header class="site-header" data-header>
       <a class="brand" href="./index.html#top" aria-label="Ningli Zhu home">
@@ -42,10 +42,14 @@
         data-nav-menu
         aria-label="Primary navigation"
       >
-        <a href="./index.html#work" data-i18n="nav.work">Work</a>
-        <a href="./notes.html" data-i18n="nav.notes">Notes</a>
-        <a href="./about.html" data-i18n="nav.about">About</a>
-        <a href="./index.html#contact" data-i18n="nav.contact">Contact</a>
+        <a class="nav-home" href="./index.html#top" aria-label="Home / 首页"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="m3 11 9-8 9 8M5 10v11h5v-7h4v7h5V10"/></svg><span class="nav-home-label" data-i18n="nav.home">Home</span></a>
+        <a href="./index.html#work" ><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="3"/><path d="M8 3v4m8-4v4M8 11h8m-8 4h5"/></svg><span data-i18n="nav.work">Work</span></a>
+        <a href="./notes.html" ><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 12h7m-7 4h5"/></svg><span data-i18n="nav.notes">Notes</span></a>
+        <a href="./artboard.html"><span data-i18n="nav.artboard">Artboard</span></a>
+        <a href="./about.html" ><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg><span data-i18n="nav.about">About</span></a>
+      </nav>
+      <div class="header-settings" aria-label="Contact, language and appearance">
+        <button class="header-contact" type="button" data-email-open aria-haspopup="dialog" aria-controls="email-panel" data-i18n="nav.contact">Contact</button>
         <button
           class="language-toggle"
           type="button"
@@ -61,9 +65,9 @@
           aria-label="Switch to dark theme"
           aria-pressed="false"
         >
-          <span data-theme-label>☾</span>
+          <span data-theme-label><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M20.6 14.3A8.6 8.6 0 0 1 9.7 3.4a9 9 0 1 0 10.9 10.9Z"/></svg></span>
         </button>
-      </nav>
+      </div>
     </header>
 
     <main class="notes-page" id="top">
@@ -133,9 +137,12 @@
           <div class="radar-heading">
             <p class="eyebrow" data-i18n="radar.eyebrow">Industry radar</p>
             <h2 id="industry-radar-title" data-i18n="radar.heading">
-              Creators I follow lately.
+              What I’m following lately.
             </h2>
           </div>
+          <div class="radar-streams">
+            <div class="radar-group">
+              <h3 class="radar-group-label" data-i18n="radar.people">People</h3>
           <div
             class="radar-marquee"
             aria-label="People Ningli follows"
@@ -175,6 +182,23 @@
               </div>
             </div>
           </div>
+            </div>
+            <div class="radar-group">
+              <h3 class="radar-group-label" data-i18n="radar.fields">Fields</h3>
+              <ul class="radar-interests">
+                <li data-i18n="radar.agents">Multi-agent systems &amp; personal agents</li>
+                <li data-i18n="radar.aiiot">AI × IoT design</li>
+              </ul>
+            </div>
+            <div class="radar-group">
+              <h3 class="radar-group-label" data-i18n="radar.products">Products</h3>
+              <ul class="radar-interests">
+                <li>Today AI</li>
+                <li>Muse AI</li>
+                <li>Tolan</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -185,6 +209,68 @@
     </footer>
 
     <div class="cursor-aura" data-cursor-aura aria-hidden="true"></div>
-    <script src="./script.js"></script>
-  </body>
+    
+      <aside
+      class="email-drawer"
+      id="email-panel"
+      data-email-drawer
+      aria-hidden="true"
+    >
+      <div class="email-drawer-backdrop" data-email-close></div>
+      <div
+        class="email-drawer-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="email-drawer-title"
+      >
+        <button
+          class="email-drawer-close"
+          type="button"
+          data-email-close
+          aria-label="Close email form"
+        >
+          ×
+        </button>
+        <p class="eyebrow" data-i18n="emailDrawer.eyebrow">Contact</p>
+        <h2 id="email-drawer-title" data-i18n="emailDrawer.title">
+          Let’s connect
+        </h2>
+        <p class="email-drawer-copy" data-i18n="emailDrawer.copy">
+          Share a role, collaboration or project idea. This form opens your
+          default email draft when submitted.
+        </p>
+        <form
+          class="email-form"
+          action="mailto:zhuningli001@163.com"
+          method="post"
+          enctype="text/plain"
+        >
+          <label>
+            <span data-i18n="emailDrawer.name">Your name</span>
+            <input name="name" type="text" autocomplete="name" />
+          </label>
+          <label>
+            <span data-i18n="emailDrawer.reply">Reply email</span>
+            <input name="email" type="email" autocomplete="email" required />
+          </label>
+          <label>
+            <span data-i18n="emailDrawer.message">Message</span>
+            <textarea name="message" rows="6" required></textarea>
+          </label>
+          <button type="submit" data-i18n="emailDrawer.send">
+            Open email draft ↗
+          </button>
+        </form>
+        <a
+          class="email-direct-link"
+          href="mailto:zhuningli001@163.com"
+          data-i18n="emailDrawer.direct"
+        >
+          zhuningli001@163.com ↗
+        </a>
+      </div>
+    </aside>
+<script src="./showcase.js?v=20261111-product-layer"></script>
+    <script src="./script.js?v=20261111-refinement"></script>
+<script src="./ui-icons.js?v=20261113"></script><script src="./editorial-rhythm.js?v=1"></script></body>
 </html>

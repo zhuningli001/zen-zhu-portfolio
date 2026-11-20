@@ -1,0 +1,79 @@
+/* Shared editorial rhythm: broad images, narrow reading, deliberate pauses. */
+:root {--rhythm-pause:clamp(88px,12vw,184px);--rhythm-reading:38rem}
+.hero {padding-block:clamp(88px,11vw,164px)}
+.hero h1 {font-size:clamp(3.4rem,7.6vw,8rem);line-height:1.02;max-width:15ch;letter-spacing:-.055em}
+.hero .hero-copy {max-width:var(--rhythm-reading);font-size:clamp(17px,1.5vw,21px);line-height:1.7}
+.section {padding-block:var(--rhythm-pause)}
+.section-heading {margin-bottom:clamp(32px,5vw,72px)}
+.section-heading h2,.notes-hero h1,.artboard-intro h1 {font-size:clamp(40px,5.8vw,88px);line-height:1.08;letter-spacing:-.045em}
+.work-section .work-grid {row-gap:clamp(64px,8vw,120px)}
+.work-section .project-description {max-width:38rem;line-height:1.65}
+@media(min-width:900px) {
+ .work-section .project-card:nth-child(2n) {margin-top:64px}
+ .work-section .project-card:nth-child(4n+3) {width:88%}
+ .work-section .project-card:nth-child(4n) {width:94%;justify-self:end}
+}
+.about-preview {gap:clamp(36px,8vw,120px)}
+.about-preview h2 {font-size:clamp(36px,4.8vw,72px);line-height:1.13;max-width:19ch}
+.about-preview p:not(.eyebrow) {max-width:34rem;line-height:1.8;margin-top:32px}
+.contact-section {padding-block:clamp(112px,16vw,240px)}
+.contact-section h2 {font-size:clamp(36px,5.6vw,84px);line-height:1.12;max-width:19ch}
+.contact-actions {margin-top:40px}
+.section-body p,.note-prose p {max-width:var(--rhythm-reading)}
+.artboard-intro {padding-block:clamp(72px,10vw,160px) 80px}
+.artboard-intro>p:not(.eyebrow) {max-width:34rem}
+/* An open twelve-column exhibition rather than equal-width masonry. */
+.art-wall {display:grid;columns:auto;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(16px,2vw,36px);row-gap:clamp(96px,14vw,240px);align-items:start;padding-block:40px 180px}
+.art-wall .art-piece {display:block;box-sizing:border-box;width:100%;margin:0;padding:0;min-width:0}
+.art-wall .art-piece:nth-child(6n+1) {grid-column:1 / 5;margin-top:clamp(100px,15vw,260px)}
+.art-wall .art-piece:nth-child(6n+2) {grid-column:6 / 12}
+.art-wall .art-piece:nth-child(6n+3) {grid-column:2 / 7;margin-top:clamp(40px,6vw,100px)}
+.art-wall .art-piece:nth-child(6n+4) {grid-column:8 / 13;margin-top:clamp(140px,20vw,320px)}
+.art-wall .art-piece:nth-child(6n+5) {grid-column:1 / 7;margin-top:clamp(100px,13vw,220px)}
+.art-wall .art-piece:nth-child(6n) {grid-column:8 / 12}
+.art-piece figcaption {padding-top:16px;font-size:13px;line-height:1.5}
+@media(min-width:721px) and (max-width:1000px) {.art-wall {row-gap:100px}.art-wall .art-piece:nth-child(6n+1) {grid-column:1 / 6}.art-wall .art-piece:nth-child(6n+2) {grid-column:7 / 13}}
+.art-open,.art-open img {border-radius:2px}
+.art-open img {transition:transform 650ms cubic-bezier(.2,.7,.2,1)}
+.art-open:hover img {transform:scale(1.035)}
+.rhythm-reveal {animation:rhythm-enter 700ms cubic-bezier(.2,.7,.2,1) both}
+@keyframes rhythm-enter {from {opacity:0;transform:translateY(24px)}to {opacity:1;transform:translateY(0)}}
+@media(max-width:720px) {
+ .hero h1 {font-size:clamp(3rem,11vw,5rem)}
+ .work-section .project-card:nth-child(n) {width:100%;margin-top:0}
+ .art-wall {display:block;padding-block:20px 80px}
+ .art-wall .art-piece:nth-child(n) {width:100%;margin:0 0 72px;padding:0}
+ .art-wall .art-piece:nth-child(3n+2) {width:85%;margin-left:auto}
+ .art-wall .art-piece:nth-child(3n) {width:92%}
+}
+@media(prefers-reduced-motion:reduce) {.rhythm-reveal {animation:none}.art-open img {transition:none}}
+
+/* The archive has its own dark exhibition surface in either global theme. */
+.artboard-page .art-wall {row-gap:clamp(48px,6vw,100px);padding-bottom:100px}
+.artboard-page .art-piece:nth-child(6n+1) {margin-top:clamp(60px,8vw,130px)}
+.artboard-page .art-piece:nth-child(6n+3) {margin-top:clamp(20px,3vw,50px)}
+.artboard-page .art-piece:nth-child(6n+4) {margin-top:clamp(60px,9vw,140px)}
+.artboard-page .art-piece:nth-child(6n+5) {margin-top:clamp(40px,6vw,100px)}
+.artboard-page .artboard-intro {padding-bottom:48px}
+@media(max-width:720px) {.artboard-page .art-wall .art-piece:nth-child(n) {margin-top:0;margin-bottom:48px}}
+
+/* Homepage uses a quieter section hierarchy; case studies keep editorial scale. */
+html body.portfolio-home .section-heading h2,
+html body.portfolio-home .about-preview h2,
+html body.portfolio-home .contact-section h2 {
+ font-size:clamp(1.9rem,4vw,4.4rem);
+ font-weight:500!important;
+ letter-spacing:-.025em!important;
+ line-height:1.2!important;
+}
+
+/* Two pairs followed by a smaller three-work composition. */
+@media(min-width:1001px) {
+ .artboard-page .art-wall .art-piece:nth-child(7n+1) {grid-column:1 / 5;margin-top:90px}
+ .artboard-page .art-wall .art-piece:nth-child(7n+2) {grid-column:6 / 13;margin-top:0}
+ .artboard-page .art-wall .art-piece:nth-child(7n+3) {grid-column:2 / 7;margin-top:0}
+ .artboard-page .art-wall .art-piece:nth-child(7n+4) {grid-column:8 / 13;margin-top:80px}
+ .artboard-page .art-wall .art-piece:nth-child(7n+5) {grid-column:1 / 5;margin-top:55px}
+ .artboard-page .art-wall .art-piece:nth-child(7n+6) {grid-column:5 / 8;margin-top:0}
+ .artboard-page .art-wall .art-piece:nth-child(7n) {grid-column:9 / 13;margin-top:95px}
+}

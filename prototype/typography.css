@@ -1,0 +1,38 @@
+/* Display typography. Kept separate from UI/body fonts and embedded demos. */
+@font-face{font-family:'Cabinet Grotesk';src:url('./assets/fonts/cabinet-grotesk-400.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Cabinet Grotesk';src:url('./assets/fonts/cabinet-grotesk-500.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Cabinet Grotesk';src:url('./assets/fonts/cabinet-grotesk-700.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Cabinet Grotesk';src:url('./assets/fonts/cabinet-grotesk-800.woff2') format('woff2');font-weight:800;font-style:normal;font-display:swap}
+:root{--font-display-zh:'Cabinet Grotesk','Songti SC','STSong','Noto Serif CJK SC','Source Han Serif SC','SimSun',serif;--font-display:'Cabinet Grotesk','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;--display-h1-tracking:-.025em;--display-h2-tracking:-.018em;--display-h1-leading:1.12;--display-h2-leading:1.28}
+/* Explicit semantic scope: H3, navigation, labels and body retain their fonts. */
+html body h1,html body h2{font-family:var(--font-display)!important;font-style:normal;font-synthesis:none;text-wrap:balance;overflow-wrap:break-word}
+html body h1{font-weight:700!important;letter-spacing:var(--display-h1-tracking)!important;line-height:var(--display-h1-leading)!important}
+html body h2{font-weight:700!important;letter-spacing:var(--display-h2-tracking)!important;line-height:var(--display-h2-leading)!important}
+html body blockquote,html body q,html body .pull-quote,html body .pullquote,html body .quote-text{font-family:var(--font-display)!important;font-weight:400;font-style:normal;font-synthesis:none;letter-spacing:-.01em;line-height:1.55;text-wrap:pretty}
+html body blockquote p{font-family:inherit!important;letter-spacing:inherit!important;line-height:inherit!important}
+/* The Notes explanatory subtitle remains secondary to its heading. */
+html body .notes-hero-copy h1 span+span{font-weight:400;letter-spacing:-.01em;line-height:1.45}
+/* Preserve a stable role line while the subtitle types; no character reflow balancing. */
+html body .hero .hero-title{text-wrap:initial}
+html body .hero .hero-role-line{min-height:1.24em}
+html[lang^='zh'] body h1,html[lang^='zh'] body h2{font-family:var(--font-display-zh)!important;font-weight:700!important;letter-spacing:0!important;line-break:strict;word-break:normal}
+html[lang^='zh'] body h1{line-height:1.28!important}
+html[lang^='zh'] body h2{line-height:1.4!important}
+html[lang^='zh'] body blockquote,html[lang^='zh'] body q,html[lang^='zh'] body .pull-quote,html[lang^='zh'] body .pullquote,html[lang^='zh'] body .quote-text{font-family:var(--font-display-zh)!important;letter-spacing:0;line-height:1.75}
+html[lang^='zh'] body .notes-hero-copy h1 span+span{letter-spacing:0;line-height:1.55}
+@media(max-width:720px){:root{--display-h1-tracking:-.02em;--display-h2-tracking:-.012em;--display-h1-leading:1.16;--display-h2-leading:1.32}html[lang^='zh'] body h1{line-height:1.3!important}html[lang^='zh'] body h2{line-height:1.42!important}}
+
+/* Extra Bold is reserved for the changing identity and explicit heading emphasis. */
+html body h1 strong,html body h2 strong,html body h1 b,html body h2 b,html body h1 .display-emphasis,html body h2 .display-emphasis,html body .hero [data-hero-word]{font-weight:800!important}
+
+/* Match Latin/CJK reading rhythm without widening labels or compact UI. */
+:root{--prose-leading:1.7;--prose-gap:1em}
+html[lang^='zh']{--prose-leading:1.85;--prose-gap:1.1em}
+html body .section-body p,html body .note-article p,html body .about-prose p{line-height:var(--prose-leading);letter-spacing:0;text-wrap:pretty}
+html body .section-body h2{margin-bottom:.7em}
+html body .section-body p+p{margin-top:var(--prose-gap)}
+html body blockquote{margin-block:1.6em;padding-block:.2em}
+html body blockquote p+p{margin-top:.8em}
+html body h1 em,html body h2 em,html body blockquote em{font-style:italic;font-synthesis:style}
+/* Keep Chinese emphasis upright; Songti carries emphasis through weight. */
+html[lang^='zh'] body h1 em,html[lang^='zh'] body h2 em,html[lang^='zh'] body blockquote em{font-style:normal;font-synthesis:none}

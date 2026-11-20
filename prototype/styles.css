@@ -31,8 +31,8 @@
   --shadow-drawer: -24px 0 80px rgba(33, 24, 18, 0.18);
   --shadow: 0 24px 80px rgba(33, 24, 18, 0.16);
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
-  --font-body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
-  --font-heading: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-heading: "DM Sans", "Helvetica Neue", Arial, sans-serif;
   --font-zh-body: "PingFang SC", "Hiragino Sans GB", "HarmonyOS Sans",
     "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
   --font-zh-heading: "PingFang SC", "Hiragino Sans GB", "HarmonyOS Sans",
@@ -669,6 +669,41 @@ body[data-theme="dark"] .rolling-atlas-die span:nth-child(9) {
   align-items: center;
 }
 
+/* Radar keeps interests readable while the existing people rail moves. */
+.radar-layout { align-items: start; }
+.radar-streams { min-width: 0; }
+.radar-group {
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr);
+  gap: 1rem;
+  align-items: baseline;
+  padding-block: 1rem;
+}
+.radar-group + .radar-group { border-top: 1px solid var(--soft-line); }
+.radar-group:first-child { padding-top: 0; }
+.radar-group:last-child { padding-bottom: 0; }
+.radar-group-label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+.radar-interests {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin: 0;
+  padding: 0.42rem 0.55rem;
+  list-style: none;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+@media (max-width: 600px) {
+  .radar-group { grid-template-columns: 1fr; gap: 0.5rem; }
+  .radar-interests { padding: 0; }
+}
+
 .radar-heading h2 {
   margin: 0.35rem 0 0;
   font-family: var(--font-heading);
@@ -1067,7 +1102,7 @@ body[data-theme="dark"] .project-content {
   overflow: hidden;
   font-family: var(--font-heading);
   font-size: clamp(1.65rem, 2.7vw, 3.4rem);
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1.04;
   text-overflow: ellipsis;
@@ -1077,7 +1112,7 @@ body[data-theme="dark"] .project-content {
 
 body[data-language="en"] .project-title {
   font-family: var(--font-body);
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: -0.035em;
   line-height: 1.08;
 }
@@ -1531,16 +1566,16 @@ body[data-theme="dark"] .notes-section .notes-rail-button:disabled {
 
 .notes-hero {
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.62fr);
-  gap: clamp(2.2rem, 6vw, 7rem);
+  grid-template-columns: minmax(0, 1.6fr) minmax(220px, 0.8fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
   align-items: center;
-  padding-bottom: clamp(2.8rem, 5vw, 5rem);
+  padding-block: clamp(1.5rem, 3vw, 3rem) clamp(2.8rem, 5vw, 5rem);
 }
 
 .notes-hero-copy h1 {
   max-width: 980px;
   margin-top: 0.7rem;
-  font-size: clamp(2.7rem, 5.3vw, 6.1rem);
+  font-size: clamp(2.5rem, 4.4vw, 4.5rem);
 }
 
 .notes-hero-copy h1 span {
@@ -1548,7 +1583,12 @@ body[data-theme="dark"] .notes-section .notes-rail-button:disabled {
 }
 
 .notes-hero-copy h1 span + span {
-  margin-top: 0.18em;
+  max-width: 34ch;
+  margin-top: 1rem;
+  font-size: clamp(1.25rem, 2.2vw, 1.9rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.4;
 }
 
 .notes-hero-copy > p:not(.eyebrow) {
@@ -1560,22 +1600,17 @@ body[data-theme="dark"] .notes-section .notes-rail-button:disabled {
 }
 
 .notes-constellation {
-  min-height: 360px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: rgba(251, 248, 242, 0.48);
-  box-shadow: var(--shadow);
-}
-
-body[data-theme="dark"] .notes-constellation {
-  background: rgba(244, 239, 230, 0.04);
+  width: 100%;
+  max-width: 320px;
+  min-height: 0;
+  justify-self: end;
 }
 
 .notes-constellation svg {
   display: block;
   width: 100%;
-  height: 100%;
-  min-height: 360px;
+  height: auto;
+  min-height: 0;
 }
 
 .note-block {
@@ -3135,7 +3170,6 @@ body[data-theme="dark"] .life-tile {
   .radar-layout,
   .about-preview,
   .about-hero-grid,
-  .notes-hero,
   .notes-roadmap,
   .note-detail-body,
   .about-intro,
@@ -3163,13 +3197,6 @@ body[data-theme="dark"] .life-tile {
     grid-template-columns: 1fr 1fr;
   }
 
-  .notes-constellation {
-    min-height: 300px;
-  }
-
-  .notes-constellation svg {
-    min-height: 300px;
-  }
 
   .notes-index-item {
     grid-template-columns: 1fr;
@@ -3350,29 +3377,29 @@ body[data-theme="dark"] .life-tile {
   }
 
   .notes-hero-copy h1 {
-    font-size: clamp(3.45rem, 16vw, 5.15rem);
+    font-size: clamp(2.5rem, 11vw, 3.5rem);
   }
 
   .notes-hero-copy h1 span + span {
     max-width: 21rem;
     margin-top: 0.75rem;
-    font-size: clamp(1.42rem, 6.2vw, 2rem);
+    font-size: clamp(1.2rem, 5vw, 1.45rem);
     letter-spacing: -0.02em;
     line-height: 1.12;
   }
 
   body[data-language="zh"] .notes-hero-copy h1 {
-    font-size: clamp(3rem, 13vw, 4.35rem);
+    font-size: clamp(2.5rem, 11vw, 3.5rem);
   }
 
   body[data-language="zh"] .notes-hero-copy h1 span + span {
-    font-size: clamp(1.35rem, 5.8vw, 1.9rem);
+    font-size: clamp(1.2rem, 5vw, 1.45rem);
     line-height: 1.18;
   }
 
   .notes-constellation,
   .notes-constellation svg {
-    min-height: 250px;
+    min-height: 0;
   }
 
   .notes-index-main {
@@ -4917,3 +4944,29 @@ body[data-language="zh"] .panel-facts dd {
     grid-row: auto;
   }
 }
+/* Real project artwork: uncropped covers share the case media radius. */
+.work-section .project-visual{border-radius:16px;background:transparent;border:0}
+.work-cover{display:block;width:100%;height:100%;object-fit:contain;border:0;border-radius:16px}
+.panel-work-cover{display:block;width:100%;height:auto;border-radius:16px;border:0;margin:24px 0}
+.work-section .project-title{font-size:clamp(1.3rem,2vw,2.2rem);line-height:1.2;min-height:0;max-width:100%;letter-spacing:-.025em}
+.work-section .project-card:not(.large) .project-title{font-size:clamp(1.3rem,2vw,2.2rem)}
+.work-section .project-desc{display:block;min-height:0;overflow:visible;max-width:48em}
+.work-section .project-meta{letter-spacing:.06em;font-size:.75rem}
+
+/* Show complete artwork at its own ratio; no baked-in framing canvas. */
+.work-section .project-card .project-visual{display:block;aspect-ratio:auto;background:transparent;align-self:start}
+.work-section .work-cover{width:100%;height:auto;object-fit:contain;background:transparent}
+.work-section .project-card{align-content:start}
+
+@media (max-width: 680px) {
+  .notes-hero { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; }
+  .notes-constellation { max-width: 220px; justify-self: start; }
+}
+
+/* Artwork remains the sole content of its media frame. */
+.work-section .project-card .project-visual {background:var(--panel);border-radius:16px;isolation:isolate}
+.work-section .project-visual .work-cover {border-radius:16px}
+/* The existing portrait stays the personal anchor; its caption is factual. */
+.about-photo-credit {display:flex;flex-wrap:wrap;gap:8px 16px;margin:22px 0 0;font-size:12px;line-height:1.6;color:var(--muted)}
+.about-photo-credit span:first-child {color:var(--ink)}
+.about-intro-copy .intro-emphasis {background:linear-gradient(transparent 64%,var(--color-accent-human-soft) 64%);box-decoration-break:clone;-webkit-box-decoration-break:clone}
