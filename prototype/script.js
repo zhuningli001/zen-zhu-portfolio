@@ -1569,7 +1569,7 @@ function renderProjects() {
   });
 
 
-  updateFilterSummary(filtered.length + visualArchive.length);
+  updateFilterSummary(filtered.length);
 }
 
 function getLocalizedText(value) {
